@@ -69,18 +69,17 @@ The "100-agent swarm" is affordable, but it is the cheapest stage and not the on
 
 | Attempt | Scale | Measured result |
 |---|---|---|
-| Cyc (1984–) | 25–30M hand-coded assertions, about 2,000 person-years | No scientific breakthroughs attributed; hand-coding did not scale |
-| Galactica (Meta, 2022) | LLM trained on about 48M papers | Pulled after 3 days for fabricated papers and citations |
-| IBM Watson for Oncology | $62M at MD Anderson | "Unsafe and incorrect" advice; never treated a patient; Watson Health sold in 2022 |
 | Microsoft Academic Graph → OpenAlex | about 250M works | Infrastructure, not a reasoning engine |
 | Swanson / Arrowsmith literature-based discovery | Two separated literatures at a time | Fish oil–Raynaud's and magnesium–migraine links, later supported clinically; modern evaluations mostly rediscover known links |
 | Hetionet (drug repurposing) | 47k nodes, 2.25M edges | AUROC 97% on known treatments, 70% on drugs later entering clinical trials |
-| Krenn group: SemNet → Science4Cast → Impact4Cast → **SciMuse** | Up to 58M papers, 123k concepts | Predicts future concept links. SciMuse: 25% of GPT-4 ideas rated 4–5 by experts; distant-field pairings rated *lower* |
+| Krenn group: SemNet → Science4Cast → Impact4Cast → **SciMuse** | Up to 58M papers, 123k concepts | Predicts future concept links. SciMuse: 25% of GPT-4 ideas rated 4–5 by the researchers themselves; ideas on less-connected (less-saturated) concepts rated higher. This measures *rated interest*, not realized impact |
 | Buehler (MIT): graph reasoning, SciAgents | Graph from about 1,000 papers | Striking cross-domain hypotheses (art → mycelium composites); no lab or expert validation found; judged by LLMs |
 | FutureHouse Robin; Google AI co-scientist | LLM + retrieval, no curated graph | Findings confirmed in cell culture or organoids (ripasudil for dry AMD; vorinostat in liver fibrosis) |
 | Microsoft Discovery | Graph-based knowledge engine | Coolant found after screening 367k candidates (company claim) |
 
-Open tension: large-scale bibliometrics finds that atypical combinations drive impact (Uzzi 2013: 2× hit rate; Shi & Evans 2023), yet expert raters marked distant-field ideas lower (SciMuse). Expert ratings may be biased against distance, which is one more reason to score ideas by measured outcomes. **No prior effort has connected a cross-discipline knowledge base to an executable harness with a numeric result. That combination is where OptiLex is new.**
+Earlier "store all of science" projects (Cyc; Galactica, 2022; IBM Watson for Oncology) are left out of this table on purpose. They failed through hand-coding that did not scale, or through model fabrication typical of pre-2023 technology, so they say little about what a current frontier model with a verified knowledge base can do.
+
+On combinations: the realized-impact evidence (Uzzi et al. 2013, 17.9M papers: a conventional core plus a tail of atypical combinations doubles the hit rate; Shi & Evans 2023: surprising combinations, often introduced by outsiders from distant fields, predict outsized impact) is the directly relevant evidence and supports a cross-discipline design. SciMuse's finding that distant-field pairings got lower *interest ratings* is not strong counter-evidence. It is a rating rather than an outcome, and it is plausibly confounded: raters judged fields they did not know, and the generator (GPT-4) may bridge distant fields less well. **No prior effort has connected a cross-discipline knowledge base to an executable harness with a numeric result. That combination is where OptiLex is new.**
 
 ## Our pilot: clean vs "ask for novelty" vs noisy prompts (`factory_pilot/`)
 
