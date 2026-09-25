@@ -47,11 +47,11 @@ Three proposals were evaluated against the literature (sources below) and one sm
 
 | Stage | Volume | Cost |
 |---|---|---|
-| Generate (about 100 agents, 10 ideas each) | ~1,000 raw ideas | ~$20–40 (~$0.02–0.04 per idea; see the pilot cost below) |
+| Generate (about 100 agents, 10 ideas each) | ~1,000 raw ideas | ~$45 ($0.044 per idea, measured in the pilot) |
 | Dedupe + novelty gate | → ~50–100 distinct families | ~$5 (embeddings + a reranker) |
 | Critic ⇄ fixer, ≤3 rounds | → ~20–30 testable specs | ~$20–40 |
 | Implement + tier-1 test | 20–30 experiments | ~$30–45 LLM + ~$5–10 GPU |
-| **Total** | **~25 real experiments/day** | **~$80–130/day** |
+| **Total** | **~25 real experiments/day** | **~$105–135/day** |
 
 The "100-agent swarm" is affordable, but it is the cheapest stage and not the one that matters. The binding constraints are dedupe quality and how many ideas get tested each day.
 
