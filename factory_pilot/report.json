@@ -1,0 +1,65 @@
+{
+ "clean": {
+  "n": 30,
+  "families_p1": 3,
+  "families_at15_p1": 3.0,
+  "novelty_mean_p1": 0.13,
+  "novelty2_frac_p1": 0.0,
+  "soundness_mean_p1": 3,
+  "sound4plus_frac_p1": 0.0,
+  "novel_and_sound_p1": 0,
+  "families_p2": 3,
+  "families_at15_p2": 3.0,
+  "novelty_mean_p2": 0.9,
+  "novelty2_frac_p2": 0.0,
+  "soundness_mean_p2": 2.2,
+  "sound4plus_frac_p2": 0.0,
+  "novel_and_sound_p2": 0,
+  "lexical_distance": 0.748
+ },
+ "ask": {
+  "n": 30,
+  "families_p1": 13,
+  "families_at15_p1": 9.8,
+  "novelty_mean_p1": 1.27,
+  "novelty2_frac_p1": 0.27,
+  "soundness_mean_p1": 2.13,
+  "sound4plus_frac_p1": 0.0,
+  "novel_and_sound_p1": 0,
+  "families_p2": 10,
+  "families_at15_p2": 7.8,
+  "novelty_mean_p2": 1.53,
+  "novelty2_frac_p2": 0.53,
+  "soundness_mean_p2": 2.17,
+  "sound4plus_frac_p2": 0.0,
+  "novel_and_sound_p2": 0,
+  "lexical_distance": 0.829
+ },
+ "noisy": {
+  "n": 30,
+  "families_p1": 15,
+  "families_at15_p1": 10.4,
+  "novelty_mean_p1": 0.9,
+  "novelty2_frac_p1": 0.1,
+  "soundness_mean_p1": 2.57,
+  "sound4plus_frac_p1": 0.03,
+  "novel_and_sound_p1": 1,
+  "families_p2": 11,
+  "families_at15_p2": 8.7,
+  "novelty_mean_p2": 1.07,
+  "novelty2_frac_p2": 0.07,
+  "soundness_mean_p2": 2.07,
+  "sound4plus_frac_p2": 0.0,
+  "novel_and_sound_p2": 0,
+  "lexical_distance": 0.828
+ },
+ "judge_agreement": {
+  "novelty_exact": 0.53,
+  "soundness_within1": 1.0,
+  "soundness_spearman": 0.4
+ },
+ "gen_cost_usd": 3.92,
+ "models": [
+  "claude-opus-5"
+ ]
+}

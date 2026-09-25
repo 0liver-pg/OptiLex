@@ -1,0 +1,90 @@
+clean 0 TITLE: Learnability-Gated Token Depth: Reallocate Layers to Informative Tokens
+ask 0 TITLE: Ghost Steps: Free Quasi-Newton Iterations Inside a Gradient Sketch Subspace
+noisy 0 TITLE: Quorum-Gated Sparse Backpropagation via Trimmed-Consensus Token Updates
+clean 1 TITLE: Learnability-gated sparse backward: token-level backprop pruning with reference-mod
+ask 1 TITLE: LZ-factorized training: pay compute only for novel substrings
+noisy 1 TITLE: Fused Co-Resident Auxiliary Heads: Recycling Activations For Dense Supervision
+clean 2 TITLE: Mid-Depth Learnability Gating: drop unlearnable tokens before deep layers
+ask 2 TITLE: Surprisal-Priced Precision: Matching Mantissa Bits to Token Information
+noisy 2 TITLE: Dual-Ledger Token Auditing: Reconciliation Residuals Allocate Backward Compute
+clean 3 TITLE: Learnability-gated per-token depth routing using a cheap reference model
+ask 3 TITLE: Surprisal-gated per-token arithmetic precision during training
+noisy 3 TITLE: Criticality-Pinned Training: Gradient-Susceptibility Control of Batch, Depth, and R
+clean 4 TITLE: Learnability-gated per-token backward sparsity in position-wise blocks
+ask 4 TITLE: Near-Duplicate Batching: Shared Prefixes as Gradient Control Variates
+noisy 4 TITLE: Affinity-Gated Clonal Adapters: Sparse Selection, Local Mutation, Mastery-Based Dat
+clean 5 TITLE: Gradient-Gated Backpropagation: token-level backward sparsity from forward-pass lea
+ask 5 TITLE: Joule-Priced Token Routing: Optimizing Bits-of-Loss per Measured Watt
+noisy 5 TITLE: Just-in-time token assembly: forward-gated backward passes with shrinking buffers
+clean 6 TITLE: Learnability-gated token-sparse backpropagation with activation-stashing skipped
+ask 6 TITLE: Bottom-Frozen Activation Replay: Reuse Cached Mid-Depth Features as Data
+noisy 6 TITLE: Nested Aperture Curriculum: growth-gated Matryoshka width-and-context scaling
+clean 7 TITLE: Learnability-gated sparse backpropagation using free early-layer exit scores
+ask 7 TITLE: Bit-Activity Regularization: Switching Energy as an MDL Prior
+noisy 7 TITLE: Evaporating Data-Side Trails for Token-Level Depth and Sampling Routing
+clean 8 TITLE: Learnability-gated selective backprop: cheap no-grad scoring, expensive gradients o
+ask 8 TITLE: Precomputed n-gram surprisal as static per-token compute and loss schedule
+noisy 8 TITLE: Surprisal-gated depth routing with redundant-token pruning and dense repacking
+clean 9 TITLE: Self-Referenced Learnability Gating of the Backward Pass
+ask 9 TITLE: Precision Annealing as Learning-Rate Schedule: Arithmetic Noise as Optimizer Temper
+noisy 9 TITLE: Shelf-Ordered Training: Hierarchical Document Codes Route Both Batches and Paramete
+clean 10 TITLE: Early-exit learnability gating: skip depth and backprop for settled tokens
+ask 10 TITLE: Gradient Quadrature: Backprop on a Coreset, Extrapolate Gradients Forward-Only
+noisy 10 TITLE: Shortcut-Claimed Tokens: Let Cheap Predictors Exempt Themselves From Depth
+clean 11 TITLE: Learnability-gated token routing: skip depth on low-value tokens
+ask 11 TITLE: Semantically Coherent Batching for Delta-Compressed, Low-Switching Training
+noisy 11 TITLE: Backward-sparse token sampling with free online gradient-norm control variates
+clean 12 TITLE: Learnability-gated sparse backward passes with recycled forward statistics
+ask 12 TITLE: Gradient-Coherent Batch Scheduling for Larger Steps and Compressible Optimizer Stat
+noisy 12 TITLE: Reconciliation-Gated Training: Balanced Loss Ledgers Select Tokens and Backward Pas
+clean 13 TITLE: Early-Exit Token Routing with Reinvested Compute Budget
+ask 13 TITLE: N-gram residual logits with prior-restricted softmax for transformer LMs
+noisy 13 TITLE: Affinity-Gated Micro-Expert Repertoires with Mutation, Memory, and Negative Selecti
+clean 14 TITLE: FP8 No-Grad Triage: Score Every Batch, Backprop the Learnable Quarter
+ask 14 TITLE: Pointer-Elided Pretraining: Redundant Spans Replaced by Cached-KV Copy Tokens
+noisy 14 TITLE: Early-Bound Multiplicative Gating: One Cheap Plan Controls Whole-Depth Compute
+clean 15 TITLE: Reducibility-gated token backprop via free early-exit disagreement signal
+ask 15 TITLE: Forward-only gradient sketches to skip redundant backward passes
+noisy 15 TITLE: Pull-Based Token Provisioning: Depth-Gated Just-In-Time Gradient Allocation
+clean 16 TITLE: Learnability-gated token masking with fused sparse backward passes
+ask 16 TITLE: Suffix-array prior as free teacher, router, and softmax sparsifier
+noisy 16 TITLE: Pull-Based Token Provisioning: Early-Exit Rejection Cascades with Demand-Sized Batc
+clean 17 TITLE: FP8 Screen-Once Training: Reuse Screening Forward for Selective Backprop
+ask 17 TITLE: Zero-FLOP suffix-automaton patching: corpus statistics as a free tokenizer
+noisy 17 TITLE: Free-Riding Value Heads That Gate the Backward Pass
+clean 18 TITLE: Learnability-gated token depth: early-exit scoring concentrates gradients and FLOPs
+ask 18 TITLE: Precision-Matched Data Pruning: arithmetic noise floor as the sample selector
+noisy 18 TITLE: Budgeted gradient exemptions: learned context-only spans with no-backward tax
+clean 19 TITLE: FP8 prefix scoring gates full backward passes on learnable tokens
+ask 19 TITLE: Boosting Transformers on a Hashed N-gram Prior with Gradient-Gated Token Skipping
+noisy 19 TITLE: Incoherently Sketched Backpropagation with Sparse Gradient Reconstruction
+clean 20 TITLE: Reducible-Loss-Gated Token Depth: spend layers only on learnable tokens
+ask 20 TITLE: Replay epochs in gradient-sketch space, never re-reading data
+noisy 20 TITLE: Phase-Aligned Gradient Routing with Deferral Queues
+clean 21 TITLE: Utility-Routed Token Depth: skip layers for already-learned tokens
+ask 21 TITLE: Antithetic batch pairing via free last-layer gradient sketches
+noisy 21 TITLE: Function-Preserving Recursive Depth Unfolding with Learned Low-Rank Deltas
+clean 22 TITLE: Score-then-train: fp8 activation-free forwards gate tokens into full backprop
+ask 22 TITLE: Self-Accelerating Training via Surprisal-Gated Elision of Predictable Spans
+noisy 22 TITLE: Affinity-Gated Clonal Adapters with Mastered-Token Compute Suppression
+clean 23 TITLE: Early-exit reducible-loss gating: drop uninformative tokens mid-forward
+ask 23 TITLE: Label-Conditioned Depth Gating with Hard-Token Replay in Saved FLOPs
+noisy 23 TITLE: Alignment-Gated Reflection Steps Against a Slow Weight Trajectory
+clean 24 TITLE: Learnability-gated depth truncation using a free EMA reference model
+ask 24 TITLE: Mid-depth activation replay: reuse frozen hidden states as cheap data
+noisy 24 TITLE: Quantization noise as the thermal bath for critical-regime pretraining
+clean 25 TITLE: Gradient-Surprisal Token Gating for Sparse Backward Passes
+ask 25 TITLE: Joule-Priced Training: Maximize Nats per Joule per Example
+noisy 25 TITLE: Deposition-Grown Networks: Let Gradient Flow Carve Model Capacity
+clean 26 TITLE: Per-token selective backpropagation gated by online loss-percentile ranking
+ask 26 TITLE: Gradient-SNR-Matched Per-Weight Precision as an Optimizer State Variable
+noisy 26 TITLE: Pull-Based Token Admission with Early-Exit Rejection for Pretraining
+clean 27 TITLE: Surprisal-Routed Depth: drop low-signal tokens from deep layers during pretraining
+ask 27 TITLE: Shadow-model gradient control variates for variance-reduced pretraining
+noisy 27 TITLE: Feedback-Inhibited Allosteric Gating for Per-Token Compute Conformations
+clean 28 TITLE: Depth-routing tokens by learning signal for triple-efficiency pretraining
+ask 28 TITLE: Koopman gradient extrapolation: free optimizer steps between real backward passes
+noisy 28 TITLE: Neighbor-Gossip Expert Swarms Replace Global Synchronized Gradient Updates
+clean 29 TITLE: Reference-Free Token Gating with Backward-Pass Repacking
+ask 29 TITLE: Sketch-Decorrelated Multi-Update Steps from Resident Activations
+noisy 29 TITLE: Incoherently Subsampled Backward Passes with Structured Gradient Reconstruction

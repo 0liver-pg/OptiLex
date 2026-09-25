@@ -6,3 +6,5 @@ Can an Opus 5.5 agent swarm find a data-efficiency breakthrough for LM pretraini
 - [SWARM.md](SWARM.md): cheapest swarm, harness and tooling design, with a phased budget
 - `pilot/`: BabyLM-2026 strict-small proxy (`prep.py` downloads and tokenizes into `data/`, `train.py` runs one training run, `grid.sh` runs the calibration grid, `analyze.py` reports the noise floor and effective-data multipliers)
 - `results/`: raw per-run JSON and `summary.json`
+- [IDEAS_FACTORY.md](IDEAS_FACTORY.md): evidence review and design for the idea-generation front end (noisy swarm, critic/fixer loop, knowledge base)
+- `factory_pilot/`: clean vs novelty-request vs noisy-prompt pilot with blind scoring

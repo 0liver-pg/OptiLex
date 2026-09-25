@@ -1,0 +1,1274 @@
+[
+ [
+  {
+   "56": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "87": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "38": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "45": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "75": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "36": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "21": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "53": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "18": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "35": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "78": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "27": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "3": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "12": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "48": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "15": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "8": "Learnability-gated sparse backward pass (dense forward, token-level gradient dropping)",
+   "9": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "23": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "69": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "70": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "30": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "54": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "39": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "6": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "33": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "84": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "81": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "0": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "26": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "60": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "63": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "32": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "72": "Learnability/surprisal-gated per-token depth routing and early exit (skip upper layers + backward)",
+   "66": "Oversampled candidate batch screened by a cheap/low-precision no-grad forward, then full training on top-k sequences",
+   "24": "Oversampled candidate batch screened by a cheap/low-precision no-grad forward, then full training on top-k sequences",
+   "42": "Oversampled candidate batch screened by a cheap/low-precision no-grad forward, then full training on top-k sequences",
+   "51": "Oversampled candidate batch screened by a cheap/low-precision no-grad forward, then full training on top-k sequences",
+   "57": "Oversampled candidate batch screened by a cheap/low-precision no-grad forward, then full training on top-k sequences",
+   "17": "Oversampled candidate batch screened by a cheap/low-precision no-grad forward, then full training on top-k sequences",
+   "47": "Pull-based demand-driven admission: shallow-prefix (first-k-layer) rejection cascade over an oversized candidate stream",
+   "80": "Pull-based demand-driven admission: shallow-prefix (first-k-layer) rejection cascade over an oversized candidate stream",
+   "50": "Pull-based demand-driven admission: shallow-prefix (first-k-layer) rejection cascade over an oversized candidate stream",
+   "88": "Extra optimizer steps from already-paid gradient information (extrapolation, sketch replay, subspace/ghost steps)",
+   "85": "Extra optimizer steps from already-paid gradient information (extrapolation, sketch replay, subspace/ghost steps)",
+   "61": "Extra optimizer steps from already-paid gradient information (extrapolation, sketch replay, subspace/ghost steps)",
+   "71": "Extra optimizer steps from already-paid gradient information (extrapolation, sketch replay, subspace/ghost steps)",
+   "1": "Extra optimizer steps from already-paid gradient information (extrapolation, sketch replay, subspace/ghost steps)",
+   "89": "Randomized subsampling/sketching of backward measurements with dense gradient reconstruction",
+   "59": "Randomized subsampling/sketching of backward measurements with dense gradient reconstruction",
+   "31": "Randomized subsampling/sketching of backward measurements with dense gradient reconstruction",
+   "37": "Gradient-variance reduction via control variates and sketch-based batch composition",
+   "82": "Gradient-variance reduction via control variates and sketch-based batch composition",
+   "64": "Gradient-variance reduction via control variates and sketch-based batch composition",
+   "46": "Microbatch-level gradient-direction redundancy/alignment gating of backward passes",
+   "62": "Microbatch-level gradient-direction redundancy/alignment gating of backward passes",
+   "4": "Corpus-redundancy elision: replacing repeated or predictable spans with pointers/patches/cached states to shorten sequences",
+   "67": "Corpus-redundancy elision: replacing repeated or predictable spans with pointers/patches/cached states to shorten sequences",
+   "43": "Corpus-redundancy elision: replacing repeated or predictable spans with pointers/patches/cached states to shorten sequences",
+   "52": "Corpus-redundancy elision: replacing repeated or predictable spans with pointers/patches/cached states to shorten sequences",
+   "58": "Count/n-gram prior as additive baseline: learn only residual logits with truncated output head",
+   "40": "Count/n-gram prior as additive baseline: learn only residual logits with truncated output head",
+   "49": "Count/n-gram prior as additive baseline: learn only residual logits with truncated output head",
+   "10": "Per-token surprisal-priced allocation of arithmetic precision (and depth/loss weight)",
+   "25": "Per-token surprisal-priced allocation of arithmetic precision (and depth/loss weight)",
+   "7": "Per-token surprisal-priced allocation of arithmetic precision (and depth/loss weight)",
+   "79": "Precision matched to measured gradient signal-to-noise / annealed bit-width schedules",
+   "28": "Precision matched to measured gradient signal-to-noise / annealed bit-width schedules",
+   "55": "Precision matched to measured gradient signal-to-noise / annealed bit-width schedules",
+   "74": "Criticality-pinned controllers on a measured susceptibility/alignment order parameter",
+   "11": "Criticality-pinned controllers on a measured susceptibility/alignment order parameter",
+   "16": "Joule-priced allocation: on-device energy counters in the training objective/controller",
+   "76": "Joule-priced allocation: on-device energy counters in the training objective/controller",
+   "5": "Fused auxiliary supervision heads recycling resident activations for dense extra learning signal",
+   "20": "Progressive function-preserving capacity growth (width/depth/context unfolding)",
+   "65": "Progressive function-preserving capacity growth (width/depth/context unfolding)",
+   "77": "Progressive function-preserving capacity growth (width/depth/context unfolding)",
+   "19": "Cached mid-depth activation replay with frozen lower layers",
+   "73": "Cached mid-depth activation replay with frozen lower layers",
+   "41": "Affinity-selected clonal micro-expert repertoires with mutation/pruning of capacity",
+   "14": "Affinity-selected clonal micro-expert repertoires with mutation/pruning of capacity",
+   "68": "Affinity-selected clonal micro-expert repertoires with mutation/pruning of capacity",
+   "44": "Early-bound per-token multiplicative gating/modulation of weights (reallocation without token dropping)",
+   "83": "Early-bound per-token multiplicative gating/modulation of weights (reallocation without token dropping)",
+   "13": "Similarity-ordered/clustered batching for activation-delta compression, weight locality, and coherent gradients",
+   "29": "Similarity-ordered/clustered batching for activation-delta compression, weight locality, and coherent gradients",
+   "34": "Similarity-ordered/clustered batching for activation-delta compression, weight locality, and coherent gradients",
+   "86": "Decentralized model population with neighbor gossip instead of synchronized all-reduce",
+   "22": "Bit-switching-activity regularization as an MDL/hardware-energy prior",
+   "2": "Cross-replica consensus gating with trimmed-mean robust aggregation"
+  },
+  {
+   "88": {
+    "id": "I000",
+    "novelty": 1,
+    "soundness": 1,
+    "nearest": "GaLore/random-projection gradient sketching + multi-step reuse of one batch (local SGD)"
+   },
+   "44": {
+    "id": "I001",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths (Raposo 2024) + Deja Vu contextual sparsity; per-token gating does not reduce weight fetch across a batch"
+   },
+   "4": {
+    "id": "I002",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Prefix KV/activation caching + exact-substring dedup (Lee et al. 2022)"
+   },
+   "9": {
+    "id": "I003",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "RHO-1 selective language modeling + Mixture-of-Depths"
+   },
+   "74": {
+    "id": "I004",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Cyclic Precision Training (Fu 2021) dressed in edge-of-chaos/susceptibility language (Poole 2016)"
+   },
+   "56": {
+    "id": "I005",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Selective Backprop (Jiang et al. 2019) with a loss-prediction probe"
+   },
+   "66": {
+    "id": "I006",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Online batch selection (Loshchilov & Hutter 2015) / Selective Backprop, in FP8"
+   },
+   "24": {
+    "id": "I007",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "RHO-1 reference-model scoring + Selective Backprop"
+   },
+   "42": {
+    "id": "I008",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Selective Backprop with EMA self-reference (near-identical to I006/I007)"
+   },
+   "20": {
+    "id": "I009",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "MatFormer / Matryoshka nesting + progressive stacking (bert2BERT)"
+   },
+   "51": {
+    "id": "I010",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Selective Backprop where the screening forward is retained; FP8 training (Micikevicius 2022)"
+   },
+   "23": {
+    "id": "I011",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Per-example loss-history online batch selection + Mixture-of-Depths, with an ant-pheromone label"
+   },
+   "87": {
+    "id": "I012",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Reference-free RHO-1 variant / Selective Backprop with sequence repacking"
+   },
+   "10": {
+    "id": "I013",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Per-tensor mixed-precision training + Deja Vu-style per-token routing; split GEMM kills the throughput claim"
+   },
+   "37": {
+    "id": "I014",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "DPP/diverse minibatch construction + 4-bit Adam; aligned batches reduce, not raise, effective batch value"
+   },
+   "67": {
+    "id": "I015",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Learned Token Pruning / Gist tokens; train-test distribution mismatch on elided spans"
+   },
+   "89": {
+    "id": "I016",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "meProp / PowerSGD plus compressed sensing; skipped slots yield no measurement of themselves"
+   },
+   "69": {
+    "id": "I017",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "CALM early exit + RHO-1 token selection"
+   },
+   "5": {
+    "id": "I018",
+    "novelty": 1,
+    "soundness": 4,
+    "nearest": "Multi-token prediction heads (Gloeckle 2024) + deep supervision"
+   },
+   "70": {
+    "id": "I019",
+    "novelty": 2,
+    "soundness": 3,
+    "nearest": "Mixture-of-Depths with an oracle (label-aware) router plus router distillation"
+   },
+   "25": {
+    "id": "I020",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Static n-gram-surprisal curriculum + Mixture-of-Depths with fixed routing"
+   },
+   "38": {
+    "id": "I021",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "RHO-loss / Prioritized training (Mindermann 2022) with a bookkeeping metaphor"
+   },
+   "47": {
+    "id": "I022",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Mixture-of-Depths + Selective Backprop (identical to I044/I048)"
+   },
+   "45": {
+    "id": "I023",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Early-exit head disagreement scoring + RHO-1 token selection"
+   },
+   "30": {
+    "id": "I024",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "CALM early exit + RHO-1"
+   },
+   "58": {
+    "id": "I025",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Residual/boosted LM over an n-gram prior (classic NNLM interpolation) + loss-thresholded token skipping"
+   },
+   "16": {
+    "id": "I026",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "RL-routed Mixture-of-Depths + hardware-aware NAS reward; NVML counters are too coarse/laggy for credit assignment"
+   },
+   "76": {
+    "id": "I027",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Bandit/value-head configuration scheduling in AutoML with an energy-priced reward"
+   },
+   "85": {
+    "id": "I028",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Anderson acceleration / DMD-based gradient extrapolation; collapses toward momentum"
+   },
+   "75": {
+    "id": "I029",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Selective Backprop (Jiang et al. 2019)"
+   },
+   "54": {
+    "id": "I030",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "RHO-1 + Mixture-of-Depths / early-exit gating"
+   },
+   "39": {
+    "id": "I031",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Mixture-of-Depths + Selective Backprop with reinvested budget"
+   },
+   "19": {
+    "id": "I032",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "FreezeOut/PipeTransformer layer freezing + cached frozen-backbone features"
+   },
+   "79": {
+    "id": "I033",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "SNR/rate-distortion bit allocation for gradients (e.g., Adam-moment-based adaptive precision); per-weight bit-width is not hardware-realizable"
+   },
+   "36": {
+    "id": "I034",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "RHO-1 with EMA self-reference and token-sparse backward"
+   },
+   "61": {
+    "id": "I035",
+    "novelty": 1,
+    "soundness": 1,
+    "nearest": "SVRG / stale-gradient replay; rank-1 stale sketches are near-useless as extra updates"
+   },
+   "86": {
+    "id": "I036",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Gossip/decentralized SGD (Lian 2017) + Branch-Train-Merge"
+   },
+   "21": {
+    "id": "I037",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "RHO-1 with a free early-exit loss-prediction head"
+   },
+   "7": {
+    "id": "I038",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "n-gram residual training + Cyclic Precision Training; a recombination of I013 and I025"
+   },
+   "82": {
+    "id": "I039",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "SVRG/control variates for deep nets (known to fail due to low gradient correlation)"
+   },
+   "11": {
+    "id": "I040",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Gradient Noise Scale adaptive batch sizing (McCandlish 2018) + stochastic depth"
+   },
+   "6": {
+    "id": "I041",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Mixture-of-Depths + RHO-1 (same as I003/I030/I058/I082)"
+   },
+   "41": {
+    "id": "I042",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "PEER (million tiny experts) + evolutionary/clonal MoE growth and pruning"
+   },
+   "53": {
+    "id": "I043",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Learned data valuation (DVRL) head + Selective Backprop"
+   },
+   "80": {
+    "id": "I044",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Selective Backprop with early-exit rejection cascade"
+   },
+   "59": {
+    "id": "I045",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Count-sketch/meProp sketched backprop plus compressed-sensing recovery"
+   },
+   "18": {
+    "id": "I046",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Selective Backprop / RHO-1 with activation stashing skipped"
+   },
+   "71": {
+    "id": "I047",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Lookahead optimizer (Zhang 2019) with alpha>1 extrapolation; equivalent to slow-timescale momentum"
+   },
+   "50": {
+    "id": "I048",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "GNS-adaptive batch accumulation + early-exit sequence rejection"
+   },
+   "43": {
+    "id": "I049",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "RETRO / 'Copy Is All You Need' pointer generation + exact-substring dedup"
+   },
+   "52": {
+    "id": "I050",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "BLT entropy-based byte patching (Pagnoni 2024) / dynamic token pooling, with a CPU suffix automaton"
+   },
+   "22": {
+    "id": "I051",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Switching-activity-aware quantization in hardware-aware training + MDL weight priors (Hinton & van Camp)"
+   },
+   "73": {
+    "id": "I052",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Layer freezing + int4 cached mid-depth activations (frozen-backbone feature caching)"
+   },
+   "35": {
+    "id": "I053",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Importance sampling with a loss/grad-norm proxy (Katharopoulos & Fleuret 2018), at token granularity"
+   },
+   "31": {
+    "id": "I054",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "CRAIG/GradMatch gradient coresets + Nystr\u00f6m extension; backward quantities do not compose linearly through depth"
+   },
+   "28": {
+    "id": "I055",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Cyclic/progressive Precision Training (Fu et al. ICLR 2021)"
+   },
+   "64": {
+    "id": "I056",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Antithetic variates + DPP diverse minibatching; last-layer sketch cannot separate signal from noise per example"
+   },
+   "14": {
+    "id": "I057",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "PEER/evolutionary expert growth with competence-based data retirement (duplicate of I042/I066)"
+   },
+   "33": {
+    "id": "I058",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "RHO-1 + Mixture-of-Depths"
+   },
+   "65": {
+    "id": "I059",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Relaxed Recursive Transformers (LoRA deltas on tied layers) + progressive stacking/Net2Net"
+   },
+   "46": {
+    "id": "I060",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "GraNd/EL2N last-layer gradient scoring + gradient-space redundancy filtering"
+   },
+   "84": {
+    "id": "I061",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Mixture-of-Depths with tied early-exit head scoring"
+   },
+   "78": {
+    "id": "I062",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Selective Backprop (Jiang et al. 2019), verbatim"
+   },
+   "27": {
+    "id": "I063",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "RHO-1 with EMA self-reference instead of a reference model"
+   },
+   "81": {
+    "id": "I064",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Mixture-of-Depths with an n-gram reducible-surprisal router"
+   },
+   "1": {
+    "id": "I065",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "GGT / SketchySGD low-rank subspace second-order optimizers"
+   },
+   "68": {
+    "id": "I066",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "PEER / clonal-selection MoE growth plus mastery-based data retirement (duplicate of I042/I057)"
+   },
+   "2": {
+    "id": "I067",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "signSGD with majority vote (Bernstein 2018) + Byzantine trimmed-mean aggregation"
+   },
+   "77": {
+    "id": "I068",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Net2Net / GradMax / Firefly gradient-driven network growth"
+   },
+   "40": {
+    "id": "I069",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Shortlist/sampled softmax (Schwenk) + n-gram prior interpolation as residual target"
+   },
+   "13": {
+    "id": "I070",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Prefix-sharing batched compute (Hydragen) + common-random-number control variates; tuple-mean subtraction biases the update"
+   },
+   "29": {
+    "id": "I071",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "c-BTM / DEMix domain-routed experts with cluster-sorted streaming"
+   },
+   "34": {
+    "id": "I072",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Clustered/curriculum batching + activation delta compression; bit-flip savings unrealizable on GPUs"
+   },
+   "83": {
+    "id": "I073",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "FiLM/hypernetwork conditional modulation + Mixture-of-Depths; per-token weight modulation destroys batched GEMMs"
+   },
+   "0": {
+    "id": "I074",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "RHO-1 + early-exit depth gating with reinvested budget"
+   },
+   "55": {
+    "id": "I075",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Bit-plane/progressive precision training (CPT) coupled to gradient-magnitude sample pruning"
+   },
+   "49": {
+    "id": "I076",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "n-gram residual logits + shortlist softmax + surprisal depth gating (merges I020/I069)"
+   },
+   "3": {
+    "id": "I077",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "RHO-1 with an EMA-snapshot reference model"
+   },
+   "62": {
+    "id": "I078",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Gradient-alignment example filtering (gradient agreement) + online hard example mining with deferral"
+   },
+   "12": {
+    "id": "I079",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Importance-sampled token subsampling of the position-wise backward (Katharopoulos & Fleuret)"
+   },
+   "26": {
+    "id": "I080",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Mixture-of-Depths with n-gram novelty gating and token repacking"
+   },
+   "48": {
+    "id": "I081",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "RHO-1 (frozen reference model) with a fused sparse backward kernel"
+   },
+   "60": {
+    "id": "I082",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "RHO-1 reducible-loss selection + early-exit depth gating"
+   },
+   "57": {
+    "id": "I083",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Proxy/prefix-based data selection + Selective Backprop, run in FP8"
+   },
+   "63": {
+    "id": "I084",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "CALM early exit + loss-prediction token selection"
+   },
+   "15": {
+    "id": "I085",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Selective Backprop with an entropy/cross-entropy score from existing logits"
+   },
+   "32": {
+    "id": "I086",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "CALM confidence-based early exit + speculative-decoding-style verification audit"
+   },
+   "8": {
+    "id": "I087",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Co-teaching / disagreement-based sample selection with a second view head"
+   },
+   "72": {
+    "id": "I088",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "RHO-1 with an EMA reference model + depth truncation (Mixture-of-Depths)"
+   },
+   "17": {
+    "id": "I089",
+    "novelty": 0,
+    "soundness": 3,
+    "nearest": "Selective Backprop with an fp8 screening forward and shrinking candidate buffer"
+   }
+  }
+ ],
+ [
+  {
+   "0": "Learnability-gated token depth routing / early exit (in-batch)",
+   "70": "Learnability-gated token depth routing / early exit (in-batch)",
+   "6": "Learnability-gated token depth routing / early exit (in-batch)",
+   "72": "Learnability-gated token depth routing / early exit (in-batch)",
+   "9": "Learnability-gated token depth routing / early exit (in-batch)",
+   "84": "Learnability-gated token depth routing / early exit (in-batch)",
+   "30": "Learnability-gated token depth routing / early exit (in-batch)",
+   "54": "Learnability-gated token depth routing / early exit (in-batch)",
+   "26": "Learnability-gated token depth routing / early exit (in-batch)",
+   "23": "Learnability-gated token depth routing / early exit (in-batch)",
+   "63": "Learnability-gated token depth routing / early exit (in-batch)",
+   "60": "Learnability-gated token depth routing / early exit (in-batch)",
+   "33": "Learnability-gated token depth routing / early exit (in-batch)",
+   "81": "Learnability-gated token depth routing / early exit (in-batch)",
+   "69": "Learnability-gated token depth routing / early exit (in-batch)",
+   "32": "Learnability-gated token depth routing / early exit (in-batch)",
+   "39": "Learnability-gated token depth routing / early exit (in-batch)",
+   "12": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "53": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "18": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "45": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "36": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "38": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "78": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "75": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "8": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "15": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "35": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "87": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "48": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "3": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "56": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "27": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "21": "Selective backpropagation: dense forward, token-gated sparse backward",
+   "17": "Oversampled candidate batches screened by a cheap forward pass (low-precision or partial-depth) before full training",
+   "42": "Oversampled candidate batches screened by a cheap forward pass (low-precision or partial-depth) before full training",
+   "24": "Oversampled candidate batches screened by a cheap forward pass (low-precision or partial-depth) before full training",
+   "51": "Oversampled candidate batches screened by a cheap forward pass (low-precision or partial-depth) before full training",
+   "66": "Oversampled candidate batches screened by a cheap forward pass (low-precision or partial-depth) before full training",
+   "80": "Oversampled candidate batches screened by a cheap forward pass (low-precision or partial-depth) before full training",
+   "57": "Oversampled candidate batches screened by a cheap forward pass (low-precision or partial-depth) before full training",
+   "47": "Oversampled candidate batches screened by a cheap forward pass (low-precision or partial-depth) before full training",
+   "50": "Oversampled candidate batches screened by a cheap forward pass (low-precision or partial-depth) before full training",
+   "68": "Sparse expert repertoires with data-driven specialization, cloning/pruning, and routed capacity",
+   "29": "Sparse expert repertoires with data-driven specialization, cloning/pruning, and routed capacity",
+   "41": "Sparse expert repertoires with data-driven specialization, cloning/pruning, and routed capacity",
+   "14": "Sparse expert repertoires with data-driven specialization, cloning/pruning, and routed capacity",
+   "86": "Sparse expert repertoires with data-driven specialization, cloning/pruning, and routed capacity",
+   "65": "Progressive capacity growth during training (function-preserving expansion from a small model)",
+   "20": "Progressive capacity growth during training (function-preserving expansion from a small model)",
+   "77": "Progressive capacity growth during training (function-preserving expansion from a small model)",
+   "49": "Cheap count/n-gram/suffix-statistics prior as free reference: residual logits, restricted softmax, and static compute allocation",
+   "25": "Cheap count/n-gram/suffix-statistics prior as free reference: residual logits, restricted softmax, and static compute allocation",
+   "58": "Cheap count/n-gram/suffix-statistics prior as free reference: residual logits, restricted softmax, and static compute allocation",
+   "40": "Cheap count/n-gram/suffix-statistics prior as free reference: residual logits, restricted softmax, and static compute allocation",
+   "7": "Cheap count/n-gram/suffix-statistics prior as free reference: residual logits, restricted softmax, and static compute allocation",
+   "22": "Adaptive numerical precision / bit-width as a training-efficiency and regularization lever",
+   "28": "Adaptive numerical precision / bit-width as a training-efficiency and regularization lever",
+   "79": "Adaptive numerical precision / bit-width as a training-efficiency and regularization lever",
+   "55": "Adaptive numerical precision / bit-width as a training-efficiency and regularization lever",
+   "10": "Adaptive numerical precision / bit-width as a training-efficiency and regularization lever",
+   "13": "Gradient variance reduction via batch composition and control variates",
+   "37": "Gradient variance reduction via batch composition and control variates",
+   "34": "Gradient variance reduction via batch composition and control variates",
+   "64": "Gradient variance reduction via batch composition and control variates",
+   "82": "Gradient variance reduction via batch composition and control variates",
+   "85": "Extra optimizer updates without extra forward/backward passes (gradient extrapolation, sketch replay, multi-update reuse)",
+   "61": "Extra optimizer updates without extra forward/backward passes (gradient extrapolation, sketch replay, multi-update reuse)",
+   "1": "Extra optimizer updates without extra forward/backward passes (gradient extrapolation, sketch replay, multi-update reuse)",
+   "88": "Extra optimizer updates without extra forward/backward passes (gradient extrapolation, sketch replay, multi-update reuse)",
+   "71": "Extra optimizer updates without extra forward/backward passes (gradient extrapolation, sketch replay, multi-update reuse)",
+   "31": "Randomized/compressed backward-pass measurement with gradient reconstruction",
+   "89": "Randomized/compressed backward-pass measurement with gradient reconstruction",
+   "59": "Randomized/compressed backward-pass measurement with gradient reconstruction",
+   "2": "Gradient-direction redundancy or cross-replica agreement gates the backward pass",
+   "62": "Gradient-direction redundancy or cross-replica agreement gates the backward pass",
+   "46": "Gradient-direction redundancy or cross-replica agreement gates the backward pass",
+   "67": "Token-stream compression: eliding, pointer-replacing, or re-tokenizing redundant/predictable spans",
+   "43": "Token-stream compression: eliding, pointer-replacing, or re-tokenizing redundant/predictable spans",
+   "52": "Token-stream compression: eliding, pointer-replacing, or re-tokenizing redundant/predictable spans",
+   "4": "Token-stream compression: eliding, pointer-replacing, or re-tokenizing redundant/predictable spans",
+   "19": "Cached mid-depth activation replay for upper-stack training",
+   "73": "Cached mid-depth activation replay for upper-stack training",
+   "44": "Controller-emitted multiplicative channel/block gating of weights per token",
+   "83": "Controller-emitted multiplicative channel/block gating of weights per token",
+   "76": "Measured-joule-priced controllers that put energy in the allocation objective",
+   "16": "Measured-joule-priced controllers that put energy in the allocation objective",
+   "74": "Criticality/susceptibility-pinned online control of training hyperparameters",
+   "11": "Criticality/susceptibility-pinned online control of training hyperparameters",
+   "5": "Fused multi-depth auxiliary heads for denser supervision from resident activations"
+  },
+  {
+   "12": {
+    "id": "I000",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Selective Backprop (Jiang et al. 2019) + RHO-1 token selection; backward-only token dropping"
+   },
+   "0": {
+    "id": "I001",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths (Raposo et al. 2024) with early-exit probe router"
+   },
+   "53": {
+    "id": "I002",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "RHO-1 / learned data-valuation head (DsDm, JEST) driving selective backprop"
+   },
+   "13": {
+    "id": "I003",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Prefix sharing (RadixAttention/packed trunks) + antithetic/control-variate gradient estimation"
+   },
+   "70": {
+    "id": "I004",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Oracle/confidence early exit (CALM) + token dropping (Hou et al. 2022), router distilled post hoc"
+   },
+   "6": {
+    "id": "I005",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths + RHO-1 token selection"
+   },
+   "44": {
+    "id": "I006",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Deja Vu contextual sparsity prediction / SkipNet-BlockDrop with early-bound plans"
+   },
+   "72": {
+    "id": "I007",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "RHO-1 with EMA self-reference + Mixture-of-Depths truncation"
+   },
+   "68": {
+    "id": "I008",
+    "novelty": 1,
+    "soundness": 1,
+    "nearest": "Growing/pruning MoE (Lifelong-MoE, Self-MoE) plus selective backprop and replay"
+   },
+   "9": {
+    "id": "I009",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "RHO-1 reference-model scoring + Mixture-of-Depths routing"
+   },
+   "2": {
+    "id": "I010",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Byzantine-robust trimmed-mean aggregation + co-teaching disagreement sample selection"
+   },
+   "18": {
+    "id": "I011",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Selective Backprop / RHO-1 with activation-stash skipping"
+   },
+   "5": {
+    "id": "I012",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Deeply-supervised nets + multi-token prediction (DeepSeek-V3/Gloeckle 2024) with kernel fusion"
+   },
+   "67": {
+    "id": "I013",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Gist tokens / LLMLingua-style compression applied to the pretraining stream"
+   },
+   "84": {
+    "id": "I014",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths with tied early-exit head as router"
+   },
+   "45": {
+    "id": "I015",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "CALM early-exit disagreement + Selective Backprop"
+   },
+   "19": {
+    "id": "I016",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "FreezeOut/progressive layer freezing + cached-feature (linear-probe) training"
+   },
+   "17": {
+    "id": "I017",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Selective Backprop / online batch selection with cheap forward screening"
+   },
+   "36": {
+    "id": "I018",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "RHO-1 + Selective Backprop (structured backward masking)"
+   },
+   "30": {
+    "id": "I019",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths + CALM early exit with token compaction"
+   },
+   "54": {
+    "id": "I020",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths with an auxiliary loss-prediction exit head"
+   },
+   "85": {
+    "id": "I021",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Koopman-operator training acceleration (Dogra & Redman 2020); Anderson/DMD extrapolation of SGD"
+   },
+   "42": {
+    "id": "I022",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "JEST / FlexiJEST learnability-based joint example selection (Evans et al. 2024)"
+   },
+   "24": {
+    "id": "I023",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "RHO-1 excess-loss scoring + JEST superbatch selective backprop"
+   },
+   "31": {
+    "id": "I024",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "CRAIG/GradMatch coreset gradient matching with Nystr\u00f6m extension"
+   },
+   "62": {
+    "id": "I025",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Gradient-alignment/conflict-based sample selection with re-queueing (GradMatch, gradient surgery)"
+   },
+   "49": {
+    "id": "I026",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Infini-gram/kNN-LM prior interpolation + shortlist (sampled) softmax"
+   },
+   "76": {
+    "id": "I027",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Zeus energy-aware DNN training control / bandit configuration selection"
+   },
+   "89": {
+    "id": "I028",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Randomized automatic differentiation (Oktay et al. 2021) + compressed-sensing gradient recovery"
+   },
+   "16": {
+    "id": "I029",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths router trained with an energy (Zeus/NVML) reward instead of FLOP proxy"
+   },
+   "51": {
+    "id": "I030",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "JEST selective backprop with FP8 (Transformer Engine) screening/activation reuse"
+   },
+   "29": {
+    "id": "I031",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "c-BTM cluster-branch-train-merge / hash & BASE layers with domain-sorted streaming"
+   },
+   "25": {
+    "id": "I032",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Static n-gram-surprisal curriculum + Mixture-of-Depths with precomputed (bucketed) routing"
+   },
+   "58": {
+    "id": "I033",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Residual/boosted n-gram prior LM (kNN-LM, Infini-gram interpolation) with confidence-based token skipping"
+   },
+   "41": {
+    "id": "I034",
+    "novelty": 1,
+    "soundness": 1,
+    "nearest": "Evolutionary/growing MoE with adapter pools + mastery-based replay"
+   },
+   "38": {
+    "id": "I035",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "RHO-1/EMA-predicted-loss gating with shard-level revisit scheduling (accounting metaphor only)"
+   },
+   "22": {
+    "id": "I036",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Switching-activity-aware quantization/energy-aware NN design + MDL weight coding (Hinton & van Camp)"
+   },
+   "37": {
+    "id": "I037",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Similarity-clustered batch construction + 4/8-bit optimizer state compression (Dettmers)"
+   },
+   "66": {
+    "id": "I038",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "JEST/FlexiJEST with an FP8 scoring pass; Selective Backprop"
+   },
+   "78": {
+    "id": "I039",
+    "novelty": 0,
+    "soundness": 2,
+    "nearest": "Selective Backprop (Jiang et al. 2019), loss-ranked backward masking"
+   },
+   "26": {
+    "id": "I040",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths with n-gram surprisal router and token repacking"
+   },
+   "28": {
+    "id": "I041",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Cyclic Precision Training (Fu et al., ICLR 2021) \u2014 precision schedule as an LR/temperature surrogate"
+   },
+   "75": {
+    "id": "I042",
+    "novelty": 0,
+    "soundness": 2,
+    "nearest": "Selective Backprop / loss-magnitude token masking of the backward pass"
+   },
+   "61": {
+    "id": "I043",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Stale/low-rank gradient replay; meProp rank-1 gradient approximation"
+   },
+   "43": {
+    "id": "I044",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "RETRO/retrieval-augmented pretraining + near-duplicate deduplication, span-to-pointer substitution"
+   },
+   "73": {
+    "id": "I045",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Layer freezing + quantized cached-activation replay for upper-stack training"
+   },
+   "23": {
+    "id": "I046",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Forgetting-score/per-example loss-trace data pruning (Toneva et al.) + Mixture-of-Depths"
+   },
+   "63": {
+    "id": "I047",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths / early-exit utility routing"
+   },
+   "83": {
+    "id": "I048",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "FiLM/hypernetwork conditional weight modulation + MoD-style compute reallocation"
+   },
+   "8": {
+    "id": "I049",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Co-teaching/disagreement-based sample selection + RHO-1 reducible-loss gating"
+   },
+   "52": {
+    "id": "I050",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Byte Latent Transformer entropy patching (Pagnoni et al. 2024) with a count-model patcher"
+   },
+   "80": {
+    "id": "I051",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Selective Backprop with early-layer rejection cascade / online batch selection"
+   },
+   "60": {
+    "id": "I052",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "RHO-1 reducible loss + Mixture-of-Depths with token compaction"
+   },
+   "1": {
+    "id": "I053",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Limited-memory subspace quasi-Newton / GaLore, Sketchy low-rank preconditioning"
+   },
+   "14": {
+    "id": "I054",
+    "novelty": 1,
+    "soundness": 1,
+    "nearest": "Growing adapter/expert pools with top-k routing + mastery-based data retirement"
+   },
+   "15": {
+    "id": "I055",
+    "novelty": 0,
+    "soundness": 2,
+    "nearest": "Selective Backprop / entropy-thresholded token masking"
+   },
+   "88": {
+    "id": "I056",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "meProp/sketched backprop combined with multiple optimizer steps per batch"
+   },
+   "35": {
+    "id": "I057",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Importance sampling with last-layer gradient-norm bounds (Katharopoulos & Fleuret 2018)"
+   },
+   "87": {
+    "id": "I058",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "RHO-1 reference-free variant + sequence repacking for sparse backward"
+   },
+   "33": {
+    "id": "I059",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths + RHO-1 reducible-loss gating"
+   },
+   "71": {
+    "id": "I060",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Lookahead optimizer (Zhang et al. 2019) with over-relaxation/extrapolation \u03b1>1"
+   },
+   "57": {
+    "id": "I061",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "JEST/FlexiJEST cheap low-resolution scoring + RHO-1 excess loss"
+   },
+   "81": {
+    "id": "I062",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths with a reducible-surprisal (reference-model) router"
+   },
+   "48": {
+    "id": "I063",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "RHO-1 (Lin et al. 2024) with fused gather/scatter sparse backward kernels"
+   },
+   "40": {
+    "id": "I064",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Shortlist/sampled softmax (Schwenk) + n-gram prior interpolation / residual logits"
+   },
+   "59": {
+    "id": "I065",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Randomized automatic differentiation (Oktay et al. 2021); sketched SGD"
+   },
+   "86": {
+    "id": "I066",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Gossip SGD / stochastic gradient push; c-BTM, DiLoCo asynchronous experts"
+   },
+   "3": {
+    "id": "I067",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "RHO-1 with EMA-snapshot reference + structured sparse backward"
+   },
+   "79": {
+    "id": "I068",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "8-bit optimizers (Dettmers) + SNR/sign-agreement-based per-tensor bit allocation"
+   },
+   "34": {
+    "id": "I069",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Similarity-clustered batching + activation delta/residual compression for bandwidth"
+   },
+   "64": {
+    "id": "I070",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Antithetic/stratified batch construction using last-layer gradient sketches (EL2N-style proxies)"
+   },
+   "56": {
+    "id": "I071",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Selective Backprop with a fixed skip quota / stop-gradient context spans"
+   },
+   "69": {
+    "id": "I072",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths + RHO-1 with mid-depth exit head and repacking"
+   },
+   "47": {
+    "id": "I073",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths + early-exit selective backprop with JIT compaction"
+   },
+   "65": {
+    "id": "I074",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "Relaxed Recursive Transformers (Bae et al. 2024) / progressive stacking, LiGO growth"
+   },
+   "50": {
+    "id": "I075",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Selective Backprop cascade + gradient-noise-scale adaptive batch sizing (McCandlish 2018)"
+   },
+   "55": {
+    "id": "I076",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Bit-plane progressive precision training coupled to loss-thresholded example pruning"
+   },
+   "20": {
+    "id": "I077",
+    "novelty": 1,
+    "soundness": 3,
+    "nearest": "MatFormer/Matryoshka nesting + progressive width growth and sequence-length warmup"
+   },
+   "74": {
+    "id": "I078",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Edge-of-chaos/criticality analyses of deep nets + SGD noise-scale (temperature) control"
+   },
+   "4": {
+    "id": "I079",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Suffix-automaton/LZ dedup + RETRO-style cached hidden-state reuse"
+   },
+   "82": {
+    "id": "I080",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "SVRG/control-variate SGD (Defazio & Bottou 2019 shows it fails for deep nets)"
+   },
+   "27": {
+    "id": "I081",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "RHO-1 reference-free (EMA baseline) + Selective Backprop"
+   },
+   "77": {
+    "id": "I082",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Net2Net / Firefly & GradMax neuron-splitting network growth"
+   },
+   "32": {
+    "id": "I083",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "CALM confident early exit with speculative-style verification audits"
+   },
+   "39": {
+    "id": "I084",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Mixture-of-Depths with compute reinvested into larger token-per-step budget"
+   },
+   "21": {
+    "id": "I085",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "RHO-1 + early-exit loss-prediction head gating the backward pass"
+   },
+   "46": {
+    "id": "I086",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Gradient-sketch redundancy/diversity batch selection (GradMatch, EL2N last-layer proxies)"
+   },
+   "10": {
+    "id": "I087",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "Per-token/outlier-split mixed precision (LLM.int8) applied as a training-time surprisal router"
+   },
+   "11": {
+    "id": "I088",
+    "novelty": 1,
+    "soundness": 2,
+    "nearest": "Gradient noise scale adaptive batch sizing (McCandlish 2018) / AdaScale, plus stochastic depth"
+   },
+   "7": {
+    "id": "I089",
+    "novelty": 2,
+    "soundness": 2,
+    "nearest": "n-gram-prior residual modeling + surprisal-gated depth and mixed-precision bit allocation"
+   }
+  }
+ ]
+]
