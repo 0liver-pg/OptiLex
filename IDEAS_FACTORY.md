@@ -11,7 +11,7 @@ Three proposals were evaluated against the literature (sources below) and one sm
 |---|---|---|
 | 100 agents × noisy prompts | **Keep the swarm, change the noise.** | Independent agents on one model converge. In our pilot, 30 of 30 clean prompts produced near-variants of one idea. Content-free noise barely helps (a random sonnet: 0.686 vs 0.679 diversity). *Task-relevant* structured variety helps a lot: random personas and constraints 0.735–0.757, mixing model vendors 0.763, near the human level of 0.773. Cross-domain analogy gives +90–173% diversity. Diversity comes from the archive and selection, not from randomness. |
 | Chaotic generator ↔ critic ↔ fixer, "fails only if unfixable" | **Keep the loop, invert the rule.** | Prompted LLM judges of research ideas are near chance (53% agreement with humans; o3 no better than random at predicting which idea wins empirically). An LLM fixer can almost always produce a plausible rescue, so under this rule ideas stop failing. Revision without external feedback often makes answers worse, novelty peaks at about 5 rounds and then declines, and sycophancy makes agents give in when pushed. |
-| Knowledge base of frontier research | **Build it narrow, as verified records, not as a concept graph.** | There is no controlled evidence that graph structure beats good retrieval plus long context (GraphRAG ≈ plain RAG on multi-hop questions and costs 57× more to build). What measurably helps is retrieval quality with reranking. A literature-grounded novelty checker reaches about 0.81 accuracy vs κ≈0.05 for naive checkers. A scoped corpus is about 10–25k papers, costing about $300–700 in a Haiku batch run. |
+| Knowledge base of frontier research | **Build it narrow, as verified records, and use it to sample rarely explored concepts. Test the graph layer before investing in it.** | Graph retrieval vs plain retrieval (arXiv 2502.11371, Llama-3.1 on QA and summarization benchmarks) is *complementary*, not worse. Graphs win on multi-hop, temporal and comparison questions (e.g. temporal 49 vs 26); they lose on single-hop and "no answer" questions; and they take 41–57× longer to build. None of the graph-vs-retrieval studies tests scientific ideation. The one large ideation test (SciMuse: 58M papers, 4,451 ideas, 110 group leaders) found experts preferred ideas built on *less-connected* concepts. Retrieval quality with reranking clearly helps novelty checking (about 0.81 accuracy vs κ≈0.05). A scoped corpus is about 10–25k papers, costing about $300–700 in a Haiku batch run. |
 
 **The key point in all three is that an idea should be judged by running it.** Our calibrated proxy (FEASIBILITY.md) detects a 1.11× effect for a few dollars. Testing an idea therefore costs about as much as the tokens an agent would spend arguing about it, and testing is far more reliable than an LLM verdict.
 
@@ -61,7 +61,26 @@ The "100-agent swarm" is affordable, but it is the cheapest stage and not the on
 - **Records:** one Haiku batch pass (about $300–700) extracts {method, mechanism, claim, scale, data multiplier, compute multiplier, energy figure, source span}. A second model checks every number against its source span, because extraction of numbers from papers runs at only about 70 F1.
 - **Index:** hybrid keyword + embedding search; citations come from Semantic Scholar rather than being extracted.
 - **Refresh:** daily, since more than 20k AI papers appear each month and a stale knowledge base causes false-novel verdicts.
-- **Reuse:** the alphaXiv MCP server and the Papers with Code archive. Don't build a concept graph until an ablation shows it beats this.
+- **Reuse:** the alphaXiv MCP server and the Papers with Code archive. Add a concept graph only once the A/B test below shows it helps.
+- **Use the knowledge base as a sampler, not only a library.** The model already knows the popular concepts; its failure is collapsing onto them (our pilot: 3 families out of 30). The knowledge base's distinctive value is supplying *rarely connected* concepts as seeds (SciMuse: interest rose as concept connectivity fell) and verified numbers for novelty checks.
+- **The A/B test that settles it:** run the same generator budget with (a) no seeds, (b) knowledge-base seeds of rarely connected concepts from within ML, and (c) knowledge-base seeds from distant fields. Score all three arms in the proxy lab, not with a judge. This tests two things at once: whether the polymath knowledge base helps, and whether ideas from distant fields beat nearby ones.
+
+## Prior attempts at a "polymath" research knowledge base
+
+| Attempt | Scale | Measured result |
+|---|---|---|
+| Cyc (1984–) | 25–30M hand-coded assertions, about 2,000 person-years | No scientific breakthroughs attributed; hand-coding did not scale |
+| Galactica (Meta, 2022) | LLM trained on about 48M papers | Pulled after 3 days for fabricated papers and citations |
+| IBM Watson for Oncology | $62M at MD Anderson | "Unsafe and incorrect" advice; never treated a patient; Watson Health sold in 2022 |
+| Microsoft Academic Graph → OpenAlex | about 250M works | Infrastructure, not a reasoning engine |
+| Swanson / Arrowsmith literature-based discovery | Two separated literatures at a time | Fish oil–Raynaud's and magnesium–migraine links, later supported clinically; modern evaluations mostly rediscover known links |
+| Hetionet (drug repurposing) | 47k nodes, 2.25M edges | AUROC 97% on known treatments, 70% on drugs later entering clinical trials |
+| Krenn group: SemNet → Science4Cast → Impact4Cast → **SciMuse** | Up to 58M papers, 123k concepts | Predicts future concept links. SciMuse: 25% of GPT-4 ideas rated 4–5 by experts; distant-field pairings rated *lower* |
+| Buehler (MIT): graph reasoning, SciAgents | Graph from about 1,000 papers | Striking cross-domain hypotheses (art → mycelium composites); no lab or expert validation found; judged by LLMs |
+| FutureHouse Robin; Google AI co-scientist | LLM + retrieval, no curated graph | Findings confirmed in cell culture or organoids (ripasudil for dry AMD; vorinostat in liver fibrosis) |
+| Microsoft Discovery | Graph-based knowledge engine | Coolant found after screening 367k candidates (company claim) |
+
+Open tension: large-scale bibliometrics finds that atypical combinations drive impact (Uzzi 2013: 2× hit rate; Shi & Evans 2023), yet expert raters marked distant-field ideas lower (SciMuse). Expert ratings may be biased against distance, which is one more reason to score ideas by measured outcomes. **No prior effort has connected a cross-discipline knowledge base to an executable harness with a numeric result. That combination is where OptiLex is new.**
 
 ## Our pilot: clean vs "ask for novelty" vs noisy prompts (`factory_pilot/`)
 
