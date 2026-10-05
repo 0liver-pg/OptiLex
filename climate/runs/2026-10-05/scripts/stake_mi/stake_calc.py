@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0, '/Users/oliverpascal/Local/GitHub/OptiLex/climate')
+sys.path.insert(0, 'climate')
 from physics import *
 KG_CH4_PER_MMBTU = 1055.06/55.5  # MJ per MMBtu / HHV MJ/kg -> ~19.0 kg
 g = GWP100['CH4_fossil']
