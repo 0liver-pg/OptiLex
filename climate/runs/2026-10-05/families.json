@@ -1,0 +1,424 @@
+[
+ {
+  "family": "CO2 as voidage-replacement fluid in lithium/bromine brine fields (Smackover): brine production for DLE doubles as storage pressure relief",
+  "member_ids": [
+   "import_recombine_2",
+   "graft_electro_6",
+   "graft_subsurface_2",
+   "incumbent_assets_2",
+   "anti_availability_2"
+  ],
+  "representative_id": "graft_subsurface_2",
+  "is_known_approach": false
+ },
+ {
+  "family": "Dissolve concentrated CO2 (gas-plant/AGRU vent) into produced water already going down Permian saltwater-disposal wells (Carbfix-style dissolved storage)",
+  "member_ids": [
+   "import_recombine_4",
+   "graft_subsurface_1",
+   "incumbent_assets_3",
+   "systems_1"
+  ],
+  "representative_id": "incumbent_assets_3",
+  "is_known_approach": false
+ },
+ {
+  "family": "Rich/lean solvent tank storage for cycling gas plants with capture; stripper sized to average and regenerated electrically off-peak",
+  "member_ids": [
+   "import_recombine_5",
+   "graft_near_6",
+   "graft_bio_5",
+   "graft_electro_4"
+  ],
+  "representative_id": "graft_near_6",
+  "is_known_approach": true
+ },
+ {
+  "family": "Heat pump / MVR on capture-plant rejected heat to lift waste-heat-capped cement capture (Brevik 50% to ~90%)",
+  "member_ids": [
+   "graft_near_4",
+   "bottleneck_thermo_2"
+  ],
+  "representative_id": "bottleneck_thermo_2",
+  "is_known_approach": true
+ },
+ {
+  "family": "Indirectly heated (Leilac-type) calciner releasing undiluted process CO2 (cement precalciner; kraft-mill lime-mud kiln)",
+  "member_ids": [
+   "import_recombine_1",
+   "systems_2"
+  ],
+  "representative_id": "import_recombine_1",
+  "is_known_approach": true
+ },
+ {
+  "family": "Carbonic-anhydrase-promoted K2CO3 capture regenerated at ~75 C for cement kilns",
+  "member_ids": [
+   "graft_bio_6"
+  ],
+  "representative_id": "graft_bio_6",
+  "is_known_approach": true
+ },
+ {
+  "family": "Adipic-acid N2O as oxidant for benzene-to-phenol feeding the plant's own KA oil (AlphOx loop)",
+  "member_ids": [
+   "graft_near_2",
+   "non_co2_4"
+  ],
+  "representative_id": "non_co2_4",
+  "is_known_approach": true
+ },
+ {
+  "family": "Incremental-cost payment for industrial N2O abatement on a production-capped baseline with stack CEMS (results contract / Montreal annex)",
+  "member_ids": [
+   "import_recombine_6",
+   "coalition_2"
+  ],
+  "representative_id": "import_recombine_6",
+  "is_known_approach": true
+ },
+ {
+  "family": "Plant-level verification/enforcement of existing HFC-23 destruction at HCFC-22 plants (fenceline monitoring; feed interlocks with signed analysers)",
+  "member_ids": [
+   "graft_near_1",
+   "graft_electro_1"
+  ],
+  "representative_id": "graft_near_1",
+  "is_known_approach": false
+ },
+ {
+  "family": "Conservative penalty default factors that force measurement (HFC-23 in fluoropolymer footprints; LNG-ship methane slip)",
+  "member_ids": [
+   "anti_availability_1",
+   "non_co2_5"
+  ],
+  "representative_id": "anti_availability_1",
+  "is_known_approach": true
+ },
+ {
+  "family": "Coal-mine ventilation-air methane ducted into nearby boiler/kiln combustion air",
+  "member_ids": [
+   "non_co2_2",
+   "systems_4"
+  ],
+  "representative_id": "non_co2_2",
+  "is_known_approach": true
+ },
+ {
+  "family": "Methanotroph biofilters for lean coal-mine ventilation air methane",
+  "member_ids": [
+   "graft_bio_1"
+  ],
+  "representative_id": "graft_bio_1",
+  "is_known_approach": true
+ },
+ {
+  "family": "Capture of methane degassing below tropical hydro dams (enclosed tailrace/weir) and oxidation in a VAM-type RTO",
+  "member_ids": [
+   "anti_availability_5",
+   "systems_5"
+  ],
+  "representative_id": "systems_5",
+  "is_known_approach": false
+ },
+ {
+  "family": "Compost methanotroph biocovers on large open dumps paid on satellite-measured plume reduction",
+  "member_ids": [
+   "non_co2_3",
+   "anti_availability_6"
+  ],
+  "representative_id": "anti_availability_6",
+  "is_known_approach": true
+ },
+ {
+  "family": "Measurement-ranked buyout and plugging of high-emitting low-production US well sites",
+  "member_ids": [
+   "graft_subsurface_5",
+   "incumbent_assets_4"
+  ],
+  "representative_id": "graft_subsurface_5",
+  "is_known_approach": true
+ },
+ {
+  "family": "Marginal pumping price makes AWD rice pay (prepaid hourly pump cards; grid-tied solar pump feed-in), with pump telemetry + Sentinel-1 MRV",
+  "member_ids": [
+   "systems_6",
+   "global_south_1"
+  ],
+  "representative_id": "global_south_1",
+  "is_known_approach": true
+ },
+ {
+  "family": "Gypsum sulfate dosing combined with AWD so drying re-oxidises sulfide and sulfate suppression recurs",
+  "member_ids": [
+   "graft_bio_3"
+  ],
+  "representative_id": "graft_bio_3",
+  "is_known_approach": false
+ },
+ {
+  "family": "Per-tonne landowner royalty instead of eminent domain for CO2 pipelines / pore space (fermentation CCS)",
+  "member_ids": [
+   "coalition_5",
+   "incumbent_assets_6"
+  ],
+  "representative_id": "incumbent_assets_6",
+  "is_known_approach": true
+ },
+ {
+  "family": "Liquid-CO2 unit trains from ethanol plants to Class VI hubs",
+  "member_ids": [
+   "graft_near_3"
+  ],
+  "representative_id": "graft_near_3",
+  "is_known_approach": true
+ },
+ {
+  "family": "Nuclear (LWR) steam bleed as DAC regeneration heat",
+  "member_ids": [
+   "bottleneck_thermo_3"
+  ],
+  "representative_id": "bottleneck_thermo_3",
+  "is_known_approach": true
+ },
+ {
+  "family": "Grid-charged pressurised hot-water storage so DAC regenerates 24/7 on cheap-hour power",
+  "member_ids": [
+   "bottleneck_thermo_4"
+  ],
+  "representative_id": "bottleneck_thermo_4",
+  "is_known_approach": false
+ },
+ {
+  "family": "Bed-to-bed sensible heat recovery in sorbent-coated heat exchangers (adsorption-chiller thermal wave)",
+  "member_ids": [
+   "bottleneck_thermo_6"
+  ],
+  "representative_id": "bottleneck_thermo_6",
+  "is_known_approach": true
+ },
+ {
+  "family": "Passive solar collector-adsorber DAC panel, one night-load/day-steam-sweep cycle",
+  "member_ids": [
+   "bottleneck_thermo_1"
+  ],
+  "representative_id": "bottleneck_thermo_1",
+  "is_known_approach": false
+ },
+ {
+  "family": "EGS/horizontal geothermal doublets sold as industrial process heat and capture reboiler heat",
+  "member_ids": [
+   "graft_subsurface_4"
+  ],
+  "representative_id": "graft_subsurface_4",
+  "is_known_approach": true
+ },
+ {
+  "family": "In-place wash-out and re-impregnation of oxidised amine on DAC sorbent supports",
+  "member_ids": [
+   "graft_bio_4"
+  ],
+  "representative_id": "graft_bio_4",
+  "is_known_approach": false
+ },
+ {
+  "family": "Mechanism-matched accelerated lifetime qualification of DAC sorbents gating offtake contracts",
+  "member_ids": [
+   "graft_electro_5"
+  ],
+  "representative_id": "graft_electro_5",
+  "is_known_approach": false
+ },
+ {
+  "family": "Hydroxide air contactor with high-current-density bipolar-membrane electrochemical regeneration replacing the calciner",
+  "member_ids": [
+   "graft_electro_3"
+  ],
+  "representative_id": "graft_electro_3",
+  "is_known_approach": true
+ },
+ {
+  "family": "Lime-looping DAC through existing cement/lime calciners with capture",
+  "member_ids": [
+   "bottleneck_thermo_5"
+  ],
+  "representative_id": "bottleneck_thermo_5",
+  "is_known_approach": true
+ },
+ {
+  "family": "Forced aeration of brucite-bearing ultramafic tailings heaps with mine power-station exhaust",
+  "member_ids": [
+   "graft_near_5"
+  ],
+  "representative_id": "graft_near_5",
+  "is_known_approach": false
+ },
+ {
+  "family": "Fracture-stimulated horizontal doublets for in-situ CO2 mineralisation in hot peridotite",
+  "member_ids": [
+   "graft_subsurface_3"
+  ],
+  "representative_id": "graft_subsurface_3",
+  "is_known_approach": false
+ },
+ {
+  "family": "Perpetual covenant extinguishing hydrocarbon rights in depleted fields converted to dedicated CO2 storage",
+  "member_ids": [
+   "graft_subsurface_6"
+  ],
+  "representative_id": "graft_subsurface_6",
+  "is_known_approach": false
+ },
+ {
+  "family": "Store the near-pure CO2 already separated in gas-based DRI shaft furnaces, with contracted H2 switch",
+  "member_ids": [
+   "import_recombine_3"
+  ],
+  "representative_id": "import_recombine_3",
+  "is_known_approach": true
+ },
+ {
+  "family": "SOFCs on stranded associated gas producing nitrogen-free anode CO2 for storage",
+  "member_ids": [
+   "graft_electro_2"
+  ],
+  "representative_id": "graft_electro_2",
+  "is_known_approach": false
+ },
+ {
+  "family": "CBAM liability makes N2O catalysts at non-EU nitric-acid plants profitable",
+  "member_ids": [
+   "non_co2_1"
+  ],
+  "representative_id": "non_co2_1",
+  "is_known_approach": true
+ },
+ {
+  "family": "HFC-23 co-pyrolysis with methane to vinylidene fluoride (PVDF monomer)",
+  "member_ids": [
+   "non_co2_6"
+  ],
+  "representative_id": "non_co2_6",
+  "is_known_approach": false
+ },
+ {
+  "family": "Revenue-neutral measured methane-intensity price differential in gas/LNG contracts",
+  "member_ids": [
+   "coalition_1"
+  ],
+  "representative_id": "coalition_1",
+  "is_known_approach": false
+ },
+ {
+  "family": "Producer-funded deposit-refund for end-of-life refrigerant recovery",
+  "member_ids": [
+   "coalition_3"
+  ],
+  "representative_id": "coalition_3",
+  "is_known_approach": true
+ },
+ {
+  "family": "Tradeable clinker process-CO2 phasedown with storage-only compliance and storage priority",
+  "member_ids": [
+   "coalition_4"
+  ],
+  "representative_id": "coalition_4",
+  "is_known_approach": false
+ },
+ {
+  "family": "CBAM-revenue-funded reverse-auction offtake compact for green HBI/ammonia from exporting countries",
+  "member_ids": [
+   "coalition_6"
+  ],
+  "representative_id": "coalition_6",
+  "is_known_approach": false
+ },
+ {
+  "family": "CO2 as cushion gas in existing underground gas storage",
+  "member_ids": [
+   "incumbent_assets_1"
+  ],
+  "representative_id": "incumbent_assets_1",
+  "is_known_approach": false
+ },
+ {
+  "family": "Store reservoir CO2 already stripped and vented by LNG trains (Sleipner-style baseline)",
+  "member_ids": [
+   "incumbent_assets_5"
+  ],
+  "representative_id": "incumbent_assets_5",
+  "is_known_approach": true
+ },
+ {
+  "family": "Dredged reservoir sediment as calcined clay for LC3 cement",
+  "member_ids": [
+   "anti_availability_3"
+  ],
+  "representative_id": "anti_availability_3",
+  "is_known_approach": false
+ },
+ {
+  "family": "In-storage slurry acidification paid per tonne methane, targeted to high-MCF systems",
+  "member_ids": [
+   "anti_availability_4"
+  ],
+  "representative_id": "anti_availability_4",
+  "is_known_approach": true
+ },
+ {
+  "family": "N2O-respiring (NosZ) bacteria delivered in livestock slurry",
+  "member_ids": [
+   "graft_bio_2"
+  ],
+  "representative_id": "graft_bio_2",
+  "is_known_approach": false
+ },
+ {
+  "family": "Carbfix-style basalt mineralisation of distillery fermentation CO2 using sugar-mill condensate (Deccan Traps)",
+  "member_ids": [
+   "systems_3"
+  ],
+  "representative_id": "systems_3",
+  "is_known_approach": true
+ },
+ {
+  "family": "Rice-husk pyrolysis ahead of parboiling-mill boilers with char returned to paddies",
+  "member_ids": [
+   "global_south_2"
+  ],
+  "representative_id": "global_south_2",
+  "is_known_approach": true
+ },
+ {
+  "family": "Swap carbonate aglime for silicate fines with mixing-model source apportionment",
+  "member_ids": [
+   "global_south_3"
+  ],
+  "representative_id": "global_south_3",
+  "is_known_approach": false
+ },
+ {
+  "family": "Dairy ration balancing verified by MIR methane prediction on bulk-milk samples",
+  "member_ids": [
+   "global_south_4"
+  ],
+  "representative_id": "global_south_4",
+  "is_known_approach": false
+ },
+ {
+  "family": "Methane-burning retort charcoal kilns credited on measured kiln methane and weighed yield",
+  "member_ids": [
+   "global_south_5"
+  ],
+  "representative_id": "global_south_5",
+  "is_known_approach": true
+ },
+ {
+  "family": "Paid full rewetting of deep-peat plantation blocks measured by InSAR subsidence against paired drained blocks",
+  "member_ids": [
+   "global_south_6"
+  ],
+  "representative_id": "global_south_6",
+  "is_known_approach": false
+ }
+]

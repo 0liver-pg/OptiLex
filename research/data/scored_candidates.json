@@ -1,0 +1,1327 @@
+[
+ {
+  "id": "sair_formal_challenges",
+  "domain": "Formal methods and computational group theory (verified-efficient Lean algorithms; Andrews-Curtis conjecture)",
+  "channel": "SAIR Foundation competitions: Lean Kernel Challenge Stage 1 (deadline 20 Nov 2026 AoE) and Andrews-Curtis Conjecture Challenge (deadline 30 Nov 2026)",
+  "description": "Generate diverse search heuristics for Andrews-Curtis move sequences, and algorithms proven correct in Lean and optimised for kernel-replay cost. Many independent implementations. Submit only machine-checked entries. AI is explicitly 'welcome'.",
+  "verifier": "The provided local machine checker (AC move sequences), and Lean proof plus ranking by median kernel-replay instruction count (one Lean file of at most 1 MiB). Near-zero cost.",
+  "poc_cost": "Claude Max plus under $500 of CPU search (estimate).",
+  "value_path": "Reputation in the Tao / Lean FRO / XTX-funded ecosystem in about 2 months. Prize amounts not found. All valid solutions are released publicly (the repo is Apache-2.0).",
+  "precedent": "XTX closed the AIMO Prize and redirected funds (16 Sep 2026): $10M to Lean FRO, $10M to Mathlib, plus SAIR support. Lean-verified AI Erd\u0151s results in 2026. URL: https://terrytao.wordpress.com/2026/09/11/sair-competition-andrew-curtis-challenge/",
+  "risks": "Cash may be none or unknown. Prior RL work on Andrews-Curtis not checked. Everything becomes open, so there is no IP. Two deadlines close together (20 and 30 Nov).",
+  "mean": 50.0,
+  "lenses": {
+   "impact": {
+    "sum": 52,
+    "detail": {
+     "impact": 4,
+     "verifier": 10,
+     "poc_fit": 9,
+     "time_to_value": 6,
+     "ai_edge": 7,
+     "competition_room": 6,
+     "safety_legal": 10
+    },
+    "note": "Ideal verifiers (local machine checker, Lean) with AI explicitly welcome and a new, uncrowded field. Impact is niche group theory and Lean infrastructure, prizes are unknown, and prior RL work already resolved many Miller-Schupp candidates (Shehper et al., arXiv 2408.15332, checked)."
+   },
+   "skeptic": {
+    "sum": 48,
+    "detail": {
+     "impact": 4,
+     "verifier": 10,
+     "poc_fit": 9,
+     "time_to_value": 4,
+     "ai_edge": 5,
+     "competition_room": 6,
+     "safety_legal": 10
+    },
+    "note": "The verifiers are local and machine-checked, AI is explicitly 'welcome' and risk is near zero, but Tao's post (fetched) names no prize amount and cites the Caltech organisers' own RL and combinatorial-search work on Andrews-Curtis, so the LLM-heuristic edge over purpose-built search is unproven."
+   },
+   "cash": {
+    "sum": 50,
+    "detail": {
+     "impact": 5,
+     "verifier": 9,
+     "poc_fit": 9,
+     "time_to_value": 5,
+     "ai_edge": 7,
+     "competition_room": 6,
+     "safety_legal": 9
+    },
+    "note": "Near-ideal verifiers (a local checker and Lean kernel replay), AI is explicitly welcome, deadlines are 20 and 30 Nov, and it is a young field. Cash is unknown, so value is mainly reputation in the XTX-funded maths ecosystem."
+   }
+  }
+ },
+ {
+  "id": "erdos_problems_lean",
+  "domain": "Research mathematics: Erd\u0151s problems (combinatorics, number theory)",
+  "channel": "Lean-verified solutions and literature finds, credited on erdosproblems.com and written up as papers; small cash bounties ($10-$10,000 each; 100 open prizes totalling $34,120)",
+  "description": "Search the literature first (importing known results), then attempt proofs or counterexamples with Claude plus Lean formalisation. The novelty gate is a deep literature search, never an LLM novelty score. Log a notability field so obscure wins are not overcounted.",
+  "verifier": "Lean proof check (near-free) plus acceptance by the database curator or experts. Cost is essentially the Max subscription.",
+  "poc_cost": "Claude Max only ($100-200/mo).",
+  "value_path": "Reputation and papers in days to weeks. Bounty cash is trivial, and no page confirms any AI solve was paid. Builds credibility for AI for Math Fund grants.",
+  "precedent": "Tao's AI-contributions wiki (frozen 30 Jun 2026): 18 distinct problems fully solved by AI alone by one count (another count gives 13 of 47 entries), and about 36 with human-AI collaboration. #728 was the first resolved autonomously (GPT-5.2 Pro + Aristotle; arXiv 2601.07421). #90, the unit distance conjecture, was disproved by an OpenAI model (20 May 2026; verified in arXiv 2605.20695). Claude Mythos solved it independently on 26 May, after publication. The database has 1,221 problems, 635 open. URL: https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems",
+  "risks": "DeepMind's sweep base rate: 700 attempted, 13 addressed, 5 'seemingly novel', only 2 full solutions (arXiv 2601.22401). About 1 incorrect AI-alone claim for every 2 correct ones. Rediscovery and 'subconscious plagiarism'. Wins cluster on obscure problems. Reviewer capacity is saturated. No meaningful money.",
+  "mean": 48.0,
+  "lenses": {
+   "impact": {
+    "sum": 50,
+    "detail": {
+     "impact": 4,
+     "verifier": 9,
+     "poc_fit": 10,
+     "time_to_value": 7,
+     "ai_edge": 8,
+     "competition_room": 3,
+     "safety_legal": 9
+    },
+    "note": "The strongest evidence that frontier LLMs produce verified new results, all within a Max subscription, but wins cluster on obscure problems, the rediscovery rate is high, the big labs are sweeping, and impact is mostly reputational."
+   },
+   "skeptic": {
+    "sum": 47,
+    "detail": {
+     "impact": 4,
+     "verifier": 8,
+     "poc_fit": 10,
+     "time_to_value": 6,
+     "ai_edge": 8,
+     "competition_room": 3,
+     "safety_legal": 8
+    },
+    "note": "This has the strongest 2026 evidence that frontier LLMs produce externally verified results (18 AI-alone full solves, Lean checks nearly free), but the base rate for genuinely novel results is under 1% per target (DeepMind: 2 full solutions from 700), about 1 in 3 AI-alone claims were wrong, labs are already sweeping the easy ones, and it pays nothing, so literature dedupe and a notability field are mandatory."
+   },
+   "cash": {
+    "sum": 47,
+    "detail": {
+     "impact": 4,
+     "verifier": 8,
+     "poc_fit": 10,
+     "time_to_value": 5,
+     "ai_edge": 8,
+     "competition_room": 4,
+     "safety_legal": 8
+    },
+    "note": "The best credibility per dollar: a Max plan plus a near-free Lean check gives verified results in days. But the bounty cash is trivial, and the easy obscure problems are being swept by the labs."
+   }
+  }
+ },
+ {
+  "id": "extremal_constructions_evolver",
+  "domain": "Extremal constructions in combinatorics, analysis and geometry (packings, bounds, matrix-multiplication schemes)",
+  "channel": "Evolver-found improved constructions, published as arXiv papers and in bound tables (reputation; seeds maths grant applications)",
+  "description": "Run an AlphaEvolve-style loop (open-source ShinkaEvolve, CC BY 4.0) with Claude writing programs against scalar evaluators. Seed it from published problem lists: Georgiev/G\u00f3mez-Serrano/Tao/Wagner's 67 problems and the 75+ problems in The Open Problems Project. It shares the executor with the industrial-optimisation pack.",
+  "verifier": "Deterministic scalar evaluator (bound value), plus a literature check of the best known result. Pennies per evaluation.",
+  "poc_cost": "Claude Max or API plus $100-1,000 compute. ShinkaEvolve reached state of the art on circle packing with 150 samples (arXiv 2509.19349).",
+  "value_path": "Papers and reputation within weeks. No cash. Credibility for Renaissance AI for Math seed grants.",
+  "precedent": "Georgiev, G\u00f3mez-Serrano, Tao & Wagner (arXiv 2511.02864): AlphaEvolve 'rediscovered the best known solutions in most of the cases and discovered improved solutions in several' of 67 problems. It also found 4x4 complex matrix multiplication in 48 multiplications, the first gain in 56 years (arXiv 2506.13131).",
+  "risks": "Most runs only match known bounds. Google made AlphaEvolve generally available (10 Jul 2026), so the space is crowded. Since 21 Jan 2026, arXiv endorsement requires prior authorship or a personal endorser. Marginal notability.",
+  "mean": 47.0,
+  "lenses": {
+   "impact": {
+    "sum": 49,
+    "detail": {
+     "impact": 4,
+     "verifier": 10,
+     "poc_fit": 9,
+     "time_to_value": 6,
+     "ai_edge": 8,
+     "competition_room": 3,
+     "safety_legal": 9
+    },
+    "note": "Cheap deterministic evaluators and AlphaEvolve/ShinkaEvolve precedent give a high hit probability, but most runs only match known bounds and AlphaEvolve going GA crowds the space, so gains are marginal."
+   },
+   "skeptic": {
+    "sum": 46,
+    "detail": {
+     "impact": 4,
+     "verifier": 9,
+     "poc_fit": 9,
+     "time_to_value": 5,
+     "ai_edge": 7,
+     "competition_room": 3,
+     "safety_legal": 9
+    },
+    "note": "Scalar evaluators are cheap and faithful, and AlphaEvolve and ShinkaEvolve show the loop works, but most runs only match known bounds, AlphaEvolve is now GA, many groups are re-running the same published 67-problem lists, and results have marginal notability."
+   },
+   "cash": {
+    "sum": 46,
+    "detail": {
+     "impact": 4,
+     "verifier": 9,
+     "poc_fit": 9,
+     "time_to_value": 4,
+     "ai_edge": 8,
+     "competition_room": 3,
+     "safety_legal": 9
+    },
+    "note": "Cheap scalar verifiers and strong AlphaEvolve precedent. But most runs only match known bounds, there is no cash, and AlphaEvolve going GA has crowded the space."
+   }
+  }
+ },
+ {
+  "id": "industrial_opt_pilots",
+  "domain": "Industrial operations optimisation code (warehouse routing, scheduling, demand forecasting, genomics pipelines)",
+  "channel": "Paid pilots or success-fee engagements with SMEs and mid-market firms that supply their data and a KPI evaluator",
+  "description": "Take the customer's seed program and a deterministic evaluator. Import OR and forecasting literature and evolve improvements with several independent implementations. Sell results measured on the customer's own KPI. This is the commercial form of the evolver.",
+  "verifier": "The customer's deterministic evaluator on held-out historical data, then a live A/B test. Cost is compute, roughly $100s-1,000s per engagement (estimate).",
+  "poc_cost": "Under $2,000 per pilot (API under Commercial Terms plus cloud; estimate).",
+  "value_path": "Pilot or success fee, with a first invoice in weeks. Can become a product. Measured evidence of use also raises any later patent value (32-108% asking-price premium). US follow-on money: SBIR Phase I up to $323,090 (US-owned small business only).",
+  "precedent": "AlphaEvolve GA (10 Jul 2026), all vendor-reported testimonials: FM Logistic routing +10.4% (over 15,000 km saved). Klarna 2x training-pipeline throughput after nearly 6,000 candidates. Kinaxis +22% forecast accuracy. Coolblue forecasting >5% in 200 iterations. PacBio variant-detection errors -30%. Google's internal scheduler recovered 0.7% of fleet compute.",
+  "risks": "Direct competition with Google's GA product, which lists a Claude Code integration. Getting customers is the bottleneck (poor PMF is cited in 43% of failures, CB Insights). Needs data access and NDAs. Must run under API or Commercial Terms, because the UK Consumer Terms say 'Non-commercial use only'.",
+  "mean": 44.3,
+  "lenses": {
+   "impact": {
+    "sum": 45,
+    "detail": {
+     "impact": 6,
+     "verifier": 8,
+     "poc_fit": 7,
+     "time_to_value": 5,
+     "ai_edge": 8,
+     "competition_room": 4,
+     "safety_legal": 7
+    },
+    "note": "Real, measurable efficiency gains across logistics, energy and genomics, with strong evidence that evaluator-driven evolution works (AlphaEvolve customer results, vendor-reported). Finding customers is the bottleneck, it competes head-on with Google's GA product, and it must run on the API under Commercial Terms."
+   },
+   "skeptic": {
+    "sum": 43,
+    "detail": {
+     "impact": 7,
+     "verifier": 8,
+     "poc_fit": 6,
+     "time_to_value": 5,
+     "ai_edge": 7,
+     "competition_room": 4,
+     "safety_legal": 6
+    },
+    "note": "The customer's own KPI evaluator is the most faithful money-linked verifier, and AlphaEvolve testimonials show buyers pay, but that evidence is vendor-reported, customer acquisition and data access are the real bottleneck, Google's GA product competes head-on, and the work must run under Commercial Terms with NDAs."
+   },
+   "cash": {
+    "sum": 45,
+    "detail": {
+     "impact": 7,
+     "verifier": 8,
+     "poc_fit": 7,
+     "time_to_value": 5,
+     "ai_edge": 7,
+     "competition_room": 4,
+     "safety_legal": 7
+    },
+    "note": "The only candidate with repeatable, uncapped invoices, verified on the customer's own KPI. Time to cash depends on landing the first customer against AlphaEvolve GA, and it must run under API/Commercial Terms."
+   }
+  }
+ },
+ {
+  "id": "vesuvius_progress_prizes",
+  "domain": "Computational cultural heritage (CT segmentation, virtual unrolling, ink detection on Herculaneum scrolls)",
+  "channel": "Vesuvius Challenge monthly progress prizes (at least $20k/month for the best entry, plus $20k/$10k/$5k/$2.5k/$1k/$500/$250) and larger open prizes ($2.14M open)",
+  "description": "Generate and build open-source tooling improvements (segmentation, surface fitting, ink detection). The monthly cadence gives the fastest recurring cash-denominated outcome labels found for AI-assisted engineering.",
+  "verifier": "Human judges score open-source usefulness and community adoption. Entrants must show text is not 'hallucinated' using held-out validation. Cost is compute.",
+  "poc_cost": "Claude Max plus $100-1,500 GPU (estimate). Data is free.",
+  "value_path": "Monthly cash (payment details due within 30 days of announcement). Next deadline 30 Sep 2026. First Letters prizes $50k per scroll (up to $500k). Grand Prize $1M ($800k for 1st) by 25 Jun 2027.",
+  "precedent": "The 2023 Grand Prize ($700k, awarded 5 Feb 2024) went to three students using ML ink detection (TimeSformer), with 3 x $50k runner-up prizes. URL: https://scrollprize.org/prizes",
+  "risks": "Adoption-based judging favours community insiders. The impact is cultural rather than health or climate. Code must be on GitHub under a permissive licence, so no IP. Monthly amounts can vary.",
+  "mean": 44.3,
+  "lenses": {
+   "impact": {
+    "sum": 44,
+    "detail": {
+     "impact": 5,
+     "verifier": 6,
+     "poc_fit": 7,
+     "time_to_value": 7,
+     "ai_edge": 5,
+     "competition_room": 5,
+     "safety_legal": 9
+    },
+    "note": "The fastest recurring cash cycle, and recovering lost classical texts is real humanities impact, but judging is human and adoption-based (favouring insiders) and there is no AI-agent win precedent."
+   },
+   "skeptic": {
+    "sum": 43,
+    "detail": {
+     "impact": 5,
+     "verifier": 5,
+     "poc_fit": 7,
+     "time_to_value": 7,
+     "ai_edge": 5,
+     "competition_room": 5,
+     "safety_legal": 9
+    },
+    "note": "This is the fastest recurring cash cycle with low legal risk, but prizes are judged by humans on community adoption, which favours insiders, so it verifies usefulness to that community rather than idea quality, and the impact is cultural."
+   },
+   "cash": {
+    "sum": 46,
+    "detail": {
+     "impact": 5,
+     "verifier": 5,
+     "poc_fit": 7,
+     "time_to_value": 8,
+     "ai_edge": 6,
+     "competition_room": 6,
+     "safety_legal": 9
+    },
+    "note": "Confirmed on scrollprize.org: a guaranteed $20k each month for the best entry, plus tiers from $20k down to $250 (next cutoff 30 Sep 2026). It is the most reliable near-term cash cadence, though judging on community adoption favours insiders."
+   }
+  }
+ },
+ {
+  "id": "frontiermath_open_problems",
+  "domain": "Research mathematics with automatic verifiers (number theory, algebra, combinatorics)",
+  "channel": "Epoch FrontierMath: Open Problems, tiered by notability (reputation and Epoch credit; no cash)",
+  "description": "Target the 40 unsolved problems, each with an importance tier from Moderately interesting to Breakthrough. Generate constructions and search strategies, and verify them with self-built checkers or Epoch's verifiers. The cleanest impact-labelled calibration set for the maths pack.",
+  "verifier": "Epoch's automatic verifier programs ('available for purchase by any party'; price not found) or reimplemented checkers for construction problems. The notability tier supplies the impact label.",
+  "poc_cost": "Claude Max plus $0-1,000 of search compute. Verifier-access price unknown.",
+  "value_path": "High-credibility reputation (an Epoch-tiered solve), in weeks. No cash.",
+  "precedent": "As of 31 Jul 2026: 4 solved by AI alone, including a genus-2 curve with many rational points found by Claude (Aug 2026). 5 solved by humans with AI, including a Hadamard matrix of order 668 (Claude with a 3-person team, provisional). 40 unsolved. Only 1 of 3 Breakthrough problems is solved, and that one by human plus AI. URL: https://epoch.ai/frontiermath/open-problems",
+  "risks": "Tier counts on the page are approximate (they sum to 49). OpenAI is the only verifier buyer, so the factory competes with a frontier lab. Unclear whether full problem statements are public. The AI-alone vs human+AI split was added 16 Sep 2026 and may be reclassified. No money.",
+  "mean": 43.7,
+  "lenses": {
+   "impact": {
+    "sum": 46,
+    "detail": {
+     "impact": 5,
+     "verifier": 8,
+     "poc_fit": 8,
+     "time_to_value": 5,
+     "ai_edge": 7,
+     "competition_room": 4,
+     "safety_legal": 9
+    },
+    "note": "The best impact-labelled maths set (notability tiers, and Claude already has an AI-alone solve), but only 40 hard problems remain, OpenAI holds verifier access, and there is no money."
+   },
+   "skeptic": {
+    "sum": 44,
+    "detail": {
+     "impact": 5,
+     "verifier": 7,
+     "poc_fit": 7,
+     "time_to_value": 5,
+     "ai_edge": 7,
+     "competition_room": 4,
+     "safety_legal": 9
+    },
+    "note": "Machine verifiers with importance tiers make this the cleanest calibration set, and Claude has already solved one problem alone, but the 40 remaining problems are hard, the verifier price is unknown, OpenAI is actively buying access, and the only reward is reputation."
+   },
+   "cash": {
+    "sum": 41,
+    "detail": {
+     "impact": 5,
+     "verifier": 7,
+     "poc_fit": 8,
+     "time_to_value": 3,
+     "ai_edge": 6,
+     "competition_room": 3,
+     "safety_legal": 9
+    },
+    "note": "Clean notability-tiered labels, but no money. The remaining 40 problems are the hard ones, and a frontier lab is working them too."
+   }
+  }
+ },
+ {
+  "id": "virtual_cell_vcc2026",
+  "domain": "Single-cell perturbation-response prediction (virtual cell models)",
+  "channel": "Arc Institute Virtual Cell Challenge 2026 ($100k / $50k / $25k, a mix of cash and NVIDIA Brev credits)",
+  "description": "Zero-shot prediction of CRISPRi knockdown responses in 6 cell lines never seen perturbed (only unperturbed profiles and gene IDs are given). Import pretrained single-cell foundation models and recombine them with strong additive and mean baselines, with at least 2 independent implementations per idea. OpenProblems.bio and the CZI Virtual Cells Platform serve as offline verifiers. This is the only live, high-impact, verifier-backed cash prize found that individuals and small companies can enter.",
+  "verifier": "Automated cell-eval aggregate of 6 metrics. The live leaderboard uses 3 lines; the final uses 3 held-out lines. The test set is released 22 Oct and the final deadline is 5 Nov 2026 23:59 UTC. Scoring costs about $0.",
+  "poc_cost": "Claude Max plus about $300-1,500 GPU (estimate).",
+  "value_path": "Cash plus credits for the top 3 (split undisclosed). Winners announced mid-to-late Nov 2026, about 6-8 weeks away. Reputation in computational biology.",
+  "precedent": "The 2025 Generalist Prize went to Altos Labs' PRiMeFlow (arXiv 2604.13986). Ahlmann-Eltze, Huber & Anders (Nature Methods) found 'a simple additive model outperformed the deep learning-based approaches', which favours import-and-recombine plus baselines. 2025 drew over 1,200 teams from 114 countries. URL: https://arcinstitute.org/news/virtual-cell-challenge-2026",
+  "risks": "Fine-print rules were unchecked (the site rendered 'Loading...'): eligibility, IP and country exclusions. The cash share is unknown. The competition has a history of metric gaming. It is hard modelling on a 6-week clock, in a crowded field.",
+  "mean": 43.3,
+  "lenses": {
+   "impact": {
+    "sum": 45,
+    "detail": {
+     "impact": 7,
+     "verifier": 7,
+     "poc_fit": 7,
+     "time_to_value": 7,
+     "ai_edge": 6,
+     "competition_room": 4,
+     "safety_legal": 7
+    },
+    "note": "The only live, high-impact cash prize with an automated scorer, and the result that simple additive baselines rival deep models favours import-and-recombine; the scorer is still a gameable proxy, the field is large (1,200+ teams in 2025), and the eligibility and IP fine print is unchecked."
+   },
+   "skeptic": {
+    "sum": 41,
+    "detail": {
+     "impact": 6,
+     "verifier": 7,
+     "poc_fit": 6,
+     "time_to_value": 7,
+     "ai_edge": 5,
+     "competition_room": 3,
+     "safety_legal": 7
+    },
+    "note": "This is the best live cash prize with an automated scorer in a high-impact domain, and 'simple additive beats deep learning' favours import-plus-baselines, but 1,200+ teams including well-resourced labs (Altos won 2025), a 6-week clock, a proxy metric with a history of gaming, and unread fine print (eligibility, IP, cash vs credits split) make winning a low-probability bet."
+   },
+   "cash": {
+    "sum": 44,
+    "detail": {
+     "impact": 7,
+     "verifier": 7,
+     "poc_fit": 7,
+     "time_to_value": 7,
+     "ai_edge": 5,
+     "competition_room": 4,
+     "safety_legal": 7
+    },
+    "note": "The Arc page confirms it is open to individuals and companies, with a $100k/$50k/$25k mix of cash and credits, the deadline on 5 Nov and winners in mid-to-late November. It is the fastest high-impact cash shot, but the cash share is undisclosed and the odds are low against 1,200+ teams."
+   }
+  }
+ },
+ {
+  "id": "research_method_productization",
+  "domain": "Recent peer-reviewed computational methods with no production-grade software (bioinformatics, forecasting, geospatial, metrology)",
+  "channel": "Paid tool, API or licensed software sold to professional users (labs, engineering and logistics firms), grown to MRR",
+  "description": "Scan recent papers with demonstrated results but no maintained implementation. Reimplement them cheaply, validate against the paper's own benchmarks, then run a demand test with target users before productising. This is the import-and-recombine thesis applied to software.",
+  "verifier": "Two stages: (1) an executed reproduction of the paper's reported numbers (cheap); (2) a paid pilot or pre-order within 30 days.",
+  "poc_cost": "$200-1,500. A 16k-LoC reimplementation costs about $150-550 in tokens (MirrorCode: 1B tokens is about $550).",
+  "value_path": "Subscription or licence revenue over months. SaaS multiples apply only once there is profit. Pre-revenue code sells for about $7,500 on average (Acquire, Nov 2024 guidance).",
+  "precedent": "MirrorCode (Epoch/METR, Apr 2026): Claude Opus 4.6 reimplemented gotree (16k LoC, estimated at 2-17 human-weeks) passing 99.95% of tests. Camuffo et al. RCTs (n=759) show disciplined hypothesis tests improve selection by killing false positives.",
+  "risks": "The original method may be covered by patents or code licences. Demand is unproven. MirrorCode reached only 35% on the 61k-LoC Pkl task, so scope must stay small. LLM product ideas are homogeneous (arXiv 2607.27553), so diversify generators. Commercial use needs API or Commercial Terms.",
+  "mean": 42.7,
+  "lenses": {
+   "impact": {
+    "sum": 44,
+    "detail": {
+     "impact": 5,
+     "verifier": 7,
+     "poc_fit": 8,
+     "time_to_value": 5,
+     "ai_edge": 7,
+     "competition_room": 6,
+     "safety_legal": 6
+    },
+    "note": "A direct application of the import thesis with a cheap two-stage verifier (reproduction, then paid pilot) and MirrorCode evidence that Claude can build it; impact depends on which methods are chosen, and demand plus patent or licence risk are unproven."
+   },
+   "skeptic": {
+    "sum": 40,
+    "detail": {
+     "impact": 5,
+     "verifier": 7,
+     "poc_fit": 8,
+     "time_to_value": 4,
+     "ai_edge": 5,
+     "competition_room": 6,
+     "safety_legal": 5
+    },
+    "note": "Reproducing a paper's own benchmarks is a cheap and honest first gate, and MirrorCode shows Claude can reimplement mid-size tools, but paid demand is unproven, the original methods may be under patents or restrictive licences, and selling requires Commercial Terms."
+   },
+   "cash": {
+    "sum": 44,
+    "detail": {
+     "impact": 5,
+     "verifier": 7,
+     "poc_fit": 8,
+     "time_to_value": 5,
+     "ai_edge": 7,
+     "competition_room": 6,
+     "safety_legal": 6
+    },
+    "note": "Reproducing a paper's numbers is a cheap first verifier, and MirrorCode shows Claude can build this cheaply. Demand is unproven, and licence and patent checks are needed before selling."
+   }
+  }
+ },
+ {
+  "id": "metabolomics_enveda_kaggle",
+  "domain": "Metabolomics: molecule identification from tandem mass spectra (natural-product and drug discovery)",
+  "channel": "Kaggle Enveda CASMI 2026 competition ($50k: $16k / $12k / $9k / $7k / $6k; about 3 months left)",
+  "description": "Import spectral-library matching, fragmentation-tree and ML structure-elucidation ideas and recombine them. Distil the result into an offline Kaggle notebook. This is a science-impact Kaggle target with a scorer running on hidden test data.",
+  "verifier": "Hidden test-set scoring on Kaggle, up to 5 submissions a day. Cost is compute only.",
+  "poc_cost": "Claude Max plus $0-500 (Kaggle notebook compute is free; estimate).",
+  "value_path": "Cash about 30 days after the acceptance documents arrive. Winning code must be MIT-licensed, and the competition data is CC BY-NC 4.0. Reputation. Expected value is small.",
+  "precedent": "Kaggle rules allow LLMs under the 'Reasonableness Standard' (the host decides). Deotte won Playground S6E3 with human-steered LLM agents (Mar 2026; swag only). Execution-scored prizes are where AI systems have won cash (AIxCC, ARC, AIMO). URL: https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra/rules",
+  "risks": "1,524 teams. Scoring is often offline with no internet. No IP or licensing upside, and the non-commercial data licence limits reuse. Low expected value per competition.",
+  "mean": 42.3,
+  "lenses": {
+   "impact": {
+    "sum": 43,
+    "detail": {
+     "impact": 5,
+     "verifier": 8,
+     "poc_fit": 8,
+     "time_to_value": 6,
+     "ai_edge": 5,
+     "competition_room": 3,
+     "safety_legal": 8
+    },
+    "note": "Useful science (metabolite identification underpins natural-product discovery) with a clean hidden-test verifier, but 1,524 teams, a $50k pool and CC BY-NC data make the expected payoff small."
+   },
+   "skeptic": {
+    "sum": 41,
+    "detail": {
+     "impact": 5,
+     "verifier": 8,
+     "poc_fit": 8,
+     "time_to_value": 5,
+     "ai_edge": 4,
+     "competition_room": 3,
+     "safety_legal": 8
+    },
+    "note": "Hidden-test scoring is cheap and faithful and Kaggle explicitly allows LLM help, but with 1,524 teams, a $50k pool split five ways, offline notebooks and CC BY-NC data, the expected value is small and there is no specific evidence LLM ideation beats domain-expert mass-spec teams."
+   },
+   "cash": {
+    "sum": 43,
+    "detail": {
+     "impact": 5,
+     "verifier": 8,
+     "poc_fit": 8,
+     "time_to_value": 6,
+     "ai_edge": 5,
+     "competition_room": 3,
+     "safety_legal": 8
+    },
+    "note": "A cheap, fast, faithful hidden-test verifier with payment about 30 days after documents. Expected value is small: $50k split five ways across 1,524 teams, with no IP upside."
+   }
+  }
+ },
+ {
+  "id": "gemma_agent_kaggle",
+  "domain": "Developer agents built on open-weight models",
+  "channel": "Kaggle Gemma-4 Developer Agent competition ($65k plus a $35k paper track; 275 teams; closes about 2 Dec 2026)",
+  "description": "The least crowded live Kaggle cash competition found. Import agent-scaffold ideas (refinement loops, tool use, self-verification) onto Gemma 4, and write the paper-track entry.",
+  "verifier": "The competition's scoring (details not checked) plus paper judging. Kaggle compute is free.",
+  "poc_cost": "Claude Max plus $0-500.",
+  "value_path": "Cash about 30 days after the acceptance documents. Reputation. About 10 weeks.",
+  "precedent": "Kaggle rules allow LLM subscriptions under the Reasonableness Standard. LLM-driven autonomous systems won AIxCC ($4M / $3M / $1.5M).",
+  "risks": "Scoring rules and exact deadline not verified. Impact is modest, close to LLM tooling rather than the 'more impactful' goal. The winning submission must be open-licensed.",
+  "mean": 42.3,
+  "lenses": {
+   "impact": {
+    "sum": 43,
+    "detail": {
+     "impact": 2,
+     "verifier": 6,
+     "poc_fit": 8,
+     "time_to_value": 6,
+     "ai_edge": 6,
+     "competition_room": 7,
+     "safety_legal": 8
+    },
+    "note": "The least crowded cash competition, but it is LLM tooling rather than 'more impactful than LLM optimisation', and the scoring rules are unverified."
+   },
+   "skeptic": {
+    "sum": 41,
+    "detail": {
+     "impact": 3,
+     "verifier": 5,
+     "poc_fit": 8,
+     "time_to_value": 6,
+     "ai_edge": 5,
+     "competition_room": 6,
+     "safety_legal": 8
+    },
+    "note": "It is the least crowded live Kaggle cash competition (275 teams) and cheap to enter, but the scoring rules are unverified and the domain is close to LLM tooling, so it fails the 'more impactful than LLM optimisation' goal."
+   },
+   "cash": {
+    "sum": 43,
+    "detail": {
+     "impact": 3,
+     "verifier": 5,
+     "poc_fit": 8,
+     "time_to_value": 6,
+     "ai_edge": 6,
+     "competition_room": 7,
+     "safety_legal": 8
+    },
+    "note": "The least crowded live Kaggle cash prize (275 teams), and agent scaffolding plays to Claude's strengths. But impact is low, and the scoring rules and deadline were not verified (the search budget was used up)."
+   }
+  }
+ },
+ {
+  "id": "lean_tooling_ai_math_fund",
+  "domain": "Automated theorem proving and autoformalisation tooling and datasets",
+  "channel": "Renaissance Philanthropy AI for Math Fund seed grants (up to $100k, rolling, open worldwide) plus Claude for Open Source (6 months of Max 20x at adoption thresholds)",
+  "description": "Package the maths packs' infrastructure as open tooling or datasets, e.g. literature-dedupe for open problems or Lean formalisation pipelines, then apply for seed grants. Adoption could also unlock free Max capacity.",
+  "verifier": "Lean-checked outputs and tool adoption, then grant review.",
+  "poc_cost": "Claude Max only.",
+  "value_path": "Seed grant up to $100k (rolling review, timeline not stated). Main grants are $100k-$1M; the 2026 round is closed and the next is to be watched. Months. All outputs must be open-access.",
+  "precedent": "Round 1 made 29 grants totalling $9M, and $13M more was announced in Mar 2026. XTX redirected $20M to Lean FRO and Mathlib (16 Sep 2026). URL: https://www.renaissancephilanthropy.org/ai-for-math-fund/",
+  "risks": "The open-access rule rules out selling. Competitive. Needs a credible human lead. Claude for OSS thresholds (500+ dependent repos, 200k+ monthly downloads, etc.) are hard to reach quickly.",
+  "mean": 42.0,
+  "lenses": {
+   "impact": {
+    "sum": 42,
+    "detail": {
+     "impact": 5,
+     "verifier": 5,
+     "poc_fit": 9,
+     "time_to_value": 3,
+     "ai_edge": 6,
+     "competition_room": 5,
+     "safety_legal": 9
+    },
+    "note": "Public-good infrastructure for verified maths with worldwide rolling seed grants, but slow, review-gated, needs a credible human lead, and competes with $20M flowing to Lean FRO and Mathlib."
+   },
+   "skeptic": {
+    "sum": 41,
+    "detail": {
+     "impact": 5,
+     "verifier": 5,
+     "poc_fit": 9,
+     "time_to_value": 3,
+     "ai_edge": 5,
+     "competition_room": 5,
+     "safety_legal": 9
+    },
+    "note": "Cheap and low-risk, with Lean-checked outputs, but the money is a rolling seed grant with no stated timeline, it needs a credible human lead, all outputs must be open-access, and the $20M XTX redirect to Lean FRO and Mathlib means well-funded incumbents already build this tooling."
+   },
+   "cash": {
+    "sum": 43,
+    "detail": {
+     "impact": 5,
+     "verifier": 5,
+     "poc_fit": 9,
+     "time_to_value": 4,
+     "ai_edge": 6,
+     "competition_room": 5,
+     "safety_legal": 9
+    },
+    "note": "Rolling seed grants up to $100k open worldwide, a good fit for the maths-pack infrastructure. The timeline is unstated and outputs must be open-access."
+   }
+  }
+ },
+ {
+  "id": "protein_binder_adaptyv",
+  "domain": "De novo protein binder design",
+  "channel": "Anthropic x Adaptyv Protein Design Competition 2026, Track 3 (free wet-lab validation, results public on Proteinbase; no cash prize, 'special non-cash prizes' TBA)",
+  "description": "For each of the 5 weekly targets (28 Sep to 31 Oct 2026), run several independent design pipelines, each an imported or recombined structure-prediction-guided design and filtering stack. Submit only the best diverse designs. This is the cheapest route found from idea to lab-validated outcome in a domain more impactful than LLM optimisation.",
+  "verifier": "Wet-lab binding assays by Adaptyv. Validation by 30 Nov, results published 15 Dec 2026. Free, but Track 3 has 'no guaranteed testing allocation'. Past hit rates: EGFR-1 2.5% (201 tested, best 491 nM), EGFR-2 14% (400 tested, 1.21 nM), Nipah 9.3% (1,200 tested, 0.37 nM), RBX1 2.8% (322 tested, 23.7 nM). Internal pre-filter: in-silico structure-confidence scores.",
+  "poc_cost": "About $0 lab cost. Claude Max plus about $200-1,000 GPU for structure prediction and design (estimate).",
+  "value_path": "Reputation, a public validated dataset, and a methods paper. Results come about 11 weeks out (15 Dec 2026). No IP value, because sequences, methods and measurements are all published. Could lead to academic or industry partners and grants.",
+  "precedent": "Prior Adaptyv rounds produced sub-nM binders (0.37 nM, Nipah). MIT generative antibiotics (Cell, 14 Aug 2025): 36M generated, 24 synthesized, 7 active. The competition selects designs with a Claude-based workflow, 'not a single in silico metric'. URL: https://proteinbase.com/competitions/anthropic-adaptyv-2026",
+  "risks": "Track 1/2 applications closed 24 Sep 2026, so a Track 3 entry may get zero lab data. Targets are revealed only as each challenge opens. The Opus 5.5 bio classifier falls back to Opus 5 on 'molecular design', and LSVP (17 Sep 2026) does not support individual plans. No cash. Hit rates are not comparable across rounds.",
+  "mean": 41.7,
+  "lenses": {
+   "impact": {
+    "sum": 44,
+    "detail": {
+     "impact": 8,
+     "verifier": 7,
+     "poc_fit": 7,
+     "time_to_value": 5,
+     "ai_edge": 6,
+     "competition_room": 5,
+     "safety_legal": 6
+    },
+    "note": "On impact this is the best near-term pack: free wet-lab binding data on therapeutically relevant targets, starting 28 Sep. Discount it because Track 3 has no guaranteed testing allocation and the bio classifier drops design work to Opus 5."
+   },
+   "skeptic": {
+    "sum": 41,
+    "detail": {
+     "impact": 7,
+     "verifier": 6,
+     "poc_fit": 7,
+     "time_to_value": 4,
+     "ai_edge": 5,
+     "competition_room": 5,
+     "safety_legal": 7
+    },
+    "note": "Free wet-lab validation that Anthropic itself sponsors is the most faithful cheap verifier on the list, but Track 3 has no guaranteed testing (Tracks 1/2 closed 24 Sep), hit rates vary widely (2.5-14%), and the bio classifier's fallback on molecular design weakens the model edge, so enter with several imported design pipelines and treat any lab data as a bonus."
+   },
+   "cash": {
+    "sum": 40,
+    "detail": {
+     "impact": 7,
+     "verifier": 6,
+     "poc_fit": 7,
+     "time_to_value": 4,
+     "ai_edge": 5,
+     "competition_room": 5,
+     "safety_legal": 6
+    },
+    "note": "Free wet-lab validation for high-impact work, but it pays nothing, results only arrive 15 Dec, and Track 3 can end with zero tested designs. Treat it as a reputation bet, not cash flow."
+   }
+  }
+ },
+ {
+  "id": "oss_security_find_fix",
+  "domain": "Defensive open-source software security (vulnerability discovery with patches)",
+  "channel": "Coordinated disclosure to maintainers, bug bounties where offered (HackerOne paid $81M in the year to Oct 2025), CVE credit, and possibly the Claude for Open Source programme",
+  "description": "Run fuzzing and static analysis with Claude triage on widely used open-source code. Submit only findings with a working PoC, a patch, human review and AI disclosure. Precision matters more than volume. The open-sourced AIxCC systems can be reused as building blocks.",
+  "verifier": "Reproducible PoC plus maintainer triage and CVE assignment. AIxCC averaged about $152 per task.",
+  "poc_cost": "$200-2,000 compute (estimate).",
+  "value_path": "Per-finding bounty cash within weeks where programmes exist. CVE credit and reputation. A route into security consulting.",
+  "precedent": "DARPA AIxCC final (8 Aug 2025): $4M / $3M / $1.5M paid; 86% of synthetic vulnerabilities found, plus 18 real ones. XBOW reached #1 on the HackerOne US leaderboard (about 130 resolved of about 1,060 reports). AISLE found all 12 CVEs in the Jan 2026 OpenSSL release. Claude Opus 4.6 found 500+ high-severity OSS vulnerabilities (5 Feb 2026).",
+  "risks": "The Opus 5.5 cyber classifier falls back to Opus 4.8 on vulnerability scanning and pen-testing. The Usage Policy bars unauthorised vulnerability discovery. curl ended its bounty on 31 Jan 2026 because AI slop pushed the valid rate below 5%, and it publicly ridicules slop submitters. XBOW's reports were about 20% duplicates and 20% informative-only. HackerOne requires human pre-review. High reputational risk.",
+  "mean": 41.3,
+  "lenses": {
+   "impact": {
+    "sum": 42,
+    "detail": {
+     "impact": 8,
+     "verifier": 7,
+     "poc_fit": 7,
+     "time_to_value": 6,
+     "ai_edge": 8,
+     "competition_room": 3,
+     "safety_legal": 3
+    },
+    "note": "Securing widely used open source has large positive externalities, and AI evidence is strong (AIxCC, 500+ Opus 4.6 finds), but the channel is saturating (curl closure), the cyber classifier drops to Opus 4.8, and Usage Policy and reputational risk are the highest here."
+   },
+   "skeptic": {
+    "sum": 42,
+    "detail": {
+     "impact": 8,
+     "verifier": 7,
+     "poc_fit": 7,
+     "time_to_value": 6,
+     "ai_edge": 8,
+     "competition_room": 3,
+     "safety_legal": 3
+    },
+    "note": "The AI edge is well evidenced (Opus 4.6's 500+ vulnerabilities, AISLE, XBOW) and PoCs are faithful verifiers, but the channel is saturating (curl shut its bounty and publicly ridicules slop submitters; XBOW's reports were about 40% duplicate or informative-only), the cyber classifier falls back to Opus 4.8, and the AUP bars unauthorised vulnerability discovery, so reputational and ToS risk is the highest on the list."
+   },
+   "cash": {
+    "sum": 40,
+    "detail": {
+     "impact": 7,
+     "verifier": 7,
+     "poc_fit": 7,
+     "time_to_value": 6,
+     "ai_edge": 7,
+     "competition_room": 3,
+     "safety_legal": 3
+    },
+    "note": "Per-finding bounty cash within weeks, and AI's edge here is proven. But the channel is saturated (XBOW, AISLE, curl's closure), the cyber classifier falls back to Opus 4.8, and slop carries serious reputational and AUP risk."
+   }
+  }
+ },
+ {
+  "id": "agent_security_aria",
+  "domain": "AI agent security and trust tooling; AI-enabled formal methods for cyber defence",
+  "channel": "UK ARIA Scaling Trust Track 2 (tooling, \u00a3200k-\u00a32M per team) or Track 3 (\u00a3100k-\u00a33M), or Safeguarded AI: Cybersecurity (\u00a320m, \u00a32.5-3.5M per team). The current batch closes 31 Oct 2026.",
+  "description": "Build a working POC (e.g. a formally verified agent-permission monitor, or a machine-checked protocol component). A named human then writes the proposal. Scaling Trust accepts individuals and companies of all sizes. The best UK non-dilutive fit for a verifier-backed domain.",
+  "verifier": "The POC executed against red-team scenarios and/or machine-checked proofs, then ARIA programme review. The Scaling Trust Arena, a future external verifier, is still at register-interest stage (Sep 2026).",
+  "poc_cost": "Under $2,000 (Max plus cloud) plus proposal time.",
+  "value_path": "A non-dilutive grant, not a sale. Notification 30 Nov 2026, contract within about 6 weeks of selection. Months overall. Batches then continue quarterly.",
+  "precedent": "ARIA's call tests whether 'AI-enabled formal methods can make high-assurance cyber defence practical at scale'. AIxCC showed autonomous LLM plus program-analysis systems winning. URL: https://www.aria.org.uk/funding-opportunities/",
+  "risks": "By default more than 50% of project costs and personnel must be in the UK, so US teams need a UK presence. Safeguarded AI's per-team sizes imply a substantial team. No ARIA policy on AI-written applications was found, so follow UKRI norms (human authorship and disclosure). Competitive. Funds execution, not ideas.",
+  "mean": 40.0,
+  "lenses": {
+   "impact": {
+    "sum": 41,
+    "detail": {
+     "impact": 8,
+     "verifier": 5,
+     "poc_fit": 6,
+     "time_to_value": 4,
+     "ai_edge": 5,
+     "competition_room": 6,
+     "safety_legal": 7
+    },
+    "note": "High-leverage AI-safety and cyber-defence work with a machine-checkable POC and \u00a3200k-\u00a33M on offer, but ARIA's human review, not the POC, is the gate, the Arena verifier is not live, and more than 50% of the work must be in the UK."
+   },
+   "skeptic": {
+    "sum": 39,
+    "detail": {
+     "impact": 7,
+     "verifier": 5,
+     "poc_fit": 6,
+     "time_to_value": 5,
+     "ai_edge": 4,
+     "competition_room": 5,
+     "safety_legal": 7
+    },
+    "note": "There is real UK non-dilutive money for a verifier-backed domain, but the external Arena verifier is still at register-interest stage, awards turn on team credibility rather than idea quality, more than 50% of work must be in the UK, and a named human must author the proposal."
+   },
+   "cash": {
+    "sum": 40,
+    "detail": {
+     "impact": 8,
+     "verifier": 4,
+     "poc_fit": 6,
+     "time_to_value": 5,
+     "ai_edge": 5,
+     "competition_room": 6,
+     "safety_legal": 6
+    },
+    "note": "The largest realistic near-term money: \u00a3200k+, notification 30 Nov, contract about 6 weeks later. But more than 50% of the work must be in the UK, it needs a credible human-led team, and it is a grant, not a sale."
+   }
+  }
+ },
+ {
+  "id": "arc_prize_writeup",
+  "domain": "AI reasoning and program synthesis (ARC-AGI-2 / ARC-AGI-3)",
+  "channel": "ARC Prize 2026 paper and write-up awards (ARC-AGI-2 $275k 'Grand Prize' for the best Solution Writeup; Paper track $450k per the Kaggle API) plus leaderboard and milestone prizes",
+  "description": "Import and recombine refinement-loop, test-time-training and program-synthesis ideas. Distil them into an offline, open-weight Kaggle notebook, then write the explained-ideas paper. This is the only large human-judged 'prize for ideas' that is tied to executed evidence.",
+  "verifier": "Kaggle private-set score (offline, 9h for AGI-3 or 12h for AGI-2, no API models) plus human judging on 6 criteria including universality, progress and theory. Kaggle compute is free.",
+  "poc_cost": "Claude Max plus $0-1,000 dev GPU (estimate).",
+  "value_path": "Cash: 2025 paid $77.5k for papers (top paper TRM got $50k) vs $50k for scores. 2026 dates: final submissions 2 Nov, papers 8-9 Nov, results 4 Dec 2026 (about 10 weeks). Code must be open-sourced (CC0 or MIT-0).",
+  "precedent": "NVARC won 2025 with 24.03% on ARC-AGI-2 (about $0.20/task) and got $25k. Organisers name refinement loops as the main driver of progress. Poetiq's Gemini 3 Pro refinement reached 54% at $30/task (API-based, not prize-eligible). URL: https://arcprize.org/competitions/2026",
+  "risks": "2,191 (AGI-2), 3,324 (AGI-3) and 205 (paper) teams. The offline rule means Claude cannot be in the final artifact. Grand-prize thresholds (85-100%) are unrealistic. Prize figures conflict between arcprize.org and the Kaggle rules; use Kaggle's. No IP.",
+  "mean": 39.3,
+  "lenses": {
+   "impact": {
+    "sum": 39,
+    "detail": {
+     "impact": 4,
+     "verifier": 7,
+     "poc_fit": 6,
+     "time_to_value": 6,
+     "ai_edge": 5,
+     "competition_room": 3,
+     "safety_legal": 8
+    },
+    "note": "The $275k write-up prize rewards explained ideas tied to executed scores, but the final artifact must run offline on open weights, the field is thousands of teams, and impact is close to AI-capability research rather than beyond it."
+   },
+   "skeptic": {
+    "sum": 38,
+    "detail": {
+     "impact": 5,
+     "verifier": 6,
+     "poc_fit": 6,
+     "time_to_value": 6,
+     "ai_edge": 4,
+     "competition_room": 3,
+     "safety_legal": 8
+    },
+    "note": "Real cash (2025 paid $77.5k for papers) and a faithful private-set score, but the offline open-weights rule shuts Claude out of the final artifact, thousands of teams compete, and the write-up prize is human-judged and tends to reward strong executed scores, so the factory's advantage is limited to idea sourcing."
+   },
+   "cash": {
+    "sum": 41,
+    "detail": {
+     "impact": 5,
+     "verifier": 6,
+     "poc_fit": 7,
+     "time_to_value": 6,
+     "ai_edge": 5,
+     "competition_room": 4,
+     "safety_legal": 8
+    },
+    "note": "Real cash about 10 weeks out, and the paper track has only 205 teams (2025 paid $77.5k for papers). But the artifact must run offline on open weights, and the write-up is judged by humans."
+   }
+  }
+ },
+ {
+  "id": "heuristic_contests",
+  "domain": "Combinatorial optimisation heuristics (NP-hard scheduling, routing, packing)",
+  "channel": "AtCoder Heuristic Contests and similar live optimisation contests (rating and ranking; AHC prize money not disclosed)",
+  "description": "Calibration pack for the evolver and executor, and the proof point for paid industrial pilots. The factory generates and evolves heuristic programs live within the contest window, against a human field.",
+  "verifier": "The contest's hidden scorer, ranked against human entrants. About $1,300 per 4-hour contest run (ALE-Agent: about $1,000 API plus infrastructure).",
+  "poc_cost": "About $500-1,500 API per contest.",
+  "value_path": "Rating and reputation within days, with little or no cash. Main value is credibility for industrial_opt_pilots.",
+  "precedent": "Sakana ALE-Agent placed 1st of 804 humans at AHC058 (14 Dec 2025), fully autonomously, with 4,700+ LLM calls and a virtual rating of 2,592. It placed 21st of about 1,000 earlier (Jun 2025). URL: https://sakana.ai/ahc058/",
+  "risks": "High run-to-run variance (Sakana calls the win an outlier). Minimal cash. Contest rules on autonomous AI entries not checked. Commercial use of a Max plan is restricted under the UK Consumer Terms.",
+  "mean": 38.7,
+  "lenses": {
+   "impact": {
+    "sum": 42,
+    "detail": {
+     "impact": 3,
+     "verifier": 9,
+     "poc_fit": 6,
+     "time_to_value": 6,
+     "ai_edge": 8,
+     "competition_room": 4,
+     "safety_legal": 6
+    },
+    "note": "Proven AI-win territory (ALE-Agent 1st of 804) with a faithful hidden scorer, but little direct impact, high variance, about $1.3k per run, and AHC-specific AI-participation rules not verified (AtCoder's general LLM page defers to separate AHC rules)."
+   },
+   "skeptic": {
+    "sum": 33,
+    "detail": {
+     "impact": 3,
+     "verifier": 9,
+     "poc_fit": 5,
+     "time_to_value": 3,
+     "ai_edge": 6,
+     "competition_room": 4,
+     "safety_legal": 3
+    },
+    "note": "The hidden scorer is excellent and ALE-Agent proved AI can win, but AtCoder's generative-AI rules (atcoder.jp/posts/1495, fetched; applying from AHC049) forbid 'automatically generating a large number of outputs using APIs or scripts', so the autonomous factory mode that won is banned without organiser permission, cash is minimal, and each run costs about $1.3k."
+   },
+   "cash": {
+    "sum": 41,
+    "detail": {
+     "impact": 3,
+     "verifier": 9,
+     "poc_fit": 6,
+     "time_to_value": 4,
+     "ai_edge": 8,
+     "competition_room": 5,
+     "safety_legal": 6
+    },
+    "note": "The fastest faithful executed verifier, and there is proof AI can win. But each run costs about $1.3k and pays almost nothing, so it is only worth it as a sales credential for industrial pilots."
+   }
+  }
+ },
+ {
+  "id": "geoscience_gems_us",
+  "domain": "Geologic and critical-minerals mapping (geoscience ML)",
+  "channel": "DOE GEMS geologic mapping prize ($300k, listed on HeroX and DrivenData). A US federal prize, so a US-only option.",
+  "description": "A US option for the geoscience pack. Import remote-sensing and geologic ML methods and recombine them. Only viable with a US-citizen, US-permanent-resident or US-incorporated lead.",
+  "verifier": "Probably scored against held-out data on DrivenData (not confirmed; rules not fetched).",
+  "poc_cost": "Under $1,000 (estimate).",
+  "value_path": "Cash prize (structure and timeline not verified). Reputation with DOE. US-based teams could follow on with SBIR (Phase I up to $323,090).",
+  "precedent": "DrivenData had 2 active prize competitions totalling $320k (Sep 2026). Execution-scored prizes are where AI-assisted entries win cash (AIxCC, ARC).",
+  "risks": "Under 15 USC 3719, individual winners must be US citizens or permanent residents and entities must be US-incorporated with their main place of business in the US, so a UK team is ineligible without a US partner. Challenge.gov was shut down on 30 Mar 2026. Prize rules, scoring and deadline were not fetched, so treat as NOT verified from primary sources.",
+  "mean": 38.3,
+  "lenses": {
+   "impact": {
+    "sum": 38,
+    "detail": {
+     "impact": 6,
+     "verifier": 6,
+     "poc_fit": 7,
+     "time_to_value": 4,
+     "ai_edge": 5,
+     "competition_room": 6,
+     "safety_legal": 4
+    },
+    "note": "Critical-minerals mapping matters for the energy transition and the $300k purse has a smaller field, but a UK team is ineligible without a US lead (15 USC 3719), and scoring, deadline and rules were not verified from primary sources."
+   },
+   "skeptic": {
+    "sum": 34,
+    "detail": {
+     "impact": 5,
+     "verifier": 5,
+     "poc_fit": 7,
+     "time_to_value": 4,
+     "ai_edge": 4,
+     "competition_room": 5,
+     "safety_legal": 4
+    },
+    "note": "Rules, scoring and deadline are unverified, and 15 USC 3719 makes a UK team ineligible for cash without a US-person or US-incorporated lead, so it stays a watch-list item until the primary rules are fetched."
+   },
+   "cash": {
+    "sum": 43,
+    "detail": {
+     "impact": 6,
+     "verifier": 7,
+     "poc_fit": 7,
+     "time_to_value": 6,
+     "ai_edge": 5,
+     "competition_room": 7,
+     "safety_legal": 5
+    },
+    "note": "Verified on the DrivenData page: $300k over 10 paid slots ($10k x5 initial; $100k/$70k/$40k/$25k/$15k final), ends 3 Dec 2026, only 314 joined, scored on a private expert-labelled test set. It is a strong cash shot, but only for a US-citizen, US-resident or US-entity lead, who must certify eligibility under penalty of perjury."
+   }
+  }
+ },
+ {
+  "id": "ref_llm_eff",
+  "domain": "LLM-training efficiency: NanoGPT-speedrun-style recipes, optimisers, data ordering, kernels",
+  "channel": "Internal calibration benchmark, plus public speedrun records and papers (reputation only, no cash)",
+  "description": "Reference and calibration pack. Generators propose imported or recombined training-recipe changes. The executor runs each one on a fixed small model and fixed hardware. The ledger records the realized speedup, which is used to measure imported-vs-invented hit rates and to calibrate the weak LLM judges before money goes into higher-impact packs.",
+  "verifier": "Executed wall-clock or tokens to a target validation loss on fixed hardware, with several seeds and at least 2 independent implementations per idea. Roughly tens of GPU-hours per idea (own estimate, not sourced).",
+  "poc_cost": "Claude Max ($100 or $200/mo) plus about $100-500 of cloud GPU per batch of ideas (estimate).",
+  "value_path": "No direct money. The value is calibration data, public records or papers, and credibility. Each cycle takes days.",
+  "precedent": "METR: 6.7x of the NanoGPT speedrun's 31x came from imported ideas, vs 1.6x from invented ones. AlphaEvolve (DeepMind blog, 14 May 2025): Gemini kernel 23% faster (about 1% less training time) and a FlashAttention kernel up to 32.5% faster.",
+  "risks": "Lowest impact and most crowded pack. Opus 5.5 has a 'frontier LLM development' classifier (e.g. 'kernel development for certain ML accelerators') that falls back to Opus 5, and pre-output refusals are billed (support article, about 24 Sep 2026). Log the model ID on every run or pin Opus 5. Commercial Terms D.4 bars training competing models, and using outputs as training targets is prohibited.",
+  "mean": 37.0,
+  "lenses": {
+   "impact": {
+    "sum": 37,
+    "detail": {
+     "impact": 3,
+     "verifier": 9,
+     "poc_fit": 7,
+     "time_to_value": 4,
+     "ai_edge": 7,
+     "competition_room": 2,
+     "safety_legal": 5
+    },
+    "note": "The verifier is excellent and the METR imported-vs-invented evidence makes this the right calibration pack, but small-model speedups rarely transfer and the field is crowded, so world impact is the lowest here; the Opus 5.5 frontier-LLM classifier and Commercial Terms D.4 add friction."
+   },
+   "skeptic": {
+    "sum": 36,
+    "detail": {
+     "impact": 3,
+     "verifier": 8,
+     "poc_fit": 7,
+     "time_to_value": 3,
+     "ai_edge": 7,
+     "competition_room": 3,
+     "safety_legal": 5
+    },
+    "note": "This domain has the best evidence that imported ideas win (METR 6.7x vs 1.6x) and a faithful executed verifier, but it pays nothing, is very crowded, and carries ToS friction: the Opus 5.5 frontier-LLM classifier falls back with refusals billed, and the consumer terms bar using the Services to 'develop or train' AI models, so run it on the API or Commercial Terms and log the model ID."
+   },
+   "cash": {
+    "sum": 38,
+    "detail": {
+     "impact": 3,
+     "verifier": 8,
+     "poc_fit": 7,
+     "time_to_value": 4,
+     "ai_edge": 8,
+     "competition_room": 2,
+     "safety_legal": 6
+    },
+    "note": "Pays no cash and the field is crowded. Keep it only as a cheap executed calibration loop, and log the model ID on every run because the frontier-LLM classifier can silently swap Opus 5.5 for Opus 5."
+   }
+  }
+ },
+ {
+  "id": "ai_science_tooling_foresight",
+  "domain": "AI-first science tooling (bio, neuro, nano) and coordination tooling (AI insurance, human empowerment)",
+  "channel": "Foresight Institute AI for Science & Safety Nodes RFP ($30k-$100k typical, larger possible; deadline 31 Oct 2026 23:59 PDT; for-profits allowed)",
+  "description": "The factory selects one high-impact AI-for-science idea and runs an executed POC (e.g. from the VCC or maths packs). A named human writes the application with an AI-use disclosure.",
+  "verifier": "Executed POC results, then Foresight's in-house screen and technical advisors (about 3 months).",
+  "poc_cost": "Under $2,000.",
+  "value_path": "A grant of $30-100k, with a decision around Jan-Feb 2027. May include access to private compute clusters.",
+  "precedent": "Small idea-grant base rate: ACX Grants 2025 funded 42 of 654 applications (6.4%), and all funders paid for credible execution. URL: https://foresight.org/grants/grants-ai-for-science-safety/",
+  "risks": "Applicants who will contribute in person at the Nodes get priority. For-profits must justify why they need grant funding. Grant decisions are confounded by applicant reputation. Openness norms conflict with selling IP. The deadline is 5 weeks away.",
+  "mean": 37.0,
+  "lenses": {
+   "impact": {
+    "sum": 35,
+    "detail": {
+     "impact": 6,
+     "verifier": 3,
+     "poc_fit": 7,
+     "time_to_value": 3,
+     "ai_edge": 4,
+     "competition_room": 5,
+     "safety_legal": 7
+    },
+    "note": "A funding wrapper rather than a domain: impact depends on the POC underneath, the verifier is a reputation-confounded grant review, and the decision lands around Jan-Feb 2027."
+   },
+   "skeptic": {
+    "sum": 36,
+    "detail": {
+     "impact": 6,
+     "verifier": 3,
+     "poc_fit": 7,
+     "time_to_value": 4,
+     "ai_edge": 3,
+     "competition_room": 5,
+     "safety_legal": 8
+    },
+    "note": "This is grant review confounded by applicant reputation and in-person priority, with a 5-week deadline and a decision in early 2027, so it funds a POC that has already been shown to work but tells the ledger little about idea quality."
+   },
+   "cash": {
+    "sum": 40,
+    "detail": {
+     "impact": 6,
+     "verifier": 4,
+     "poc_fit": 8,
+     "time_to_value": 5,
+     "ai_edge": 4,
+     "competition_room": 5,
+     "safety_legal": 8
+    },
+    "note": "$30-100k with a decision around Jan-Feb 2027, and for-profits can apply. The executed POC helps, but human review weighs applicant reputation and in-person Node contribution."
+   }
+  }
+ },
+ {
+  "id": "shopify_b2b_apps",
+  "domain": "B2B commerce tooling (merchant workflow apps)",
+  "channel": "Shopify App Store: a built POC grown to MRR (0% revenue share on the first $1M lifetime from 1 Jan 2025; $19 registration), optionally sold later on Acquire.com or Flippa",
+  "description": "Import-and-recombine: port workflows with proven demand from other platforms, verticals or research methods into underserved merchant niches. Dedupe against live app-store listings. A marketplace with built-in buyer intent partly solves distribution. Serves as the cheap real-money calibration pack.",
+  "verifier": "Real money: a first paid install or customer within 14-30 days, then D30/D90 retention and MRR. The demand test costs about $0-500.",
+  "poc_cost": "Under $1,000 (Claude builds it; hosting; any AI features run on the API under Commercial Terms).",
+  "value_path": "MRR over months. Exit at about 2.4x profit (Flippa apps average; 5.4x top quartile) or a 3.9x median SaaS multiple (Acquire). At $1K MRR that is roughly a $20-35k exit.",
+  "precedent": "Stripe 2025 letter: 20% of Atlas startups charged a first customer within 30 days (8% in 2020). RevenueCat 2026: 17.3% of launched subscription apps reach $1K MRR within 2 years (Business category 14.7% for $1K, 1.6% for $10K). Base44 sold to Wix for $80M upfront (a survivorship outlier).",
+  "risks": "Demand and distribution are the bottleneck. The median app earns about $72/mo after 1 year. Supply is saturated (about 7x more monthly launches since 2022). A security verifier is needed (CVE-2025-48757, missing row-level security in vibe-coded apps). UK Consumer Terms say 'Non-commercial use only', and Max limits assume 'ordinary, individual usage'.",
+  "mean": 37.0,
+  "lenses": {
+   "impact": {
+    "sum": 37,
+    "detail": {
+     "impact": 2,
+     "verifier": 8,
+     "poc_fit": 8,
+     "time_to_value": 6,
+     "ai_edge": 4,
+     "competition_room": 3,
+     "safety_legal": 6
+    },
+    "note": "The most honest real-money verifier, useful for calibration, but merchant tooling has minimal world impact, supply is saturated (median about $72/mo), and UK Consumer Terms push it onto the API."
+   },
+   "skeptic": {
+    "sum": 35,
+    "detail": {
+     "impact": 3,
+     "verifier": 8,
+     "poc_fit": 8,
+     "time_to_value": 5,
+     "ai_edge": 3,
+     "competition_room": 3,
+     "safety_legal": 5
+    },
+    "note": "Paid installs are a very faithful real-money verifier, but demand is the bottleneck (median app earns about $72/mo, launch supply is up about 7x), LLM product ideas are homogeneous, and UK Consumer Terms say 'Non-commercial use only', so it works as a calibration pack, not an impact bet."
+   },
+   "cash": {
+    "sum": 39,
+    "detail": {
+     "impact": 3,
+     "verifier": 8,
+     "poc_fit": 8,
+     "time_to_value": 6,
+     "ai_edge": 5,
+     "competition_room": 3,
+     "safety_legal": 6
+    },
+    "note": "The most faithful money verifier (paid installs within 14-30 days) at near-zero cost. But the median app earns about $72/mo, supply is saturated, and the UK consumer-terms non-commercial clause forces API use."
+   }
+  }
+ },
+ {
+  "id": "small_molecule_cache",
+  "domain": "Small-molecule hit finding (virtual screening against disease targets)",
+  "channel": "CACHE hit-finding challenges and DREAM x CACHE (organisers buy and assay the compounds; data released 'without restrictions on use')",
+  "description": "Recombine docking, ML scoring and scaffold-hopping ideas to pick about 100 compounds per challenge, with several independent pipelines. Enter the next open round: CACHE #8 (GID4) closed 30 Apr 2026 and DREAM x CACHE (PGK2) closed 15 Sep 2026, so watch for new calls.",
+  "verifier": "Experimental binding assays paid for by CACHE (up to about 100 compounds per participant). In DREAM x CACHE the participant buys 50 Enamine compounds (under $1,000) and organisers pay 100% of assay costs. Realized hit rates: CACHE #3 had 28 confirmed of 1,739 picked (about 1.6%). CACHE #4 had 2 validated of 1,688 (about 0.12%; ChemRxiv, not fetched).",
+  "poc_cost": "$0-1,000 for compounds, plus Claude Max and a small docking compute budget.",
+  "value_path": "Consortium co-authorship (e.g. J. Chem. Inf. Model. 2026), public data, reputation. No cash and no IP. Months per round.",
+  "precedent": "CACHE #3 (SARS-CoV-2 Nsp3): 9 teams produced hits, but 27 of 28 used the canonical adenine-mimic scaffold. The paper says ML 'augments but does not consistently outperform physics-based methods'. URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC12892310/",
+  "risks": "No window is currently open. Very low hit rates mean many shots are needed, and novel hits are rare. The Opus 5.5 bio classifier falls back to weaker models on molecular design. No cash, and all data is released.",
+  "mean": 36.0,
+  "lenses": {
+   "impact": {
+    "sum": 39,
+    "detail": {
+     "impact": 7,
+     "verifier": 8,
+     "poc_fit": 7,
+     "time_to_value": 2,
+     "ai_edge": 4,
+     "competition_room": 5,
+     "safety_legal": 6
+    },
+    "note": "The free assays are a faithful verifier with high impact, but no round is open, hit rates are 0.1-1.6%, and CACHE #3 found ML does not beat physics-based methods; keep it on a watchlist rather than as a first pack."
+   },
+   "skeptic": {
+    "sum": 35,
+    "detail": {
+     "impact": 7,
+     "verifier": 6,
+     "poc_fit": 6,
+     "time_to_value": 2,
+     "ai_edge": 3,
+     "competition_room": 5,
+     "safety_legal": 6
+    },
+    "note": "Assays are free and faithful, but no window is open, realized hit rates are 0.12-1.6%, and the CACHE #3 paper found ML 'augments but does not consistently outperform' physics methods, so there is little evidence of an LLM-factory edge and a months-long wait for labels."
+   },
+   "cash": {
+    "sum": 34,
+    "detail": {
+     "impact": 7,
+     "verifier": 5,
+     "poc_fit": 6,
+     "time_to_value": 2,
+     "ai_edge": 3,
+     "competition_room": 5,
+     "safety_legal": 6
+    },
+    "note": "No round is open now. Hit rates are 0.1-1.6%, ML has not beaten physics methods here, and there is no cash, so this is the slowest route to any payoff."
+   }
+  }
+ },
+ {
+  "id": "drug_repurposing_partner_lab",
+  "domain": "Drug repurposing and combination hypotheses using approved drugs (e.g. fibrosis, AML, rare disease)",
+  "channel": "Validation by an academic partner lab, leading to co-authored papers, then grants and future Longitude-style AI-discovery prizes",
+  "description": "Generate repurposing and combination hypotheses in the co-scientist style, from literature recombination. Deduplicate against the literature and trial registries. A partner lab runs cheap in-vitro or organoid assays. An academic PI partner would also unlock Anthropic AI for Science credits (nonprofit and academic only) and LSVP (organisations only).",
+  "verifier": "Partner-lab cell or organoid assays (partner pays; cost unknown). Cheap pre-verifier: literature, patent and ClinicalTrials.gov dedupe.",
+  "poc_cost": "About $0-2,000 to the factory for API or Max. Assay cost is borne by the partner lab.",
+  "value_path": "Papers, grant funding and reputation, over months to years. Licensing money is slow and small: Insilico's SK deal (22 Jun 2026) has up to $18M upfront against a headline above $2.5B.",
+  "precedent": "Google Co-Scientist: 2 of 3 AI-recommended epigenetic drugs were anti-fibrotic in human liver organoids (Adv. Sci., 14 Sep 2025). AML repurposing candidates were validated in vitro (Nature, 19 May 2026). FutureHouse Robin proposed ripasudil for dry AMD, validated lab-in-the-loop (arXiv 2505.13400). Insilico's rentosertib reached Phase III (first patient 9 Sep 2026).",
+  "risks": "Depends entirely on finding a partner lab. The Opus 5.5 bio classifier falls back on dual-use requests, and LSVP excludes individual plans. No licensing or clinical follow-up found for Robin or Kosmos. The NIH originality rule (NOT-OD-25-132) and the 6-applications-per-PI cap apply to NIH routes. Slow.",
+  "mean": 35.7,
+  "lenses": {
+   "impact": {
+    "sum": 38,
+    "detail": {
+     "impact": 9,
+     "verifier": 4,
+     "poc_fit": 5,
+     "time_to_value": 2,
+     "ai_edge": 7,
+     "competition_room": 6,
+     "safety_legal": 5
+    },
+    "note": "Highest ceiling if it works: approved drugs have the shortest path to patients, and literature recombination is where LLMs have lab-validated wins (Co-Scientist, Robin). Everything depends on recruiting a partner lab, though, and in-vitro hits are weak predictors of the clinic."
+   },
+   "skeptic": {
+    "sum": 34,
+    "detail": {
+     "impact": 8,
+     "verifier": 4,
+     "poc_fit": 4,
+     "time_to_value": 2,
+     "ai_edge": 6,
+     "competition_room": 5,
+     "safety_legal": 5
+    },
+    "note": "Co-Scientist and Robin show AI repurposing hypotheses can survive lab tests, but everything hinges on finding a partner lab, labels take months to years, no precedent has produced money, and bio classifier fallback, LSVP excluding individual plans, and NIH originality rules all add friction."
+   },
+   "cash": {
+    "sum": 35,
+    "detail": {
+     "impact": 8,
+     "verifier": 4,
+     "poc_fit": 5,
+     "time_to_value": 2,
+     "ai_edge": 6,
+     "competition_room": 6,
+     "safety_legal": 4
+    },
+    "note": "High impact with good Co-Scientist precedents. But it is blocked on finding a partner lab, bio classifiers apply, and the money arrives over years, so it fails the 3-6 month cash test."
+   }
+  }
+ },
+ {
+  "id": "wazoku_engineering_challenges",
+  "domain": "Industrial process and measurement engineering (flow metrology, chemical waste reuse, water)",
+  "channel": "Wazoku Crowd / InnoCentive prize challenges (e.g. $25k wet-gas flow-meter accuracy, due 12 Oct 2026; $25k Syria underground utilities; $800k Global Prize for Innovation in Water closes 30 Sep)",
+  "description": "The only 'sell an idea for cash' channel with committed buyers. The factory drafts diverse solution concepts, and a human domain expert curates them, adds analysis and a feasibility plan, and submits one best entry per challenge.",
+  "verifier": "Seeker and expert review against the challenge criteria. This is human-judged, so a weak verifier. Cost is human expert time.",
+  "poc_cost": "Under $500 compute plus expert hours.",
+  "value_path": "$20-25k awards. Wazoku targets payment within 30 days of verification (not guaranteed). Weeks to months. Under the wet-gas terms, non-awarded solvers keep all rights.",
+  "precedent": "Lakhani et al. (2007): outsiders solved about one-third of 166 problems that firms' labs had not solved. No AI-specific payout found. URL: https://www.innocentive.com/challenges/improving-wet-gas-measurement-accuracy-across-industry-standard-flow-meters/",
+  "risks": "Challenges state 'Any submissions produced solely with generative AI are not of interest'. Only about 6 public listings. Caps of 1-3 submissions per solver. The aircraft-fuelling and spent-caustic calls are scouting calls for organisations at TRL 7-9. Ideation-type challenges license even non-awarded ideas. Thin and slow.",
+  "mean": 31.3,
+  "lenses": {
+   "impact": {
+    "sum": 32,
+    "detail": {
+     "impact": 5,
+     "verifier": 3,
+     "poc_fit": 7,
+     "time_to_value": 4,
+     "ai_edge": 3,
+     "competition_room": 5,
+     "safety_legal": 5
+    },
+    "note": "Real industrial problems with committed buyers, but judging is human and slow, listings are thin (about 6 open), and entries 'produced solely with generative AI are not of interest', so AI gives little edge."
+   },
+   "skeptic": {
+    "sum": 30,
+    "detail": {
+     "impact": 5,
+     "verifier": 3,
+     "poc_fit": 7,
+     "time_to_value": 4,
+     "ai_edge": 2,
+     "competition_room": 4,
+     "safety_legal": 5
+    },
+    "note": "This is the only channel with a committed buyer paying for ideas, but the challenges say AI-only submissions are 'not of interest', entries are capped at 1-3 per solver, judging is slow and human, only about 6 listings exist, and no AI-assisted payout was found, so the edge rests on the human expert rather than the factory."
+   },
+   "cash": {
+    "sum": 32,
+    "detail": {
+     "impact": 5,
+     "verifier": 3,
+     "poc_fit": 8,
+     "time_to_value": 4,
+     "ai_edge": 3,
+     "competition_room": 4,
+     "safety_legal": 5
+    },
+    "note": "The only committed idea-for-cash buyers, but the market is thin (about 6 listings), rejects AI-only entries, caps submissions at 1-3, and judges by humans with no stated payout timeline. Use only for a single human-curated shot, such as the wet-gas challenge due 12 Oct."
+   }
+  }
+ },
+ {
+  "id": "materials_ml_benchmarks",
+  "domain": "Materials discovery (crystal stability, catalysts)",
+  "channel": "Matbench Discovery and OCx24-style benchmarks (reputation), then synthesis with a partner lab if one can be found",
+  "description": "Keep as a monitored, low-priority candidate. Import or ensemble interatomic-potential models for stability prediction. Only move to real impact with a cloud-lab or experimental partner.",
+  "verifier": "Benchmark against the DFT convex hull. The CPS score weights discovery F1 at 50%, geometry RMSD at 10% and phonon \u03baSRME at 40%. Cheap, but only weakly tied to lab outcomes.",
+  "poc_cost": "$500-2,000 GPU (estimate). Lab synthesis is beyond budget.",
+  "value_path": "Leaderboard reputation only. No cash. Real value needs partner synthesis, taking months to years.",
+  "precedent": "MatterGen's TaCr2O6 was synthesized at SIAT with a measured bulk modulus of 169 GPa against a 200 GPa target (Nature 2025). OCx24 (arXiv 2411.11783) synthesized 572 samples and found a 'gap between what AI-accelerated computational models predict and what experimental studies produce'.",
+  "risks": "Crowded: 43 eligible models, and the leader (Prophet-OAME-MBD, Kairos Materials, 13 Sep 2026) has CPS 0.912. The site calls the benchmark 'not a complete assessment or an endorsement'. Wet-lab validation is beyond the under-$2k budget.",
+  "mean": 31.3,
+  "lenses": {
+   "impact": {
+    "sum": 31,
+    "detail": {
+     "impact": 6,
+     "verifier": 4,
+     "poc_fit": 5,
+     "time_to_value": 2,
+     "ai_edge": 3,
+     "competition_room": 2,
+     "safety_legal": 9
+    },
+    "note": "Real-world materials impact would be large, but the DFT-hull benchmark is saturated (CPS 0.912 leader), weakly tied to lab outcomes (OCx24 gap), and specialist interatomic-potential labs dominate."
+   },
+   "skeptic": {
+    "sum": 31,
+    "detail": {
+     "impact": 6,
+     "verifier": 4,
+     "poc_fit": 5,
+     "time_to_value": 2,
+     "ai_edge": 3,
+     "competition_room": 2,
+     "safety_legal": 9
+    },
+    "note": "The benchmark is saturated (43 models, leader CPS 0.912) and OCx24 documents a gap between computational prediction and experimental results, so without a lab partner there is no faithful verifier and no evidence an LLM factory can add value."
+   },
+   "cash": {
+    "sum": 32,
+    "detail": {
+     "impact": 6,
+     "verifier": 4,
+     "poc_fit": 5,
+     "time_to_value": 2,
+     "ai_edge": 4,
+     "competition_room": 2,
+     "safety_legal": 9
+    },
+    "note": "A crowded, near-saturated leaderboard that is only weakly tied to lab outcomes, with no cash and synthesis beyond budget. Monitor only."
+   }
+  }
+ },
+ {
+  "id": "patent_option_computational",
+  "domain": "Computational or ML-enabled technical inventions with industrial users (fed from industrial_opt and metrology outputs)",
+  "channel": "A file-before-publish patent option (US provisional or UK priority filing), leading to a licence or sale to incumbents",
+  "description": "Only for the top few percent of execution-verified ideas that have evidence of use. Record the human conception contribution for every claim limitation. Everything else is published defensively on TDCommons (free, posted within 72h).",
+  "verifier": "Executed evidence plus customer evidence-of-use, then patent examination (2+ years).",
+  "poc_cost": "US micro-entity provisional $65 (small entity $130). UK official fees about \u00a3405 through examination, with the application fee payable later. Attorney drafting is about $5-15k per application (unverified), above the POC budget.",
+  "value_path": "Rare and slow. The brokered patent market was about $158M in 2024. Median asking price per asset for assets that sold: $95k (2024), $33k (2023). Evidence of use carries a 32-108% asking premium. Years.",
+  "precedent": "Richardson Oliver 2025 report. Google's 2015 Patent Purchase Promotion paid $3k-$250k (a one-off, buyer-run window that bought only issued patents). Gans, Hsu & Stern (2008): the licensing hazard rises after patent allowance. UK eligibility for ML inventions improved after Emotional Perception [2026] UKSC 3.",
+  "risks": "On average 87% of university tech-transfer offices did not break even over 20 years. Invention promoters leave fewer than 1% of clients net-positive. An invention conceived only by AI has no lawful inventor (USPTO guidance 28 Nov 2025; [2023] UKSC 49). The UK has no inventor grace period, so any publication kills UK and European rights. US micro-entity status is capped at 4 prior applications.",
+  "mean": 20.7,
+  "lenses": {
+   "impact": {
+    "sum": 21,
+    "detail": {
+     "impact": 3,
+     "verifier": 2,
+     "poc_fit": 3,
+     "time_to_value": 1,
+     "ai_edge": 3,
+     "competition_room": 5,
+     "safety_legal": 4
+    },
+    "note": "An exit option, not a domain: 2+ year examination, attorney costs above the POC budget, a thin brokered market (about $158M/yr), and unresolved AI-inventorship law make it a long-tail bonus only."
+   },
+   "skeptic": {
+    "sum": 19,
+    "detail": {
+     "impact": 3,
+     "verifier": 2,
+     "poc_fit": 3,
+     "time_to_value": 1,
+     "ai_edge": 2,
+     "competition_room": 5,
+     "safety_legal": 3
+    },
+    "note": "Attorney drafting exceeds the POC budget, examination takes 2+ years, the market is small and illiquid ($158M/yr), and inventions conceived by AI alone have no lawful inventor, so this is at best a rare option layered on already-verified ideas."
+   },
+   "cash": {
+    "sum": 22,
+    "detail": {
+     "impact": 4,
+     "verifier": 2,
+     "poc_fit": 3,
+     "time_to_value": 1,
+     "ai_edge": 3,
+     "competition_room": 5,
+     "safety_legal": 4
+    },
+    "note": "Takes years, and attorney fees exceed the POC budget. The market is illiquid (about $158M/yr), and AI-conceived claims have no lawful inventor. Keep it only as a rare option for proven-in-use results."
+   }
+  }
+ }
+]
