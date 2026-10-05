@@ -29,7 +29,7 @@ Labels used below:
 - **[assume]** assumption
 - **[recall]** knowledge from before the model's cutoff, not re-checked
 
-The scripts are in `scratchpad/climate/`: `graft_subsurface_2_patched.py`, `critic_li_swap.py`, `patch_li_swap.py`, and my independent cross-check, `dossier_li_unit_check.py`.
+The scripts are in `climate/runs/2026-10-05/scripts/`: `graft_subsurface_2_patched.py`, `critic_li_swap.py`, `patch_li_swap.py`, and my independent cross-check, `dossier_li_unit_check.py`.
 
 | Quantity | Value | Basis |
 |---|---|---|
