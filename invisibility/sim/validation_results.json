@@ -1,0 +1,37 @@
+{
+ "Mie: scattnlay vs miepython": {
+  "ok": true,
+  "detail": "scattnlay vs miepython Qext=3.818319/3.818319 rel.err=2.9e-13",
+  "seconds": 0.03
+ },
+ "Mie: extinction paradox": {
+  "ok": true,
+  "detail": "Qext(x=2000, m=1.5)=2.0099 (geometric-optics limit 2)",
+  "seconds": 0.01
+ },
+ "Mie: scattering-cancellation shell": {
+  "ok": true,
+  "detail": "Qsca bare=2.949e-02, best shell eps=0.16 Qsca=4.837e-05 (610x lower)",
+  "seconds": 0.04
+ },
+ "Cylinder series self-check": {
+  "ok": true,
+  "detail": "lossless sigma_sca=sigma_ext (5.342218/5.342218); large lossy cylinder sigma_ext/2a=2.0034 (limit 2)",
+  "seconds": 2.75
+ },
+ "ceviche FDFD vs H0 Green fn": {
+  "ok": true,
+  "detail": "|E/H0| normalised deviation over 0.5-2.4 lambda: 0.013 (dl=lambda/40)",
+  "seconds": 53.17
+ },
+ "NGSolve FEM vs exact cylinder": {
+  "ok": true,
+  "detail": "max rel. error of scattered E_z at 4 points: 1.92e-04 (order 5, h~lambda/17)",
+  "seconds": 16.58
+ },
+ "Mitsuba 3 render + FLIP": {
+  "ok": true,
+  "detail": "variant=scalar_rgb render (256, 256, 3); FLIP(same)=0.00e+00, FLIP(two noise seeds)=0.025",
+  "seconds": 26.18
+ }
+}
