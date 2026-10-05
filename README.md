@@ -10,3 +10,5 @@ Can an Opus 5.5 agent swarm find a data-efficiency breakthrough for LM pretraini
 - `factory_pilot/`: clean vs novelty-request vs noisy-prompt pilot with blind scoring
 - [research/FACTORY_REPORT.md](research/FACTORY_REPORT.md): merged strategy report for a general ideas factory: engine evidence, value channels, 25 scored domains, checked open targets, vetted engine proposals, 8-week plan
 - `research/data/`: digests of the underlying multi-agent research (claims checked against primary sources)
+
+- `climate/`: physics verifier for climate ideas (minimum separation work, fan work, gigatonne-scale arithmetic), with tests
