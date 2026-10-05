@@ -12,3 +12,5 @@ Can an Opus 5.5 agent swarm find a data-efficiency breakthrough for LM pretraini
 - `research/data/`: digests of the underlying multi-agent research (claims checked against primary sources)
 
 - `climate/`: physics verifier for climate ideas (minimum separation work, fan work, gigatonne-scale arithmetic), with tests
+- `climate/sorbent.py`: sorbent verifier for direct air capture (Langmuir temperature-vacuum swing: working capacity, regeneration heat, work-equivalent energy, sorbent cost per tonne), with tests
+- `climate/runs/`: idea-engine runs on climate questions; each has a README, a report, verified idea dossiers and the scripts behind them
