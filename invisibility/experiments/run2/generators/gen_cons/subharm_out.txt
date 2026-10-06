@@ -1,0 +1,6 @@
+bare
+  phi=3.142: Lorentz-avg dsig/dphi=0.57411  bound(compensated)=0.56685  ratio=0.987  uncompensated=0.77607 (VIOLATES)  dsig/dphi(kc)=0.56013
+  phi=2.356: Lorentz-avg dsig/dphi=0.56746  bound(compensated)=0.55965  ratio=0.986  uncompensated=0.74812 (VIOLATES)  dsig/dphi(kc)=0.55663
+  phi=1.571: Lorentz-avg dsig/dphi=0.51721  bound(compensated)=0.50608  ratio=0.978  uncompensated=0.63197 (VIOLATES)  dsig/dphi(kc)=0.49115
+  phi=0.785: Lorentz-avg dsig/dphi=0.98820  bound(compensated)=0.96407  ratio=0.976  uncompensated=1.08723 (VIOLATES)  dsig/dphi(kc)=0.99692
+  phi=0.000: Lorentz-avg dsig/dphi=2.32844  bound(compensated)=2.31490  ratio=0.994  uncompensated=2.31490 (ok)  dsig/dphi(kc)=2.26869

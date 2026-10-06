@@ -1,0 +1,37 @@
+{
+ "0": {
+  "chimax_symG_max": 4.017997020109786,
+  "chimax_symG_min": -6.720578367739387,
+  "best_lmin_nodelocal": 0.02512544404873549
+ },
+ "1": {
+  "chimax_symG_max": 3.9805095328974467,
+  "chimax_symG_min": -6.377567204129605,
+  "best_lmin_nodelocal": 0.023378608626996384
+ },
+ "2": {
+  "chimax_symG_max": 3.9049444816806718,
+  "chimax_symG_min": -4.0176607788238625,
+  "best_lmin_nodelocal": 0.018079623182885456
+ },
+ "3": {
+  "chimax_symG_max": 4.6519645701422485,
+  "chimax_symG_min": -0.08982119340518657,
+  "best_lmin_nodelocal": 0.012361634980875363
+ },
+ "4": {
+  "chimax_symG_max": 5.3894188301102774,
+  "chimax_symG_min": 0.012605412743367402,
+  "best_lmin_nodelocal": -4.12326616289461e-05
+ },
+ "5": {
+  "chimax_symG_max": 3.805621775104747,
+  "chimax_symG_min": 0.01254927873154265,
+  "best_lmin_nodelocal": -0.0006159649477509251
+ },
+ "6": {
+  "chimax_symG_max": 2.3617399826348624,
+  "chimax_symG_min": 0.012479455340502663,
+  "best_lmin_nodelocal": -0.00012965295694855424
+ }
+}

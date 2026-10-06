@@ -26,7 +26,7 @@ No simulations were left running. Two web pages that an earlier research agent s
 ## Resuming
 The workflow script is saved in the session's workflow directory. Completed agents replay from cache. The 5 missing generator modes, dedupe and everything after must run fresh. Inputs for a fresh continuation are all in this folder: `BOUNDS_BRIEF.md`, `research/bounds_base_research.md`, `experiments/cards_full.json`, `experiments/strategies/import.json`.
 
-## Run 2 (2026-10-06): paused by request (5-hour usage limit approaching)
+## Run 2 (2026-10-06): stopped by the stop command at the user's request to pause (cause was my stop, not a usage limit; the exact limit behind the user's warning was not verified)
 
 | Stage | Status |
 |---|---|
@@ -37,3 +37,5 @@ The workflow script is saved in the session's workflow directory. Completed agen
 | Fixer, execute, replicate, report | not reached |
 
 All completed agent outputs (strategies, families, prior-art and critic verdicts) are in `experiments/run2/completed_agents.json`. To continue: resume workflow run `wf_561e4309-c72` from this session (completed agents replay from cache), or start a continuation from that file.
+
+**Recovery (2026-10-06):** see `experiments/run2/README.md`. Scripts and numbers from the generators and from the stopped critics and prior-art agents were recovered from scratch space and transcripts. `invisibility/.venv` has lost its site-packages, cause unknown; the Meep env still works.

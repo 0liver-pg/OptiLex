@@ -1,0 +1,14 @@
+{
+ "S1_variable_phase": {"max_abs_b_diff_vs_cloak2d_6_random_designs_n0to3": 4.77e-10,
+   "pec_phases_kc_pi_over_2": {"n0": 0.8556, "n1": 2.1445, "n2": 2.8640, "n3": 3.1046},
+   "grid_dp_two_channel_0_1": {"G256_nr400": 0.396, "G512_nr800": 0.324, "bare_subset": 5.044},
+   "grid_dp_two_channel_0_2": {"G256_nr400": 0.380, "bare_subset": 1.834},
+   "grid_dp_three_channel_0_1_2": {"G96_nr300": 1.471, "G64_nr200": 1.433, "bare_subset": 5.427},
+   "dp_policy_rollout_G64": {"channels_0_2_sum_cloak2d": 1.004, "total_ext": 13.666, "channel_widths": {"0": 0.2635, "1": 0.0413, "2": 0.6994, "3": 4.5227, "4": 4.4162}, "switch_radii": [1.01, 1.30, 1.31, 1.35, 1.39, 2.71]},
+   "reading": "two- and three-channel relaxations are loose (<=0.07 and <=0.185 of bare vs best design 0.559); grid DP at G<=96 overestimates (1.43 > attained 1.004), so not a certificate"},
+ "S2_semidisk": {"omega_band_t0.25": 0.68808, "omega_band_t0.5": 0.40967, "formula": "1-(4/pi)arctan t",
+   "poisson_jensen_slack_max_abs": 3e-11, "designs": ["bare", "de_ext_B0.1_L8", "lossless_sector_B0.1_L8"],
+   "backscatter_growth_y3": {"abs_T": 5059.2, "abs_T_e2ikb": 7.7e-5, "abs_T_e2ika": 12.54}, "bare_abs_T_e2ika_y3": 1.749},
+ "S3_fsum_disk": {"y_min_over_kc2_B0.1": 0.11, "max_ratio_ymin_abs_chi2_over_Im_chi": 1.0, "fsum_check": [2.042035, 2.042035],
+   "W0.5_design_budget_lhs_rhs_kc2": [0.4999, 0.4999], "weighted_h_disk_diameter_B0.1": [5.79468, 5.79468]}
+}

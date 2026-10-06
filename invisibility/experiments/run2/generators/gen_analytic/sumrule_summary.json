@@ -1,0 +1,22 @@
+{
+ "A_free_space_fsum": {
+  "pred": 3.141592653589793,
+  "K40_raw": 3.11036,
+  "K40_tail_k^-2": 3.1416271777761375
+ },
+ "B_b1.5": {
+  "pred_shadow": 1.54874,
+  "pred_full_area": 3.92699,
+  "K40_raw": 1.255,
+  "K40_tail_k^-5/3": 1.540485770720518,
+  "K20_tail_k^-5/3": 1.5313518680262668
+ },
+ "B_b2.0": {
+  "pred_shadow": 2.45674,
+  "pred_full_area": 4.71239,
+  "K40_raw": 2.2056,
+  "K40_tail_k^-5/3": 2.456784697385353,
+  "K20_tail_k^-5/3": 2.464648907928277
+ },
+ "note": "PEC core a=1, single Lorentz shell; (2/pi) int_0^K (sigma_d - sigma_bare) dk + extrapolated tail (penumbra-type k^-5/3 decay, observed exponent 1.61-1.70). Free-space tail k^-2."
+}

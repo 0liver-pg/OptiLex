@@ -1,0 +1,5 @@
+{"pick_schur_check.py": {"trials": 20000, "K_range": "1-5 complex frequencies in k_c*[0.7,1.3] + i*k_c*[1e-3,0.3]", "oscillators": "1-3 Lorentz, w0 in [0.05,20], gamma in [1e-3,1], strength in [0,3]",
+ "min_normalized_eig_pick_schur": 1.3e-14, "min_normalized_eig_augmented_mass": 1.0e-14,
+ "nondispersive_real_chi_pick_schur_eigs": [-7.5e-15, 1.0e-16, 8.46],
+ "note": "augmented LMI with 3 points stays PSD for s below the true mass (0.6 vs 0.7): budget enforcement from few points is loose",
+ "env_issue": "invisibility/.venv has no site-packages (numpy missing); ran with .mamba/envs/meep/bin/python"}}

@@ -1,0 +1,4 @@
+bare eta=0.01: Poisson avg=2.683 >= V(z)=2.492  ratio=0.929 | eta=0.04: Poisson avg=2.657 >= V(z)=1.978  ratio=0.744 | eta=0.16: Poisson avg=2.561 >= V(z)=0.7908  ratio=0.309
+de_ext_B0.0_L16.json eta=0.01: Poisson avg=2.112 >= V(z)=1.782  ratio=0.844 | eta=0.04: Poisson avg=2.167 >= V(z)=1.099  ratio=0.507 | eta=0.16: Poisson avg=2.321 >= V(z)=0.1433  ratio=0.062
+lossless_sector_B0.1_L8.json eta=0.01: Poisson avg=1.669 >= V(z)=1.082  ratio=0.648 | eta=0.04: Poisson avg=2.154 >= V(z)=0.4878  ratio=0.226 | eta=0.16: Poisson avg=3.192 >= V(z)=0.4354  ratio=0.136
+de_sector_B0.0_L8.json eta=0.01: Poisson avg=1.887 >= V(z)=0.8903  ratio=0.472 | eta=0.04: Poisson avg=3.098 >= V(z)=1.011  ratio=0.326 | eta=0.16: Poisson avg=4.414 >= V(z)=1.594  ratio=0.361

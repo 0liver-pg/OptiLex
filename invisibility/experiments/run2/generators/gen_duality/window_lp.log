@@ -1,0 +1,4 @@
+bare <sigma_ext>_U = 5.4341
+UB =  1x bare: window-LP floor on <sigma_ext>_U = 4.9351  (ratio to true 0.908)
+UB =  3x bare: window-LP floor on <sigma_ext>_U = 2.5600  (ratio to true 0.471)
+UB = 10x bare: window-LP floor on <sigma_ext>_U = 0.6404  (ratio to true 0.118)

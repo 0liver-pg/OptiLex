@@ -1,0 +1,6 @@
+bare <sigma_Theta>_U = 1.71395 (card: 1.714)
+J= 1 eta/|I|=0.500 omega_I=0.500  log-route floor (U=1x,10x,100x true out-of-band) = 0.4250 0.0425 0.0042  ratio_to_true(1x)=0.248 | linear-route floor (true U) = 0.1977
+J= 4 eta/|I|=0.250 omega_I=0.625  log-route floor (U=1x,10x,100x true out-of-band) = 0.9590 0.2414 0.0608  ratio_to_true(1x)=0.560 | linear-route floor (true U) = 0.9209
+J= 8 eta/|I|=0.125 omega_I=0.758  log-route floor (U=1x,10x,100x true out-of-band) = 1.2722 0.6106 0.2931  ratio_to_true(1x)=0.742 | linear-route floor (true U) = 1.2686
+J= 8 eta/|I|=0.075 omega_I=0.835  log-route floor (U=1x,10x,100x true out-of-band) = 1.3590 0.8619 0.5466  ratio_to_true(1x)=0.793 | linear-route floor (true U) = 1.3586
+J=16 eta/|I|=0.062 omega_I=0.852  log-route floor (U=1x,10x,100x true out-of-band) = 1.4546 0.9740 0.6522  ratio_to_true(1x)=0.849 | linear-route floor (true U) = 1.4544

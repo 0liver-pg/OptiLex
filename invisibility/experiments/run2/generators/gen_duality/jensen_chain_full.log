@@ -1,0 +1,3 @@
+bare full-circle <sigma_sca>_U = 5.43413 (card ext: 5.434)
+J= 8 eta/|I|=0.075 omega_I=0.835  log-route floor (U=1x,10x,100x true out-of-band) = 4.5200 2.8666 1.8180  ratio_to_true(1x)=0.832 | linear-route floor (true U) = 4.5201
+J=16 eta/|I|=0.062 omega_I=0.852  log-route floor (U=1x,10x,100x true out-of-band) = 4.7954 3.2110 2.1500  ratio_to_true(1x)=0.882 | linear-route floor (true U) = 4.7955
