@@ -1,0 +1,260 @@
+[
+ {
+  "key": "odac",
+  "dataset": "Open DAC 2023 (ODAC23, Meta FAIR + Georgia Tech): the per-system adsorption-energy table adsorption_energy.txt (7.5 MB; 172,659 relaxed PBE+D3 DFT adsorption energies for CO2, H2O, CO2+H2O and CO2+2H2O placements in 8,302 frameworks: 4,832 pristine CoRE-MOF-2019 structures and 3,470 hypothetical missing-linker 'defective' variants). Joined with (a) data_w_oms.json (22 MB; 51,478 rigid-framework interaction energies and open-metal-site flags, compacted to a 2.3 MB CSV and the original deleted), (b) CoRE MOF 2019 metadata CSV (1.75 MB; metals, pore sizes), (c) the ODAC23 authors' 'promising MOF' lists and CIF archives from the fairchem GitHub repo (1.3 MB). ODAC25 was NOT used: it is only on Hugging Face behind a terms-and-personal-details gate (which I did not accept on the user's behalf) and ships raw DFT frames, with no compact per-MOF summary.",
+  "dataset_url": "https://dl.fbaipublicfiles.com/opencatalystproject/data/large_files/adsorption_energy.txt (also: https://dl.fbaipublicfiles.com/opencatalystproject/data/large_files/data_w_oms.json ; https://github.com/facebookresearch/fairchem/tree/main/src/fairchem/data/odac/promising_mof ; https://zenodo.org/records/3370144 ; paper https://arxiv.org/abs/2311.00341 ; ODAC25 https://arxiv.org/abs/2508.03162)",
+  "method": "Executed screen, three scripts run from the repo root with the OptiLex verifier imported (no repo files modified).\n\nCONVERSION (dataset quantity -> verifier parameters). ODAC23 gives E_ads = E(MOF+adsorbate) - E(relaxed empty MOF) - E(gas molecules), 0 K electronic energy, PBE+D3, lowest of ~2-9 placements per framework.\n(1) dH(298 K) = E_ads + 1.3 kJ/mol for CO2 (midpoint of a localized-harmonic limit +3.8 and a mobile-adsorbate limit -1.2, computed in the script); +3.7 kJ/mol for H2O (limits +8.6 / -1.1).\n(2) Adsorption entropy is not in the dataset. The verifier default (-165 J/mol/K) is amine-like chemisorption; ODAC23 relaxations model physisorption. I calibrated dS with the verifier's own Langmuir site against MEASURED dry single-gas uptakes at 400 ppm CO2, 298 K: SIFSIX-3-Zn (0.13 mmol/g, Qst 45), SIFSIX-3-Cu (1.24 mmol/g, Qst 54), NbOFFIVE-1-Ni (1.30 mmol/g, Qst 54) -> dS = -110.1, -116.9, -113.1; used -113 J/mol/K (saturation capacities 2.2-2.6 mmol/g are my assumption; +-20% moves dS by a few J/mol/K; +-3 kJ/mol in Qst moves it +-10.1).\n(3) Window, from verifier functions loading() and desorption_temperature(): site >= 20% filled at 420 ppm, 25 C AND <= 20% residual under 1 kPa CO2 by 120 C. Result: dH -54.9 .. -49.5 kJ/mol at dS=-113 (E_ads -0.583 .. -0.526 eV; only 5.5 kJ/mol wide); -75.4 .. -65.0 kJ/mol at the verifier-default dS=-165 (E_ads -0.795 .. -0.687 eV), run as a secondary scenario.\n(4) Uncertainty: benchmark of ODAC23 lowest E_ads + 1.3 against measured isosteric heats for 6 known MOFs present in the dataset (SIFSIX-3-Zn, Mg/Ni/Co/Mn/Zn-MOF-74): mean signed error -2.1, RMSE 4.7, max 5.8 kJ/mol. I therefore quote P(in window) for sigma = 5 and 10 kJ/mol.\n\nDATA-QUALITY CORRECTION. Where a rigid-framework interaction energy E_int exists for a placement, E_ads - E_int < -0.05 eV means the 'relaxed' empty-MOF reference was not the true minimum, so binding is overstated (the flaw the ODAC25 paper says it fixed). Rule: use E_int for such placements ('refcorr'), E_ads otherwise; label the deciding placement ok / refcorr / distort (> +0.05 eV) / unverified (no record).\n\nFILTERS, in order: both CO2 and H2O energies present; >= 3 CO2 and >= 2 H2O placements converged (after the paper's own |E/n| < 2 eV cut); corrected CO2 dH inside the window; deciding placement checked (ok or refcorr); CO2 binds at least as strongly as H2O (raw E_H2O - E_CO2 >= 0, a difference in which the framework reference cancels). Passing all = Tier A. In-window and CO2 >= H2O but unverified/distorting = Tier B.\n\nRANKING: humid working-capacity fraction per site = [CO2 filling at 420 ppm, 25 C with water competing for the same site at 50% RH (competitive Langmuir, water dS -118.9 J/mol/K)] minus [residual at 100 C under 1 kPa CO2], all from the verifier's langmuir_b/loading.\n\nFOLLOW-UPS: positive control on SIFSIX-3-Zn; same-material duplicate-entry reproducibility; composition/density from the published CIFs; pristine parents of defective hits; two-point Langmuir fits to measured loadings quoted in the ODAC23 paper's Table 2; verifier TVSA cycles with realistic site densities.",
+  "findings": [
+   "HEADLINE: the screen ran on real data and its main result is negative. Of 8,118 frameworks with CO2 and H2O energies, ZERO pristine (experimentally reported) structures pass every check. Tier A holds 7 structures, all hypothetical missing-linker defect models; Tier B holds 23 unverified leads (17 pristine, 6 defective). Under the verifier-default entropy (dS=-165) Tier A is empty.",
+   "Funnel, primary window (dS=-113, dH -54.9 .. -49.5 kJ/mol), exactly as printed: 8118 frameworks -> 7754 with >=3 CO2 and >=2 H2O placements -> 318 with raw lowest E_ads in window (44 of them with CO2 >= H2O) -> 215 in window after reference correction (deciding placement: ok 38, refcorr 10, distort 13, unverified 154) -> 48 checked -> 7 Tier A. Secondary window (dS=-165): 137 raw -> 85 corrected -> 2 checked -> 0 Tier A; 20 Tier B.",
+   "ODAC23 raw adsorption energies are frequently overstated. Among 29,418 CO2 placements that have a rigid-framework energy, 24.3% have E_ads - E_int below -0.05 eV (empty-MOF reference too high), 36.0% above +0.05 eV (framework distorts), and only 39.7% agree within +-0.05 eV. This matches the ODAC25 paper's own statement that re-relaxed empty MOFs were often lower in energy and that about 7% of ODAC23 calculations carry k-point errors above 0.2 eV.",
+   "The ODAC23 paper's own 'promising' list is dominated by this artifact. I reproduced its criteria (E_CO2 < -0.5 eV and stronger than H2O): 168 pristine and 107 defective here versus 135 and 107 published (all published entries recovered). Of the 140 promising MOFs whose deciding CO2 placement can be checked, 93 are overstated (median 24 kJ/mol), 39 distort the framework and only 8 are consistent. With raw energies 168 of the 242 bind too strongly for a <=120 C swing, 39 sit in the window and 35 are too weak; after correction 119 / 26 / 97.",
+   "Survival rate that calibrates Tier B: where the check is possible, only 18% (34 of 190) of raw in-window energies are consistent, and 13% (3 of 23) of those that also show CO2 >= H2O. For the dS=-165 window the figures are 1% (1 of 76) and 0% (0 of 17). Expect roughly 2 of the 17 pristine Tier-B leads to survive a proper recalculation, before DFT error is considered.",
+   "Water wins in most in-window sites: of the 48 checked in-window frameworks only 7 bind CO2 at least as strongly as a single H2O (10 within 5 kJ/mol). At 50% RH and 25 C water's partial pressure (1584 Pa) is 37x that of CO2, so even the Tier-A leaders lose capacity: humid working-capacity fractions are 0.15, 0.12, 0.09, 0.07, 0.02, 0.00, 0.00 per site.",
+   "Tier A depends entirely on the hypothetical defect site. All seven pristine parents are too weak (corrected CO2 energies -24.7 to -45.1 kJ/mol; predicted filling at 420 ppm 0.000 to 0.025). If the strong site exists only at the defect (1-2 sites per simulation cell), the verifier cycle (100 C, 1 kPa CO2, no water) gives working capacity 0.053-0.179 mol/kg and regeneration heat 15.5-49.5 GJ/t for six of the seven, versus 1.04 mol/kg and 6.04 GJ/t for the amine reference; sorbent cost $1,268-4,299/t at $20/kg and 2,000 cycles versus $218/t. Only NUNCEG_0.12_0 (light Li framework) lands at 5.5-9.7 GJ/t and $375-751/t.",
+   "Measured data contradict two of the paper's hand-picked pristine MOFs and support the correction rule. Two-point Langmuir fits to dry pure-CO2 loadings quoted in ODAC23 Table 2 (150 mbar and 1 bar): QOVSOL (298 K) implies dH -37.5 kJ/mol; DFT raw gives -88.0 but the reference-corrected value is -35.4. QEFNAQ (293 K; 0.4 and 1.0 mmol/g) implies -35.6 against an unverified DFT -54.0. FECXES (273 K) implies -30.7 against DFT -60.2 (distorting placement). All three extrapolate to <= 0.0017 mmol/g at 420 ppm, 25 C. Caveat: a two-point fit cannot exclude a small population of strong sites.",
+   "Reproducibility between CSD entries of the same material is poor in the raw data and repaired where the correction applies: HKUST-1 lowest raw CO2 energy ranges -24.2 to -78.3 kJ/mol across 7 entries (H2O -1.8 to -94.3), none checkable; UiO-66 range shrinks from 23.9 to 0.8 kJ/mol and MOF-5 from 2.6 to 0.4 after correction. Pooled within-material std of raw lowest energies: CO2 14.0, H2O 23.2 kJ/mol (some entries may be different phases or differently cleaned structures).",
+   "The window is narrower than the DFT error. A framework computed at the exact centre of the physisorption window is truly inside it with probability 0.41 at sigma 5 kJ/mol and 0.21 at sigma 10 (0.70 and 0.40 for the wider dS=-165 window). Positive control: SIFSIX-3-Zn (FUDQIF, identity inferred from Zn/Si composition and 3.86 A pore) is predicted at 0.33 mmol/g at 400 ppm versus 0.13 measured, a 2.5x miss from a 3.4 kJ/mol energy error; DFT also has water binding it more strongly (-59.6 vs -49.7 kJ/mol).",
+   "What an in-window physisorbent buys in the verifier's cycle (q_max 2 mol/kg, 100 C, 1 kPa CO2): working capacity 0.45-0.62 mol/kg versus 1.04 for the amine reference, heat 5.35-6.86 GJ/t dry and 7.35-8.86 GJ/t with 2 mol water co-desorbed per mol CO2, versus 6.04 GJ/t for the amine reference (which already includes 2.00 GJ/t of water). Weaker binding lowers reaction heat (1.19-1.25 vs 1.59 GJ/t) but the smaller entropy gives less temperature leverage, so sensible heat rises (4.10-5.68 vs 2.45 GJ/t). In this model a physisorbent's advantage has to come from deeper vacuum, lower regeneration temperature or lifetime, not from heat at a 100 C swing.",
+   "Structure errors reach the shortlist: three of the top eight pristine Tier-B leads have CIFs with carbon but no hydrogen atoms (cm503311x_aloh225K = Al4 C32 O20, cm503311x_alf425K = Al4 C32 F4 O16, CAVNOE = Sc4 C32 N16 O52). The two Al entries have the composition of an Al terephthalate with its hydrogens missing, so their DFT energies describe a chemically wrong model.",
+   "What a team with more disk and compute should run: (1) get ODAC25 (the user must accept the Hugging Face terms; corrected references and k-points, plus N2 and O2) and its released interatomic potentials; (2) for the 17 pristine Tier-B frameworks and the 7 Tier-A defect models, re-relax the empty framework from each adsorbed geometry and recompute E_ads; (3) compute CO2, H2O and N2 Henry coefficients by Widom insertion and run mixture GCMC at 420 ppm CO2, 50% RH, 25 C rather than single-molecule energies; (4) only then send survivors for measured isotherms at 400 ppm in humid air and cycling."
+  ],
+  "candidates": [
+   {
+    "name": "SOYWOT_neutral_b_0.12_0 (Tier A; defective Cu carboxylate, cell Cu12 C63 H30 O48, PLD 6.58 A)",
+    "why": "Best humid working-capacity fraction among structures passing every check. CO2 stays well ahead of water (margin +9.9 kJ/mol), so the 50% RH penalty is small.",
+    "key_numbers": "E_CO2 raw -59.4, reference-corrected -52.1 kJ/mol (refcorr); E_H2O -49.5; dH -50.8; fill at 420 ppm 0.29 dry / 0.28 at 50% RH; residual at 100 C, 1 kPa 0.14; wc fraction 0.16 dry / 0.15 humid; T_des 90 C; CO2 binding with one H2O present -33.1; placements 6 CO2 / 4 H2O; P(in window) 0.40 / 0.21 at sigma 5 / 10. Pristine parent: corrected -45.1 (unverified), fill 0.025 = too weak. Site-limited cycle: 1-2 sites per cell -> q_max 0.43-0.86 mol/kg, heat 39.0-20.1 GJ/t.",
+    "known_experimentally": "Hypothetical missing-linker model, not a synthesized material as such. Prior-art web search could not be run (session search budget was exhausted at this step); no DAC measurement known to me. Simulation only."
+   },
+   {
+    "name": "IRELAU_0.12_0 (Tier A; defective Zn carboxylate, cell Zn16 C154 H82 O64, PLD 3.48 A)",
+    "why": "Cleanest data of the shortlist: the deciding placement and all 12 recorded placements of this host agree with the rigid-framework energy within +-0.05 eV.",
+    "key_numbers": "E_CO2 -54.1 kJ/mol (ok); E_H2O -48.8; dH -52.8; margin +5.4; fill 0.49 dry / 0.35 at 50% RH; residual 0.24; wc fraction 0.25 dry / 0.12 humid; T_des 105 C; CO2 with one H2O present -38.7; placements 8 / 6; P(in window) 0.41 / 0.21. Pristine parent IRELAU: raw -54.2 but corrected -39.1, E_H2O -79.6, fill 0.002 = too weak and water-dominated. Site-limited cycle: q_max 0.25-0.50 mol/kg, heat 41.6-21.4 GJ/t.",
+    "known_experimentally": "Hypothetical defect model. Identity of the parent not resolved (search budget exhausted; CCDC lookup returned no entry data). No DAC measurement found."
+   },
+   {
+    "name": "MAKXAZ_0.16_1 (Tier A; defective Zn MOF, cell Zn4 C66 H52 N4 O15, PLD 4.84 A)",
+    "why": "In window after correction with CO2 ahead of water by 6.9 kJ/mol, but sits at the weak edge of the window.",
+    "key_numbers": "E_CO2 raw -59.7, corrected -50.9 kJ/mol (refcorr); E_H2O -52.8; dH -49.6; fill 0.21 dry / 0.19 humid; residual 0.10; wc fraction 0.11 dry / 0.09 humid; T_des 82 C; co-adsorption value -163.3 kJ/mol is an obvious framework-rearrangement artifact; placements 6 / 5; P(in window) 0.37 / 0.21. Pristine parent corrected -35.7 = too weak. Site-limited heat 34.5-17.8 GJ/t.",
+    "known_experimentally": "Hypothetical defect model; no DAC measurement found (search not possible)."
+   },
+   {
+    "name": "NUNCEG_0.12_0 (Tier A; defective Li / silicon-centred carboxylate framework, cell Li8 Si2 C49 H31 O16, PLD 4.08 A)",
+    "why": "The only Tier-A structure whose site-limited verifier cycle is in the range of the amine reference, because the framework is light (0.81 g/cm3).",
+    "key_numbers": "E_CO2 -55.5 kJ/mol (ok); E_H2O -50.6; dH -54.2; margin +4.9; fill 0.62 dry / 0.39 at 50% RH; residual 0.33; wc fraction 0.30 dry / 0.07 humid; T_des 115 C; CO2 with one H2O present -66.8; placements 5 / 5; P(in window) 0.39 / 0.21. Pristine parent NUNCEG: -42.4 (ok), E_H2O -96.4 = too weak and strongly hydrophilic. Site-limited cycle: q_max 1.01-2.03 mol/kg, wc 0.303-0.605 mol/kg, heat 9.7-5.5 GJ/t, sorbent $751-375/t at $20/kg and 2,000 cycles.",
+    "known_experimentally": "Hypothetical defect model. Lithium carboxylate frameworks are generally moisture-sensitive (my judgement, not checked). No DAC measurement found."
+   },
+   {
+    "name": "CAXVUU_0.11_0 (Tier A; defective Fe carboxylate, cell Fe18 C64 H25 O54, PLD 10.53 A)",
+    "why": "Passes the rule only after a large reference correction, and water is nearly as strong as CO2; humid capacity almost vanishes.",
+    "key_numbers": "E_CO2 raw -74.2, corrected -51.7 kJ/mol (refcorr; only 1 recorded placement, at -0.23 eV); E_H2O -72.2; dH -50.4; margin +2.0; fill 0.27 dry / 0.15 humid; wc fraction 0.14 dry / 0.02 humid; T_des 88 C; placements 5 / 4. Pristine parent -24.7 = too weak. Site-limited heat 49.5-25.3 GJ/t.",
+    "known_experimentally": "Hypothetical defect model; no DAC measurement found."
+   },
+   {
+    "name": "EQOXIT_0.08_0 (Tier A; defective Zn MOF with N-donor linker, cell Zn12 C130 H86 N22 O36, PLD 6.98 A)",
+    "why": "In window after correction, but the water margin (+2.5 kJ/mol) is too small to survive 50% RH in the shared-site model.",
+    "key_numbers": "E_CO2 raw -66.4, corrected -55.4 kJ/mol (refcorr); E_H2O -63.9; dH -54.1; fill 0.62 dry / 0.24 humid; residual 0.32; wc fraction 0.30 dry / 0.00 humid; T_des 114 C; placements 6 / 5. Pristine parent -27.3 with E_H2O -103.6. Site-limited heat 29.8-15.5 GJ/t.",
+    "known_experimentally": "Hypothetical defect model; no DAC measurement found."
+   },
+   {
+    "name": "QATPOR_0.03_0 (Tier A; defective Ga/Ti phosphate, cell Ga6 Ti18 H9 O124 P29, PLD 3.49 A, 2.45 g/cm3)",
+    "why": "Passes with a consistent placement, but it is a dense inorganic phosphate rather than a MOF and water competes strongly.",
+    "key_numbers": "E_CO2 -55.6 kJ/mol (ok); E_H2O -52.8; dH -54.3; margin +2.8; fill 0.64 dry / 0.26 humid; residual 0.33; wc fraction 0.30 dry / 0.00 humid; T_des 115 C; placements 9 / 6. Pristine parent -43.2 (unverified) = too weak. Site-limited heat 36.6-18.9 GJ/t.",
+    "known_experimentally": "Hypothetical defect model; no DAC measurement found."
+   },
+   {
+    "name": "QEFNAQ (Tier B rank 1; pristine Cu MOF, cell Cu12 C96 H72 N48 O24; one of the ODAC23 paper's five 'suitable for synthesis' picks)",
+    "why": "Top unverified pristine lead by the ranking rule, but measured data argue against it: treat as a likely false positive.",
+    "key_numbers": "E_CO2 -55.3 kJ/mol (unverified); E_H2O -30.9; dH -54.0; margin +24.5; fill 0.61 dry and humid; wc fraction 0.29; T_des 113 C; placements 7 / 5; other placements of this host show E_ads - E_int down to -0.26 eV. Measured (ODAC23 Table 2, dry pure CO2, 293 K): 0.4 mmol/g at 150 mbar and 1.0 mmol/g at 1 bar -> implied dH -35.6 kJ/mol and 0.0013 mmol/g at 420 ppm.",
+    "known_experimentally": "Synthesized and CO2 isotherms measured at 150 mbar-1 bar (source cited by the ODAC23 paper: Navarro et al., Inorg. Chem. 2006, a sodalite-type copper pyrimidinolate by my reading of the formula). No measurement at 400 ppm or in humid air found."
+   },
+   {
+    "name": "cm503311x_aloh225K (Tier B rank 2; pristine Al terephthalate-type entry, cell Al4 C32 O20)",
+    "why": "Ranks high numerically but should be REJECTED: the CIF has no hydrogen atoms, so the DFT model is chemically wrong.",
+    "key_numbers": "E_CO2 -55.1 kJ/mol (unverified, no recorded placement for this host); E_H2O -33.1; dH -53.8; margin +22.0; fill 0.59; wc fraction 0.29; T_des 112 C; co-adsorption value -348.9 kJ/mol (artifact); placements 5 / 4.",
+    "known_experimentally": "Parent family (Al hydroxide terephthalate, MIL-53 type, by composition) is well known and made at scale, but this entry's energies are not evidence about it. No DAC data implied."
+   },
+   {
+    "name": "DICKEH (Tier B rank 3; pristine Cu MOF with open metal sites, cell Cu6 C78 H30 O24, PLD 7.41 A, 0.51 g/cm3)",
+    "why": "Best remaining pristine lead with a sane structure: large CO2-over-water margin and unchanged filling at 50% RH, but its energy cannot be checked with the data on hand.",
+    "key_numbers": "E_CO2 -54.4 kJ/mol (unverified, no recorded placement); E_H2O -33.3; dH -53.1; margin +21.1; fill 0.51 dry and humid; residual 0.25; wc fraction 0.26; T_des 106 C; CO2 with one H2O present -60.8; placements 6 / 4; P(in window) 0.41 / 0.21. One-site-per-metal upper bound: q_max 3.46 mol/kg -> wc 0.91 mol/kg, heat 4.03 GJ/t.",
+    "known_experimentally": "Crystal structure reported (CSD entry); identity and any CO2 data not resolved (search budget exhausted). Caution: PBE without Hubbard U overbinds at open Cu sites, and water normally binds open Cu sites strongly (e.g. -50.0 kJ/mol for HKUST-1 entry XAMDUM in this dataset), so the weak computed water energy probably reflects missed placements."
+   },
+   {
+    "name": "cm503311x_alf425K (Tier B rank 4; pristine Al fluoride terephthalate-type entry, cell Al4 C32 F4 O16)",
+    "why": "REJECT for the same reason as its sibling: carbon but no hydrogen in the CIF.",
+    "key_numbers": "E_CO2 -53.4 kJ/mol (unverified); E_H2O -21.8; dH -52.1; margin +31.6; fill 0.41; wc fraction 0.22; T_des 99 C; co-adsorption value -103.6 kJ/mol (artifact); placements 5 / 3.",
+    "known_experimentally": "Not assessed further; broken structural model."
+   },
+   {
+    "name": "NEVVEQ (Tier B rank 5; pristine Co MOF with S,N-donor linker, cell Co4 C24 H12 N4 O8 S4, PLD 3.80 A, 1.59 g/cm3)",
+    "why": "Narrow-pore pristine framework without flagged open metal sites, the structural type most like the measured physisorbent benchmarks; moderate water margin.",
+    "key_numbers": "E_CO2 -52.2 kJ/mol (unverified); E_H2O -42.9; dH -50.9; margin +9.3; fill 0.31 dry / 0.29 at 50% RH; residual 0.14; wc fraction 0.16 dry / 0.15 humid; T_des 91 C; CO2 with one H2O present -53.1 (binding retained); placements 8 / 5; P(in window) 0.40 / 0.21.",
+    "known_experimentally": "Crystal structure reported; no CO2 or DAC measurement found (search not possible). Simulation only."
+   },
+   {
+    "name": "XUVHEB (Tier B rank 6; pristine Zn MOF with open metal sites, cell Zn12 C208 H128 N8 O48, PLD 5.41 A)",
+    "why": "In window with CO2 ahead of water by 9.1 kJ/mol; unverified.",
+    "key_numbers": "E_CO2 -52.1 kJ/mol (unverified); E_H2O -43.0; dH -50.8; fill 0.30 dry / 0.28 humid; residual 0.14; wc fraction 0.16 dry / 0.14 humid; T_des 90 C; CO2 with one H2O present -43.8; placements 7 / 5; one-site-per-metal upper bound only 2.80 mol/kg.",
+    "known_experimentally": "Crystal structure reported; no DAC measurement found (search not possible)."
+   },
+   {
+    "name": "CAVNOE (Tier B rank 7; pristine Sc entry, cell Sc4 C32 N16 O52)",
+    "why": "Numerically in window, but the CIF again has carbon and no hydrogen: suspect model, treat as rejected until the structure is checked.",
+    "key_numbers": "E_CO2 -51.7 kJ/mol (unverified); E_H2O -39.9; dH -50.4; margin +11.8; fill 0.26; wc fraction 0.14 dry / 0.13 humid; T_des 87 C; co-adsorption value -102.6 kJ/mol (artifact); placements 6 / 4.",
+    "known_experimentally": "Not assessed further; structural model suspect."
+   },
+   {
+    "name": "JOHQUT (Tier B rank 8; pristine Sb/Pr framework with open metal sites, PLD 3.95 A)",
+    "why": "Last of the fifteen; narrow pore and in window, but another placement of the same host already shows the reference problem.",
+    "key_numbers": "E_CO2 -53.1 kJ/mol (unverified); E_H2O -47.0; dH -51.8; margin +6.1; fill 0.39 dry / 0.32 at 50% RH; residual 0.18; wc fraction 0.21 dry / 0.13 humid; T_des 98 C; CO2 with one H2O present -51.7; placements 7 / 5; host recorded placements 2, minimum E_ads - E_int -0.08 eV.",
+    "known_experimentally": "Crystal structure reported; lanthanide/antimony cost makes it an unlikely DAC material. No DAC measurement found (search not possible)."
+   }
+  ],
+  "caveats": [
+   "Prior-art check is incomplete. The session's web-search budget ran out before step 5, and a direct CCDC lookup returned no entry data, so 'known experimentally for DAC' rests on the ODAC23 paper's own tables and references, CoRE metadata and CIF compositions. Refcode-to-material identities other than the benchmarks are inferred from composition and should be confirmed.",
+   "Evidence tier: everything in the candidate list is simulation (single-molecule DFT, 0 K, PBE+D3, no Hubbard U). None has a measurement at 400 ppm CO2, in humid air, or over cycles. Measured data were used only for the entropy calibration (dry single-gas isotherms, 298 K), the benchmark and the three Table-2 checks.",
+   "The entropy is not in the dataset and drives the window. Using the verifier default (-165 J/mol/K) moves the window 15-20 kJ/mol stronger and leaves no checked candidate. The calibrated -113 J/mol/K comes from three ultramicroporous fluorinated MOFs and assumed saturation capacities; other pore types may differ by 10 J/mol/K or more, which shifts the window by about 3 kJ/mol.",
+   "The window (5.5 kJ/mol) is narrower than the DFT error (benchmark RMSE 4.7 kJ/mol on six MOFs, five of whose experimental heats I quoted from memory of Queen et al. 2014 because the publisher blocked automated access; only SIFSIX-3-Zn's 45 kJ/mol was confirmed this run). Ranking inside the window is therefore weakly informative; P(in window) is 0.21-0.41 per candidate even if the energy is otherwise sound.",
+   "The reference correction can only be applied where a rigid-framework energy exists (about 60% of single-molecule placements; none for co-adsorption). 154 of the 215 in-window frameworks are unverified, including every pristine lead. Using E_int for flagged placements ignores small genuine framework deformation and so slightly overstates binding.",
+   "Lowest energy over 2-9 placements is not the global minimum. Water sites are easily missed (HKUST-1 entry FIQCEN shows water at -1.8 kJ/mol while entry XAMDUM shows -50.0), which produces false 'CO2 beats water' results. The shared-site competitive Langmuir model also ignores water clustering and pore condensation, which make real humid performance worse, and ignores cases where water and CO2 use different sites, which would make it better.",
+   "Defective structures are computer-generated missing-linker models at fixed defect concentrations. Real defects are usually capped by water or hydroxide and cannot be placed at will; site density is the binding constraint, as the site-limited cycle numbers show.",
+   "CoRE MOF 2019 structures contain cleaning errors (missing hydrogens, removed counter-ions, linker loss), as the ODAC23 authors themselves warn. Three of the top eight pristine leads show this. I checked only the frameworks whose CIFs are in the authors' promising-MOF archive.",
+   "The verifier is a single-site Langmuir equilibrium model: no kinetics, heterogeneity, heat losses, or stability. q_max values used in cycle estimates are assumptions (generic 2 mol/kg, one site per metal as an upper bound, or 1-2 sites per cell for defects), not dataset quantities.",
+   "ODAC25, which fixes the reference and k-point problems and adds N2/O2, was not screened: access requires accepting Hugging Face terms with personal details (a user decision) and the release is raw DFT frames far above the 100 MB limit. The ODAC25 paper lists no named top candidates.",
+   "Shared scratch folder: other workflow agents' files are present there and were left untouched. The 22 MB data_w_oms.json was reduced to odac23_eint_compact.csv and deleted; outputs were verified identical before and after."
+  ],
+  "n_materials": 8302,
+  "script_path": "climate/runs/2026-10-06-sorbents/scripts/odac23_screen.py (main screen; output in odac23_screen_output.txt and odac23_screen_results.json in the same folder). Follow-ups in the same folder: odac23_candidate_formulas.py (CIF compositions, output odac23_candidate_formulas_output.txt) and odac23_followup.py (measured-loading checks, defect parents, structure sanity, site-limited cycles; output odac23_followup_output.txt). Run order: screen, formulas, followup, each from the repo root with .venv/bin/python.",
+  "succeeded": true
+ },
+ {
+  "key": "core_other",
+  "dataset": "NIST/ARPA-E Database of Novel and Emerging Adsorbent Materials (ISODB), GitHub mirror NIST-ISODB/isodb-library, master branch (last pushed 2026-09-19; 18.3 MB tarball). Experimental isotherms digitised from the literature: 39,988 isotherm files, of which 8,399 are single-component CO2 isotherms (2,629 adsorbents, 1,410 papers, mostly 2008-2017 plus a 2026 NIST/VAMAS zeolite 13X interlaboratory set) and 1,221 are water isotherms (557 adsorbents). Evidence tier: measured lab data under idealised conditions (dry, pure CO2, equilibrium), not humid air or cycling.",
+  "dataset_url": "https://github.com/NIST-ISODB/isodb-library (downloaded from https://codeload.github.com/NIST-ISODB/isodb-library/tar.gz/refs/heads/master)",
+  "n_materials": 1255,
+  "succeeded": true,
+  "script_path": "climate/runs/2026-10-06-sorbents/scripts/s3_screen.py",
+  "method": "Executed pipeline (all in the scratchpad sorbent folder): s1_extract.py parses the tarball into a 7.3 MB cache; s3_screen.py is the screen; s5_checks.py, s6_final.py and s7_counts.py are cross-checks, the final table and coverage counts. The raw tarball was deleted after extraction; s1 carries the re-download command. No repo file was modified.\n\nRanking rule, fixed before the final ranking was read:\n1. Keep entries not labelled simulation/model, in mass-based units, at 288-308 K, with at least 3 resolved points. Points below 2% of an isotherm's top pressure are dropped as unresolved figure digitisation unless that region is itself resolved. Loadings are made monotone by isotonic regression.\n2. Uptake at 420 ppm (42.56 Pa). Class A: resolved points within one decade either side, log-log interpolation. Class B: rigorous bracket from the nearest resolved point p1 above 42.56 Pa. For a concave isotherm through the origin, q(p1) x 42.56/p1 <= q <= q(p1). The central value is a low-pressure Langmuir fit clamped to the bracket.\n3. Per paper, take the isotherm closest to 298 K. Per adsorbent, score = median over papers of the guaranteed (lower-bound) uptake. Rank by score, so only what was measured is credited.\n4. Automatic exclusions: simulation by journal/title, whole isotherm below 5 mbar (pressure scale suspect), non-monotone low-pressure points with an ambiguous unit.\n\nConversion to verifier parameters:\n- q_max comes from the low-pressure Langmuir fit, and b is set to reproduce the central 420 ppm uptake.\n- dG = -R T ln(b P_REF).\n- dH comes from Clausius-Clapeyron at the lowest loading measured at every temperature (same paper and adsorbent, span at least 10 K).\n- dS = (dH - dG)/T.\n- Reported verifier outputs: site filling at 420 ppm and 25 C; T80 (temperature to unload 80% of the ambient loading under 1 kPa CO2, the verifier default, and under 0.1 kPa); TVSACycle working capacity and heat at 100 and 120 C.\n- DAC window = score at least 0.1 mol/kg and T80 at 1 kPa no higher than 120 C.\n\nMeasured uncertainty of the conversion:\n- Lab-to-lab spread: the NIST 13X interlaboratory set gives a median of 0.412 mol/kg with a 10th-90th percentile of 0.323-0.493 (41%).\n- Extrapolation error: blinding those same isotherms below 425 / 1000 / 2000 Pa, the Langmuir central estimate is 0.55 / 0.34 / 0.23 of the measured value and the lower bound is 0.28 / 0.16 / 0.10 of it. The bracket contained the measured value in 92/92 cases. For class B entries the true uptake is therefore probably several times the score.\n- dH: sensitivity is reported as T80 at dH plus or minus 5 kJ/mol. Cross-paper scatter is larger: 13X spans -15.6 to -64.9 kJ/mol over 10 papers, median -39.6.\n- A mapped dS above -50 J/mol/K is treated as a sign that the heat was measured on weaker sites, and the window is then left indeterminate.\n\nPrior-art check: the shared web-search budget ran out mid-task, so it used Europe PMC full-text search plus Semantic Scholar and Crossref abstracts, and the open-access full text of Shekhah 2014 for literature values.",
+  "findings": [
+   "The literature almost never measured the DAC region. Of 8,399 CO2 isotherms, 5,617 were usable and 3,008 lie at 288-308 K. Only 134 are resolved within a decade either side of 42.56 Pa, and 92 of those are the 2026 NIST 13X interlaboratory set; outside it the count is 42 of 2,907. Only 62 of 1,255 adsorbents (4.9%) have a resolved point within 25x of 42.56 Pa.",
+   "After exclusions, 15 adsorbents have a guaranteed uptake of at least 0.1 mol/kg at 420 ppm (dry, 288-308 K); 8 reach 0.2, 4 reach 0.5 and 1 reaches 1.0. The upper bound is at least 0.1 mol/kg for 844 adsorbents, so the data cannot rule most materials in or out.",
+   "Only one of the 15 sits inside the verifier's strict window (unload 80% by 120 C at 1 kPa CO2): the amine sorbent PEI-MonoSil. It holds 1.109 mol/kg, with dH -80.8 kJ/mol, dS -186 J/mol/K and site filling 0.92. T80 is 107 C (101-114 C for dH plus or minus 5 kJ/mol).",
+   "Verifier cycle for PEI-MonoSil at 100 C and 1 kPa: working capacity 0.78 mol/kg; heat 5.11 GJ/t dry (reaction 1.84, sensible 3.28) or 7.11 GJ/t with 2 mol water per mol CO2; work-equivalent 1.69 or 2.10 GJ/t; second-law efficiency 27% or 22%. Sorbent cost at $20/kg is $291/t at 2,000 cycles and $29/t at 20,000. Its measured 75 C isotherm holds 1.456 mol/kg at 1 kPa, more than the ambient 420 ppm loading, so a 75 C swing at 1 kPa releases nothing.",
+   "Physisorbents with a measured dH fail the 1 kPa window and pass only at 0.1 kPa CO2 (deep vacuum or purge). T80 at 1 kPa / 0.1 kPa: zeolite 13X (dH -39.6, dS -83) 156 C / 83 C; SIFSIX-3-Zn (dH -46.2, dS -110) 130 C / 72 C; Mg-MOF-74 (dH -38.9, dS -100) 156 C / 81 C.",
+   "Verifier swing for those physisorbents at 100 C, dry: 13X gives 0.016 mol/kg and 160.2 GJ/t at 1 kPa, against 0.302 mol/kg, 9.4 GJ/t heat and 2.7 GJ/t work-equivalent at 0.1 kPa. SIFSIX-3-Zn goes from 0.081 mol/kg (32.5 GJ/t) to 0.180 mol/kg (15.2 GJ/t). Mg-MOF-74 goes from 0.000 to 0.106 mol/kg (24.9 GJ/t).",
+   "The window is set by entropy as much as by enthalpy. For half filling at 420 ppm, a site with dS of -80 / -100 / -110 / -130 / -165 / -186 J/mol/K needs dH of -43.1 / -49.1 / -52.0 / -58.0 / -68.4 / -74.7 kJ/mol. It then unloads 80% at 158 / 136 / 127 / 113 / 97 / 89 C under 1 kPa, or 88 / 79 / 76 / 70 / 62 / 59 C under 0.1 kPa. The median mapped dS over 382 adsorbent sets is -88 J/mol/K (10th-90th percentile -131 to -64), so typical physisorbents sit outside the 1 kPa window. Mechanisms with a large entropy loss on binding (carbamate, bicarbonate, cooperative insertion), or a process with low CO2 partial pressure in desorption, are what fit.",
+   "Water swamps every physisorbent that has water data, on a pure-component basis. Moles of H2O at 50% RH per mole of CO2 at 420 ppm: zeolite 4A 27, 13X 52, Na-A 91, Mg-MOF-74 285, MIL-101 296, MOF-74-Ni 879, Ni-DOBDC 924. At 10% RH these still hold 12.4-25.3 mol/kg of water. ISODB has no water isotherms for the amine, hydroxide or SIFSIX candidates, so the water criterion could not be applied to them.",
+   "The bracket method agrees with independent literature values at 400 ppm and 298 K. SIFSIX-3-Zn: 0.13 mmol/g in Shekhah 2014 against a bracket of 0.121-0.998, and Qst 45 against a screen dH of -46.2. TRI-PE-MCM-41: about 1 mmol/g against 0.197-1.279. mmen-Mg2(dobpdc): 2.0 mmol/g at 0.39 mbar against 0.047-2.874. Mg-MOF-74: 0.08 mmol/g against a lower bound of 0.102, slightly outside, which is consistent with sample-to-sample variation.",
+   "Simulated entries would have topped the ranking. The three highest raw scores (2.300, 2.285 and 1.768 mol/kg for Mg-, Al- and Sr-rho-ZMOF) come from a molecular simulation paper and were excluded; ISODB holds no measured isotherm for them. This is the same predicted-above-measured pattern OptiLex has seen before.",
+   "The screen found no strong 420 ppm binder outside known families. All 15 are amine-functionalised solids, cation-rich zeolites (FAU, LTA, KFI, CHA), open-metal-site or ultramicroporous MOFs, or hydroxide-site frameworks. Four have no DAC test in the indexes searched and are the leads worth a cheap measurement: MAF-X27ox, the K-exchanged X@A core-shell zeolite, low-silica Sr-KFI and NJU-Bai7.",
+   "The cheapest useful experiment the screen points to is filling the measurement gap: a dry 400 ppm isotherm at 25 C plus two more temperatures for the heat, then a humid 400 ppm breakthrough and 100+ cycles, on those four leads. Database extrapolation cannot substitute, since it underestimated 13X by 2-4x in the blinding test."
+  ],
+  "candidates": [
+   {
+    "name": "PEI-MonoSil (polyethylenimine on macro-/mesoporous silica monolith)",
+    "why": "Rank 1 and the only adsorbent inside the strict verifier window. Useful as the measured reference point for any new idea.",
+    "key_numbers": "Class A, 298 K, dry: 1.109 mol/kg at 420 ppm (upper 1.203). dH -80.8 kJ/mol from 4 temperatures (298-348 K), dS -186 J/mol/K, filling 0.92. T80 107 C at 1 kPa, 76 C at 0.1 kPa. Verifier 100 C swing: 0.78 mol/kg, 5.1 GJ/t dry. One paper (2015).",
+    "known_experimentally": "Yes as a class: PEI on silica is the standard DAC chemisorbent, with DAC-specific durability testing published in 2024. Not novel. Whether this specific monolith was tested in air was not confirmed."
+   },
+   {
+    "name": "Zeolite KX@KA core-shell (K-exchanged binderless X microspheres with an A shell)",
+    "why": "Rank 2. Highest measured physisorbent uptake in the set, and a separate 2022 study reports K-X keeping over 95% of its dry trace-CO2 uptake at 74% RH. If both hold together it would be an unusually moisture-tolerant zeolite.",
+    "key_numbers": "Class A, 298 K, dry: 0.794 mol/kg at 420 ppm (upper 0.995), interpolated between 12.5 Pa (0.59) and 108 Pa (0.995). One paper (2019). Regeneration unmeasured; with a 13X-like dS of -83 J/mol/K the verifier gives T80 of 152 C at 1 kPa and 84 C at 0.1 kPa. The same paper's NaX@NaA is 0.170-0.662.",
+    "known_experimentally": "No DAC test found. The source paper is about CO2/CH4 and CO2/N2 selectivity. The value is about twice the NIST 13X consensus (0.412) and comes from a single source, so replicate before believing it."
+   },
+   {
+    "name": "Zeolite FAU-I (faujasite, 2002 isosteric-method paper)",
+    "why": "Rank 3. Confirms that cation-rich faujasites reach 0.4-0.8 mol/kg dry at 420 ppm.",
+    "key_numbers": "Class A, 298 K, dry: 0.654 mol/kg (upper 0.785). One paper. Regeneration unmeasured; with dS -83 the verifier gives T80 of 152 C at 1 kPa and 83 C at 0.1 kPa.",
+    "known_experimentally": "Known family. Faujasite X is a long-standing dry-air CO2 sorbent; a 2022 study tuned FAU cations for trace CO2. Not novel."
+   },
+   {
+    "name": "Zeolite 4A (Na-A)",
+    "why": "Rank 4. Cheap commodity sorbent with meaningful dry uptake, but the worst case for water competition among the top entries.",
+    "key_numbers": "Class A, 298 K, dry: 0.552 mol/kg (3 papers; per-paper central values range 0.003-1.150, depending on activation). Water: 13.3 mol/kg at 10% RH and 15.0 at 50% RH, 27 mol H2O per mol CO2. With dS -83: T80 153 C at 1 kPa, 82 C at 0.1 kPa.",
+    "known_experimentally": "Known; covered in DAC reviews. Needs dry air or a guard bed."
+   },
+   {
+    "name": "CPO-27-Mg-c (Mg-MOF-74 with ethylenediamine on 60% of open metal sites)",
+    "why": "Rank 5. Amine grafting lifts Mg-MOF-74 from 0.102 to 0.463 mol/kg guaranteed, and the amine-type entropy would put it inside the window.",
+    "key_numbers": "Class A, 298 K, dry: 0.463 mol/kg (upper 0.748; a second 298 K isotherm in the same entry reads 1.335 mol/kg at 79 Pa). One paper (2015). Regeneration unmeasured; with a PEI-like dS of -186 the verifier gives T80 of 89 C at 1 kPa.",
+    "known_experimentally": "Yes. The source paper targets air-filtering conditions, and amine-appended Mg-MOF-74 and Mg2(dobpdc) are established DAC materials (the hydrazine version reports 3.89 mmol/g at 0.4 mbar, 298 K, single-component)."
+   },
+   {
+    "name": "MAF-X27ox, [CoIICoIII(OH)Cl2(bbta)] (monodentate metal-hydroxide MOF)",
+    "why": "Rank 6 and the top under-tested lead. It is a conventional stable azolate framework plus one imported mechanism, the metal-hydroxide site of carbonic anhydrase. The source reports unchanged CO2 capture at high humidity for flue gas, and hydroxide sites avoid amine oxidation.",
+    "key_numbers": "Class B, 298 K, dry: guaranteed 0.327, central 0.376, upper 1.269 mol/kg; first resolved point at 3.9x of 42.56 Pa. The raw low-pressure points are a noisy near-vertical rise. One paper (2015). No multi-temperature data in ISODB; the paper's reported adsorption enthalpy is about 124 kJ/mol (from the abstract, not checked in full text). The Mn analogue MAF-X25ox is bracketed at 0.041-2.325.",
+    "known_experimentally": "Not for DAC as far as found. Europe PMC full-text search returned only a review mentioning it alongside DAC. The hydroxide-site class is active for DAC (CD-MOFs in 2022 and 2025), so the mechanism is not new; a 400 ppm humid cycling test of this framework appears to be missing."
+   },
+   {
+    "name": "CD-MOF-2 (gamma-cyclodextrin/Rb hydroxide framework)",
+    "why": "Rank 7. Chemisorbs CO2 as bicarbonate at hydroxide sites; low-cost, oxidation-resistant chemistry.",
+    "key_numbers": "Class B, 298 K, dry: guaranteed 0.281, central 0.311, upper 0.319 mol/kg (2 papers). The only isosteric heat available (-22.5 kJ/mol at 1.479 mol/kg) was taken on weaker sites, so the window is indeterminate.",
+    "known_experimentally": "Yes. The CD-MOF family has been evaluated for capture from air: a 2022 paper on KHCO3 CD-MOF and a 2025 JACS paper on Rb2CO3 CD-MOF, which also found irreversible carbonate formation under dry hot conditions."
+   },
+   {
+    "name": "Zeolite 13X (Na-X)",
+    "why": "Rank 8 and the best-characterised benchmark. It quantifies both the physisorbent regeneration problem and lab-to-lab reproducibility.",
+    "key_numbers": "Literature: 0.271 mol/kg (7 papers with a point within 25x, 293-303 K; 29 papers in total). NIST/VAMAS 2026 interlaboratory set at 25 C: median 0.412 mol/kg over 92 isotherms (10th-90th percentile 0.323-0.493). dH -39.6 kJ/mol (median of 10 papers), dS -83. T80 156 C at 1 kPa (136-185 C for dH plus or minus 5), 83 C at 0.1 kPa. Water 14.1 mol/kg at 50% RH, 52 mol per mol CO2.",
+    "known_experimentally": "Yes. Standard dry-air benchmark; loses DAC performance in humid air (Kumar 2015)."
+   },
+   {
+    "name": "TRI-PE-MCM-41 (triamine-grafted pore-expanded MCM-41)",
+    "why": "Rank 9. A grafted, non-leaching amine; the screen credits it only with what ISODB resolves.",
+    "key_numbers": "Class B, 298 K, dry: guaranteed 0.197, central 0.427, upper 1.279 mol/kg; first point at 6.5x. Literature value about 1 mmol/g at 400 ppm, inside the bracket. With a PEI-like dS of -186 the verifier gives T80 of 87 C at 1 kPa.",
+    "known_experimentally": "Yes. Established DAC sorbent from 2010 onward."
+   },
+   {
+    "name": "Low-silica Sr-KFI zeolite",
+    "why": "Rank 10. Small-pore, divalent-cation zeolite with strong low-pressure uptake that appears untested for air capture.",
+    "key_numbers": "Class B, 303 K, dry: guaranteed 0.193, upper 0.446 mol/kg; first point at 2.3x (98 Pa, 0.446 mol/kg). One paper (2013). With dS -83: T80 154 C at 1 kPa, 82 C at 0.1 kPa.",
+    "known_experimentally": "No DAC test found. The source paper is on CO2/CH4 separation; KFI appears only in reviews in the DAC full-text search. Water uptake is expected to be zeolite-like but was not measured here."
+   },
+   {
+    "name": "Zeolite NaX@NaA core-shell (binderless microspheres)",
+    "why": "Rank 11. Same platform as rank 2, without the K exchange.",
+    "key_numbers": "Class B, 298 K, dry: guaranteed 0.170, central 0.174, upper 0.662 mol/kg; first point at 3.9x. One paper (2019). With dS -83: T80 169 C at 1 kPa, 86 C at 0.1 kPa.",
+    "known_experimentally": "No DAC test found; reported for CO2/CH4 and CO2/N2 selectivity and crush strength."
+   },
+   {
+    "name": "NJU-Bai7 (Cu MOF with pore size tuned by ligand geometry)",
+    "why": "Rank 12. Reaches DAC-relevant uptake without open metal sites or polar groups, which are the usual water-binding sites, so its humidity behaviour is worth one measurement.",
+    "key_numbers": "Class A, 298 K, dry: 0.141 mol/kg (upper 0.197), 2 papers. No multi-temperature data in ISODB; with a physisorbent-MOF dS of -105 the verifier gives T80 of 130 C at 1 kPa and 73 C at 0.1 kPa.",
+    "known_experimentally": "No DAC test found. Published in 2013 for post-combustion capture. Uptake is modest, about the same as SIFSIX-3-Zn."
+   },
+   {
+    "name": "SIFSIX-3-Zn",
+    "why": "Rank 13. Validation anchor for the method and the parent of the fluorinated ultramicroporous DAC family.",
+    "key_numbers": "Class B, 298 K, dry: guaranteed 0.121, central 0.194, upper 0.998 mol/kg; literature 0.13 mmol/g. dH -46.2 kJ/mol from 5 temperatures (literature Qst 45), dS -110. T80 130 C at 1 kPa (116-147 C), 72 C at 0.1 kPa. Verifier 100 C swing: 0.081 mol/kg at 1 kPa, 0.180 at 0.1 kPa.",
+    "known_experimentally": "Yes. The Cu analogue reaches 1.24 mmol/g at 400 ppm and is not in ISODB. Kumar 2015 found poor CO2/H2O selectivity for SIFSIX-3-Ni in humid air."
+   },
+   {
+    "name": "Mg-MOF-74 (Mg2(dobdc), CPO-27-Mg)",
+    "why": "Rank 14. Open-metal-site benchmark and the clearest case of water outcompeting CO2.",
+    "key_numbers": "Class B, 298 K, dry: guaranteed 0.102, central 0.119 mol/kg (15 papers; 3 with a point within 25x give 0.117-0.154); literature 0.08 mmol/g. dH -38.9 kJ/mol, dS -100. T80 156 C at 1 kPa, 81 C at 0.1 kPa. Water 34.1 mol/kg at 50% RH, 285 mol per mol CO2.",
+    "known_experimentally": "Yes. Tested for DAC and degraded by atmospheric moisture (Kumar 2015)."
+   },
+   {
+    "name": "Chabazite (2001 air pre-purification paper)",
+    "why": "Rank 15, just above the 0.1 mol/kg threshold. Included for completeness; the data are weak.",
+    "key_numbers": "Class A, 298 K, dry: 0.101 mol/kg (upper 0.130). The isotherm is non-concave at low pressure, so it is flagged. dH -26.7 kJ/mol taken at only 0.003 mol/kg, dS -57. T80 263 C at 1 kPa, 114 C at 0.1 kPa. Measured 70 C isotherm: 0.541 mol/kg at 1 kPa.",
+    "known_experimentally": "Yes. The source is air pre-purification, which is CO2 removal from air ahead of cryogenic separation. Known zeolite class."
+   }
+  ],
+  "caveats": [
+   "Every number is dry, single-component, equilibrium lab data. Nothing here measures humid 400 ppm air, kinetics, cycling stability or pilot performance, which rank higher in the evidence weighting.",
+   "ISODB coverage is skewed to papers from about 2008-2017 and to figures that someone digitised. It lacks most modern DAC sorbents (SIFSIX-3-Cu, NbOFFIVE-1-Ni, SIFSIX-18-Ni-beta, CALF-20, and mmen-Mg2(dobpdc) only at poor low-pressure resolution), so absence from the list says nothing about a material.",
+   "The ranking credits only measured low-pressure data, so it favours materials whose authors happened to measure below 1 mbar. Class B scores are lower bounds that assume a concave isotherm; stepped isotherms such as diamine-appended MOFs break that assumption and are badly underrated.",
+   "Seven of the 15 candidates rest on a single paper at 420 ppm (PEI-MonoSil, KX@KA, FAU-I, CPO-27-Mg-c, MAF-X27ox, Sr-KFI, NaX@NaA). The NIST 13X set shows about 41% lab-to-lab spread even for a reference material, and zeolite 4A varies from 0.003 to 1.150 mol/kg across three papers.",
+   "Isosteric heats from digitised isotherms are noisy: 13X spans -15.6 to -64.9 kJ/mol over 10 papers. They are taken at the lowest commonly measured loading, which can be above the DAC loading and so understate binding on the strongest sites. T80 moves by roughly 15-30 C for a 5 kJ/mol change.",
+   "For 8 of the 15 candidates the regeneration temperature is not measured. The T80 values quoted for them assume an entropy borrowed from 13X (-83), from SIFSIX-3-Zn and Mg-MOF-74 (-105) or from PEI-MonoSil (-186 J/mol/K) and are conditional estimates only.",
+   "The verifier is a single-site Langmuir idealisation and gives optimistic bounds. Real sorbents have heterogeneous sites: the PEI-MonoSil 75 C isotherm holds 1.456 mol/kg at 1 kPa where the mapped site predicts 0.857.",
+   "The water comparison uses pure-component isotherms, not co-adsorption, and exists for only 7 of the relevant adsorbents. It could not be applied to the amine, hydroxide or SIFSIX candidates.",
+   "Three high-scoring entries from one quartz-crystal-microbalance paper (ZIF-90, polyimide film, Cu-hfipbb) were excluded because the whole isotherm lies below 5 mbar, which looks like a pressure-scale entry error. This was not verified against the paper. Fe-BTT was excluded for non-monotone low-pressure points in an ambiguous unit.",
+   "Two data fixes were applied: the 182 NIST 2026 13X entries store temperature as 25 (deg C) and were set to 298.15 K, and 76 desorption-branch files were dropped.",
+   "The prior-art check is shallow. The shared web-search budget was exhausted mid-task, so it relied on Europe PMC full-text search and abstracts. 'No DAC test found' means none in those indexes, not that none exists. The MAF-X27ox enthalpy and humidity claims come from the abstract and a search summary, not the full text.",
+   "A team with more disk and compute should run the complementary computed screen this one could not: CO2 and H2O Henry coefficients or binding energies across CoRE MOF 2019/2024 and zeolite databases, then measure 400 ppm humid breakthrough on the short list. The blinding test here shows extrapolating from data above 1 kPa underestimates 13X by about 3x, so new low-pressure measurements are needed rather than more fitting."
+  ]
+ }
+]

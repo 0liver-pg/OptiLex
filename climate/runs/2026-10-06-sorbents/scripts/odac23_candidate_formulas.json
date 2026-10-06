@@ -1,0 +1,262 @@
+{
+ "ANUGOG": {
+  "host": "ANUGOG",
+  "formula": "Cu8 C112 H56 O32",
+  "natoms": 208,
+  "vol": 7023.164479749151,
+  "density": 0.5726552753985598,
+  "mol_metal_per_kg": 3.3030335059718845,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "CAVNOE": {
+  "host": "CAVNOE",
+  "formula": "Sc4 C32 N16 O52",
+  "natoms": 104,
+  "vol": 1721.8748666685167,
+  "density": 1.5625207313972802,
+  "mol_metal_per_kg": 2.468776153597377,
+  "N_per_metal": 4.0,
+  "F_per_metal": 0.0
+ },
+ "cm503311x_alf425K": {
+  "host": "cm503311x_alf425K",
+  "formula": "Al4 C32 F4 O16",
+  "natoms": 56,
+  "vol": 1482.5104436700992,
+  "density": 0.9232375361647186,
+  "mol_metal_per_kg": 4.8528612469912265,
+  "N_per_metal": 0.0,
+  "F_per_metal": 1.0
+ },
+ "cm503311x_aloh225K": {
+  "host": "cm503311x_aloh225K",
+  "formula": "Al4 C32 O20",
+  "natoms": 56,
+  "vol": 1497.8114097909263,
+  "density": 0.9005068688126106,
+  "mol_metal_per_kg": 4.924531553935932,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "DICKEH": {
+  "host": "DICKEH",
+  "formula": "Cu6 C78 H30 O24",
+  "natoms": 138,
+  "vol": 5586.351883908712,
+  "density": 0.514939787682308,
+  "mol_metal_per_kg": 3.4635033336219587,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "GUHNUU": {
+  "host": "GUHNUU",
+  "formula": "La8 C224 H200 N16 O64",
+  "natoms": 512,
+  "vol": 9054.150414722142,
+  "density": 0.9631025277979238,
+  "mol_metal_per_kg": 1.523417207606727,
+  "N_per_metal": 2.0,
+  "F_per_metal": 0.0
+ },
+ "IBUDOZ": {
+  "host": "IBUDOZ",
+  "formula": "Cu4 C24 H16 N20",
+  "natoms": 64,
+  "vol": 778.4190452504046,
+  "density": 1.7891657363236337,
+  "mol_metal_per_kg": 4.769194816839073,
+  "N_per_metal": 5.0,
+  "F_per_metal": 0.0
+ },
+ "NEVVEQ": {
+  "host": "NEVVEQ",
+  "formula": "Co4 C24 H12 N4 O8 S4",
+  "natoms": 56,
+  "vol": 885.9572071348902,
+  "density": 1.5900560742326966,
+  "mol_metal_per_kg": 4.715023952321678,
+  "N_per_metal": 1.0,
+  "F_per_metal": 0.0
+ },
+ "NUBBAP": {
+  "host": "NUBBAP",
+  "formula": "Zn22 C108 H36 O72",
+  "natoms": 238,
+  "vol": 9096.703495460566,
+  "density": 0.7162554452414235,
+  "mol_metal_per_kg": 5.606861166981501,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "QEFNAQ": {
+  "host": "QEFNAQ",
+  "formula": "Cu12 C96 H72 N48 O24",
+  "natoms": 252,
+  "vol": 3986.091103967156,
+  "density": 1.2682862523696508,
+  "mol_metal_per_kg": 3.9415390921847164,
+  "N_per_metal": 4.0,
+  "F_per_metal": 0.0
+ },
+ "RIPKIM": {
+  "host": "RIPKIM",
+  "formula": "Cu8 C96 H104 N16 O32",
+  "natoms": 256,
+  "vol": 3196.700284540455,
+  "density": 1.2998486931322917,
+  "mol_metal_per_kg": 3.19701271132254,
+  "N_per_metal": 2.0,
+  "F_per_metal": 0.0
+ },
+ "SUSZOW": {
+  "host": "SUSZOW",
+  "formula": "Al32 O128 P32",
+  "natoms": 192,
+  "vol": 3488.655483364471,
+  "density": 1.8575046923206069,
+  "mol_metal_per_kg": 8.19994752033587,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "XUVHEB": {
+  "host": "XUVHEB",
+  "formula": "Zn12 C208 H128 N8 O48",
+  "natoms": 404,
+  "vol": 6669.707806654447,
+  "density": 1.068537725822346,
+  "mol_metal_per_kg": 2.7959775203407364,
+  "N_per_metal": 0.6666666666666666,
+  "F_per_metal": 0.0
+ },
+ "BIMDEF_0.12_0": {
+  "host": "BIMDEF_0.12_0",
+  "formula": "Cu16 C98 H96 O64",
+  "natoms": 274,
+  "vol": 4160.876994250952,
+  "density": 1.3227708090038706,
+  "mol_metal_per_kg": 4.827247883402655,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "CAXVUU_0.11_0": {
+  "host": "CAXVUU_0.11_0",
+  "formula": "Fe18 C64 H25 O54",
+  "natoms": 161,
+  "vol": 3934.5060895553656,
+  "density": 1.1239314586313738,
+  "mol_metal_per_kg": 6.7591417392022715,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "EQOXIT_0.08_0": {
+  "host": "EQOXIT_0.08_0",
+  "formula": "Zn12 C130 H86 N22 O36",
+  "natoms": 286,
+  "vol": 4754.0187266252115,
+  "density": 1.1585291629163896,
+  "mol_metal_per_kg": 3.6179493704165107,
+  "N_per_metal": 1.8333333333333333,
+  "F_per_metal": 0.0
+ },
+ "IRELAU_0.12_0": {
+  "host": "IRELAU_0.12_0",
+  "formula": "Zn16 C154 H82 O64",
+  "natoms": 316,
+  "vol": 4532.698804182559,
+  "density": 1.4662534157344913,
+  "mol_metal_per_kg": 3.9976353986616915,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "KEDJAG22_0.08_0": {
+  "host": "KEDJAG22_0.08_0",
+  "formula": "Cu8 C22 H6 O48",
+  "natoms": 84,
+  "vol": 1532.5964409639453,
+  "density": 1.675722491608057,
+  "mol_metal_per_kg": 5.172603306586664,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "KUXLUL_0.12_0": {
+  "host": "KUXLUL_0.12_0",
+  "formula": "Cu16 C56 H38 O63 S7",
+  "natoms": 180,
+  "vol": 3947.1580044814677,
+  "density": 1.2452547428458376,
+  "mol_metal_per_kg": 5.405381665553496,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "LUYHAP_0.16_0": {
+  "host": "LUYHAP_0.16_0",
+  "formula": "Cu12 C100 H42 O48",
+  "natoms": 202,
+  "vol": 8273.360660267406,
+  "density": 0.5567550997888373,
+  "mol_metal_per_kg": 4.325976769504748,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "MAKXAZ_0.16_1": {
+  "host": "MAKXAZ_0.16_1",
+  "formula": "Zn4 C66 H52 N4 O15",
+  "natoms": 141,
+  "vol": 1542.717391578048,
+  "density": 1.5098012434186256,
+  "mol_metal_per_kg": 2.8516940845170837,
+  "N_per_metal": 1.0,
+  "F_per_metal": 0.0
+ },
+ "NUNCEG_0.12_0": {
+  "host": "NUNCEG_0.12_0",
+  "formula": "Li8 Si2 C49 H31 O16",
+  "natoms": 106,
+  "vol": 2015.1529556436897,
+  "density": 0.8136954985458763,
+  "mol_metal_per_kg": 10.126961719072005,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "QATPOR_0.03_0": {
+  "host": "QATPOR_0.03_0",
+  "formula": "Ga6 Ti18 H9 O124 P29",
+  "natoms": 186,
+  "vol": 2826.9929144256,
+  "density": 2.450072502208838,
+  "mol_metal_per_kg": 5.753825454827916,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "QOVDEL_0.05_0": {
+  "host": "QOVDEL_0.05_0",
+  "formula": "Ni18 C51 H3 N17 O53 P17",
+  "natoms": 159,
+  "vol": 4146.838349449736,
+  "density": 1.3153019204391114,
+  "mol_metal_per_kg": 5.4799808687779,
+  "N_per_metal": 0.9444444444444444,
+  "F_per_metal": 0.0
+ },
+ "SOYWOT_neutral_b_0.12_0": {
+  "host": "SOYWOT_neutral_b_0.12_0",
+  "formula": "Cu12 C63 H30 O48",
+  "natoms": 153,
+  "vol": 4601.535618489701,
+  "density": 0.8362848825404069,
+  "mol_metal_per_kg": 5.178134292323804,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ },
+ "YOFGOR_0.03_1": {
+  "host": "YOFGOR_0.03_1",
+  "formula": "Mn24 C148 H86 O96",
+  "natoms": 354,
+  "vol": 5894.397225265164,
+  "density": 1.3293367470956097,
+  "mol_metal_per_kg": 5.086112116560127,
+  "N_per_metal": 0.0,
+  "F_per_metal": 0.0
+ }
+}
