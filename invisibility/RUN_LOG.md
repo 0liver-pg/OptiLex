@@ -25,3 +25,15 @@ No simulations were left running. Two web pages that an earlier research agent s
 
 ## Resuming
 The workflow script is saved in the session's workflow directory. Completed agents replay from cache. The 5 missing generator modes, dedupe and everything after must run fresh. Inputs for a fresh continuation are all in this folder: `BOUNDS_BRIEF.md`, `research/bounds_base_research.md`, `experiments/cards_full.json`, `experiments/strategies/import.json`.
+
+## Run 2 (2026-10-06): paused by request (5-hour usage limit approaching)
+
+| Stage | Status |
+|---|---|
+| 5 missing generator modes (duality, analytic, channels, conservation, metric) | ✅ done |
+| Dedupe into ≤ 6 families | ✅ done |
+| Prior-art checks | ✅ F1, F2, F3, F6; ⏸ F4, F5 stopped |
+| Soundness critics | ✅ F1, F2; ⏸ F3–F6 stopped |
+| Fixer, execute, replicate, report | not reached |
+
+All completed agent outputs (strategies, families, prior-art and critic verdicts) are in `experiments/run2/completed_agents.json`. To continue: resume workflow run `wf_561e4309-c72` from this session (completed agents replay from cache), or start a continuation from that file.

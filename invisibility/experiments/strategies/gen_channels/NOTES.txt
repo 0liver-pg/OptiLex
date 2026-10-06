@@ -1,0 +1,10 @@
+Channels-mode generator (run 2, 2026-10-06). Prototype scripts and numbers behind strategies C1-C3.
+Python: .venv is broken (site-packages missing); these ran with .mamba/envs/meep/bin/python (numpy 2.5.3, scipy 1.18.1).
+fastvp.py   exact layered propagation of lifted variable phases (matches cloak2d L16 optimum to 1e-13: 3.0370736497949).
+perchan.py  per-channel Kamke reachable-phase floor, B=0 sweep -> perchannel_floor_sweep.json (44/64 points nonzero; 0 at canonical b/a=3, eps_max=6).
+perchan_band.py  pointwise-in-k band floors B=0.1,0.3 (24 GL nodes; prototype) -> perchannel_floor_band.json.
+adv2.py     L=8 DE+L-BFGS adversary at 10 sweep points (cloak2d rescored) -> perchannel_gap_check.json (gaps 1.007-2.75).
+bnb.py      chi-range B&B over 8 equal layers, 10 channels: LB 0.252 a (0.046 bare) after 2000 nodes -> bnb_M8.json.
+            NOTE: chi-range bisection only covers piecewise-constant designs on the fixed layers; needs the averaging lemma (C1).
+bnb_s.py    covering B&B on s_i = int chi dr with interval envelopes: vacuous (LB 0 after 20000 nodes) -> bnbs_M8.json.
+subsets.py  adversarial channel-subset minima, L=16 (stopped after 4 subsets) -> subset_adversary.json.
